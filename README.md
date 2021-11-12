@@ -1,2 +1,2 @@
 # GCat
-an application for chinese user of GitHub in Weixin
+an application for chinese user of GitHub in WeChat
