@@ -1,17 +1,17 @@
 {
   "pages":[
+    "pages/personal/personal",
     "pages/recommend/recommend", 
-    "pages/message/message", 
-    "pages/personal/personal", 
-    "pages/myrepos-list/myrepos-list", 
-    "pages/cooperationrepos-list/cooperationrepos-list", 
-    "pages/starrepos-list/starrepos-list", 
-    "pages/history-list/history-list", 
-    "pages/repos/repos", 
-    "pages/cooperation-repos/cooperation-repos", 
-    "pages/my-repos/my-repos", 
-    "pages/weeklog/weeklog", 
-    "pages/setup/setup" 
+    "pages/message/message",
+    "pages/myrepos-list/myrepos-list",
+    "pages/cooperationrepos-list/cooperationrepos-list",
+    "pages/starrepos-list/starrepos-list",
+    "pages/history-list/history-list",
+    "pages/repos/repos",
+    "pages/cooperation-repos/cooperation-repos",
+    "pages/my-repos/my-repos",
+    "pages/weeklog/weeklog",
+    "pages/setup/setup"
   ],
   "window":{
     "backgroundTextStyle":"light",
