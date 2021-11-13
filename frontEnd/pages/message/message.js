@@ -4,9 +4,34 @@ Page({
     /**
      * 页面的初始数据
      */
-    data: {
+    data: { 
+        dropdownData:["事件","类型","时间"],
+        selectData: ['事件1', '事件2', '事件3'], 
+        sort_hidden: true,
+        zhezhao:true,
+        dropup_pic_index: true,
+        }, 
 
-    },
+        
+        dropdownTap(e){ 
+        let _this=this; 
+        _this.setData({ 
+        id: e.currentTarget.dataset.index,
+        sort_hidden:false,
+        zhezhao: false, 
+        upordown: "up", 
+        }) 
+        },
+        
+        optionTap(e) { 
+        let _that=this; 
+        _that.setData({ 
+        key: e.currentTarget.dataset.index, 
+        zhezhao: true, 
+        sort_hidden: true,
+        upordown: "down", 
+        })
+        },
 
     /**
      * 生命周期函数--监听页面加载
