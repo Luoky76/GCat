@@ -1,1 +1,56 @@
 /* pages/myrepos-list/myrepos-list.wxss */
+.bg{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    z-index:-1; 
+}
+.user{
+    width:98%;
+    height:148rpx;
+    margin-top: -300rpx;
+    margin-left: 1%;
+    margin-right: 1%;
+    border-radius: 25rpx;
+    background-color:rgba(255,255,255,0.81);
+    display: flex;
+    box-shadow:1rpx 4rpx 12rpx rgba(0,0,0,0.4);
+  }
+  
+  .icon_size{
+    width: 35rpx;
+    height: 35rpx;
+  }
+  .setting{
+    margin-top: 1%;
+    margin-left: 5%;
+  }
+  .course{
+    margin-top: 6%;
+    margin-left: -25%;
+  }
+
+  .font1{
+    margin-top: 2%;
+    margin-left: -7%;
+    font-size:30rpx;
+    color:rgb(32, 32, 32);
+  }
+
+  .font2{
+    margin-top: 2%;
+    margin-left: 42%;
+    font-size:30rpx;
+    color:rgb(32, 32, 32);
+  }
+  .type{
+    margin-top: 8%;
+    margin-left: 2%;
+    font-size:30rpx;
+    color:rgb(32, 32, 32);
+  }
+
+  

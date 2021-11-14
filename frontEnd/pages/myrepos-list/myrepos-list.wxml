@@ -1,2 +1,15 @@
 <!--pages/myrepos-list/myrepos-list.wxml-->
-<text>pages/myrepos-list/myrepos-list.wxml</text>
+<view class="container" >
+
+<view class="index" >
+ <image class="bg" src="/pages/images/background2.png"></image>
+</view>
+
+<view class="user">
+    <text class="type">C++</text>
+    <text class="font1">User1/xxx</text>
+    <text class="font2">最近一次更新：1周前</text>
+    
+</view>
+
+</view>

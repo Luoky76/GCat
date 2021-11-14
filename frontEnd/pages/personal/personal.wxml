@@ -28,7 +28,7 @@
     </view>
     <!-- 新手教程 -->
     <view class="func2">
-      <image class="func_size" src="/pages/images/个人仓库.png"></image>
+      <image class="func_size" bindtap='myreposlist' src="/pages/images/个人仓库.png"></image>
       <text class="font2">\n个人仓库</text>
     </view>
     <!-- 协作仓库 -->

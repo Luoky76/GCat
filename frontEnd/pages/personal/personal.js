@@ -63,6 +63,11 @@ Page({
     onShareAppMessage: function () {
 
     },
+    myreposlist:function(){
+        wx.navigateTo({
+           url:'/pages/myrepos-list/myrepos-list',
+        })
+      },
     // 获取用户信息
     getuserinfo:function(e)
     {
