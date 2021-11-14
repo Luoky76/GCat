@@ -63,13 +63,4 @@ Page({
     onShareAppMessage: function () {
 
     },
-    // 获取用户信息
-    getuserinfo:function(e)
-    {
-        // console.log(e.detail.userInfo)
-        this.setData({
-            nickname:e.detail.userInfo.nickName,
-            avatarurl:e.detail.userInfo.avatarUrl
-        })
-    }
 })

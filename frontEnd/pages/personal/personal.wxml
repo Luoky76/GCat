@@ -1,6 +1,6 @@
 <!--pages/personal/personal.wxml-->
 <!-- 背景 -->
-<view class="index" >
+<view>
   <image class="bg" src="/pages/images/bg.jpg"></image>
 </view>
 <!-- 用户 -->

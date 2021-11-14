@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/cooperation-repos/cooperation-repos",
+    "pages/repos/repos",
     "pages/personal/personal",
     "pages/recommend/recommend", 
     "pages/message/message",
@@ -7,8 +9,6 @@
     "pages/cooperationrepos-list/cooperationrepos-list",
     "pages/starrepos-list/starrepos-list",
     "pages/history-list/history-list",
-    "pages/repos/repos",
-    "pages/cooperation-repos/cooperation-repos",
     "pages/my-repos/my-repos",
     "pages/weeklog/weeklog",
     "pages/setup/setup"

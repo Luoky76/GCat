@@ -1,2 +1,101 @@
 <!--pages/cooperation-repos/cooperation-repos.wxml-->
-<text>pages/cooperation-repos/cooperation-repos.wxml</text>
+<!-- 背景 -->
+<view>
+  <image class="bg" src="/pages/images/bg2.png"></image>
+</view>
+<!-- 仓库名称 -->
+<view class="title_font">仓库名</view>
+<!-- 收藏按钮 -->
+<view>
+  <image class="icon" src="/pages/images/收藏.png"></image>
+</view>
+<!-- 查看选择 -->
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">首页</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">合并请求</view>
+  <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">代码文件</view>
+  <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">协作者</view>
+</view>
+<swiper current="{{currentTab}}" bindchange="bindChange" style="height:{{winHeight - 31}}px">
+  <!-- 首页 -->
+  <swiper-item>
+    <view class="main_detail">
+      <!-- 仓库头像 -->
+      <view>
+        <image class="img" src="/pages/images/logo.png" mode="scaleToFill"></image>
+      </view>
+      <!-- 仓库信息 -->
+      <view class="right_column">
+        <view>
+          <image class="detail_icon" src="../images/个人仓库.png"></image>
+          <text class="font">User2</text>
+        </view>
+        <view>
+          <image class="detail_icon" src="../images/更新.png"></image>
+          <text class="font">2021/11/2 15:31:33</text>
+        </view>
+        <view>
+          <image class="detail_icon" src="../images/显示.png"></image>
+          <text class="font">31</text>
+        </view>
+        <view>
+          <image class="detail_icon" src="../images/收藏.png"></image>
+          <text class="font">112</text>
+        </view>
+      </view>
+    </view>
+    <!-- 用户点评按钮 -->
+    <button class="comment" style="width:97%">用户点评</button>
+    <!-- README -->
+    <button class="readme" style="width:97%">README.md</button>
+    <view class="readme_detail">
+      <text class="font">这里是README.md的内容</text>
+    </view>
+  </swiper-item>
+  <!-- 合并请求 -->
+  <swiper-item>
+    <view class="merge_detail">
+      <image class="merge_icon" src="../images/分享.png"></image>
+      <view class="right_column">
+        <view>
+          <text class="merge_font">这里是commit描述\nUser2 2021.10.31</text>
+        </view>
+      </view>
+    </view>
+  </swiper-item>
+  <!-- 代码文件 -->
+  <swiper-item>
+    <button class="code1" style="width:97%">
+      <image class="detail_icon" src="../images/文件夹.png"></image>file1
+    </button>
+    <button class="code2" style="width:97%">
+      <image class="detail_icon" src="../images/文件.png"></image>file2
+    </button>
+    <button class="code2" style="width:97%">
+      <image class="detail_icon" src="../images/文件.png"></image>file3
+    </button>
+    <button class="code2" style="width:97%">
+      <image class="detail_icon" src="../images/文件.png"></image>file4
+    </button>
+  </swiper-item>
+  <!-- 协作者 -->
+  <swiper-item>
+    <view class="co_detail">
+      <!-- 头像 -->
+      <view>
+        <image class="co_img" src="/pages/images/男生-黄.png" mode="scaleToFill"></image>
+      </view>
+      <!-- 信息 -->
+      <view class="right_column">
+        <view>
+          <image class="detail_icon" src="../images/个人仓库.png"></image>
+          <text class="font">User2</text>
+        </view>
+        <view>
+          <image class="detail_icon" src="../images/更新.png"></image>
+          <text class="font">2021/11/2 15:31:33</text>
+        </view>
+      </view>
+    </view>
+  </swiper-item>
+</swiper>
