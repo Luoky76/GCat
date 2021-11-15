@@ -21,35 +21,35 @@
     <text class="font1">新手教程</text>
 </view>
 <view class="function">
-    <!-- 设置 -->
-    <view class="func1">
-      <image class="func_size" src="/pages/images/历史浏览.png"></image>
+    <!-- 历史浏览 -->
+    <navigator url="../history-list/history-list" class="func1">
+      <image class="func_size" src="/pages/images/历史浏览.png" bindtap=""></image>
       <text class="font2">\n历史浏览</text>
-    </view>
-    <!-- 新手教程 -->
-    <view class="func2">
+    </navigator>
+    <!-- 个人仓库 -->
+    <navigator url="../myrepos-list/myrepos-list" class="func2">
       <image class="func_size" src="/pages/images/个人仓库.png"></image>
       <text class="font2">\n个人仓库</text>
-    </view>
+    </navigator>
     <!-- 协作仓库 -->
-    <view class="func2">
+    <navigator url="../cooperationrepos-list/cooperationrepos-list" class="func2">
       <image class="func_size" src="/pages/images/协作仓库.png"></image>
       <text class="font2">\n协作仓库</text>
-    </view>
-    <!-- 协作仓库 -->
-    <view class="func3">
+    </navigator>
+    <!-- 个人周报 -->
+    <navigator url="../weeklog/weeklog" class="func3">
       <image class="func_size" src="/pages/images/个人周报.png"></image>
       <text class="font2">\n个人周报</text>
-    </view>
-    <!-- 协作仓库 -->
-    <view class="func4">
+    </navigator>
+    <!-- 收藏夹 -->
+    <navigator url="../starrepos-list/starrepos-list" class="func4">
       <image class="func_size" src="/pages/images/收藏.png"></image>
       <text class="font2">\n收藏夹</text>
-    </view>
-    <!-- 协作仓库 -->
-    <view class="func4">
+    </navigator>
+    <!-- 快速建仓 -->
+    <navigator url="../setup/setup" class="func4">
       <image class="func_size" src="/pages/images/快速建仓.png"></image>
       <text class="font2">\n快速建仓</text>
-    </view>
+    </navigator>
 </view>
 

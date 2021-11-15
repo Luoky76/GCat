@@ -12,9 +12,7 @@
 <!-- 查看选择 -->
 <view class="swiper-tab">
   <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">首页</view>
-  <!-- <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">合并请求</view>   -->
   <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="1" bindtap="swichNav">代码文件</view>
-  <!-- <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">协作者</view>   -->
 </view>
 <swiper current="{{currentTab}}" bindchange="bindChange" style="height:{{winHeight - 31}}px">
   <!-- 首页 -->
