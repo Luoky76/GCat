@@ -63,11 +63,26 @@ Page({
     onShareAppMessage: function () {
 
     },
+    historylist:function(){
+        wx.navigateTo({
+           url:'/pages/history-list/history-list',
+        })
+      },
     myreposlist:function(){
         wx.navigateTo({
            url:'/pages/myrepos-list/myrepos-list',
         })
       },
+    cooperationreposlist:function(){
+        wx.navigateTo({
+            url:'/pages/cooperationrepos-list/cooperationrepos-list',
+         })
+    },
+    starreposlist:function(){
+        wx.navigateTo({
+            url:'/pages/starrepos-list/starrepos-list',
+         })
+    },
     // 获取用户信息
     getuserinfo:function(e)
     {

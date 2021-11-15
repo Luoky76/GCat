@@ -23,7 +23,7 @@
 <view class="function">
     <!-- 设置 -->
     <view class="func1">
-      <image class="func_size" src="/pages/images/历史浏览.png"></image>
+      <image class="func_size" bindtap='historylist' src="/pages/images/历史浏览.png"></image>
       <text class="font2">\n历史浏览</text>
     </view>
     <!-- 新手教程 -->
@@ -33,7 +33,7 @@
     </view>
     <!-- 协作仓库 -->
     <view class="func2">
-      <image class="func_size" src="/pages/images/协作仓库.png"></image>
+      <image class="func_size" bindtap='cooperationreposlist' src="/pages/images/协作仓库.png"></image>
       <text class="font2">\n协作仓库</text>
     </view>
     <!-- 协作仓库 -->
@@ -43,7 +43,7 @@
     </view>
     <!-- 协作仓库 -->
     <view class="func4">
-      <image class="func_size" src="/pages/images/收藏.png"></image>
+      <image class="func_size" bindtap='starreposlist' src="/pages/images/收藏.png"></image>
       <text class="font2">\n收藏夹</text>
     </view>
     <!-- 协作仓库 -->
