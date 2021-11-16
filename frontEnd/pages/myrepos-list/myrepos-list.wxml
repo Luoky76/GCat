@@ -1,2 +1,130 @@
 <!--pages/myrepos-list/myrepos-list.wxml-->
-<text>pages/myrepos-list/myrepos-list.wxml</text>
+<view class="container" >
+
+<view class="index" >
+ <image class="bg" src="/pages/images/background2.png"></image>
+</view>
+
+<view class="user">
+    <text class="type">C++</text>
+    <text class="font1">User1/xxx</text>
+    <view class="like">
+      <image class="icon_size" src="/pages/images/收藏.png"></image>
+    </view>
+    <text class="font3">111</text>
+    <view class="share">
+      <image class="icon_size" src="/pages/images/收藏.png"></image>
+    </view>
+    <text class="font3">111</text>
+    <view class="count">
+      <image class="icon_size" src="/pages/images/协作仓库.png"></image>
+    </view>
+    <text class="font3">10</text>
+    <text class="font2">最近一次更新：1周前</text>
+</view>
+
+<view class="user1">
+    <text class="type">C++</text>
+    <text class="font1">User1/xxx</text>
+    <view class="like">
+      <image class="icon_size" src="/pages/images/收藏.png"></image>
+    </view>
+    <text class="font3">111</text>
+    <view class="share">
+      <image class="icon_size" src="/pages/images/收藏.png"></image>
+    </view>
+    <text class="font3">111</text>
+    <view class="count">
+      <image class="icon_size" src="/pages/images/协作仓库.png"></image>
+    </view>
+    <text class="font3">10</text>
+    <text class="font2">最近一次更新：1周前</text>
+</view>
+
+<view class="user1">
+    <text class="type">C++</text>
+    <text class="font1">User1/xxx</text>
+    <view class="like">
+      <image class="icon_size" src="/pages/images/收藏.png"></image>
+    </view>
+    <text class="font3">111</text>
+    <view class="share">
+      <image class="icon_size" src="/pages/images/收藏.png"></image>
+    </view>
+    <text class="font3">111</text>
+    <view class="count">
+      <image class="icon_size" src="/pages/images/协作仓库.png"></image>
+    </view>
+    <text class="font3">10</text>
+    <text class="font2">最近一次更新：1周前</text>
+</view>
+
+<view class="user1">
+    <text class="type">C++</text>
+    <text class="font1">User1/xxx</text>
+    <view class="like">
+      <image class="icon_size" src="/pages/images/收藏.png"></image>
+    </view>
+    <text class="font3">111</text>
+    <view class="share">
+      <image class="icon_size" src="/pages/images/收藏.png"></image>
+    </view>
+    <text class="font3">111</text>
+    <view class="count">
+      <image class="icon_size" src="/pages/images/协作仓库.png"></image>
+    </view>
+    <text class="font3">10</text>
+    <text class="font2">最近一次更新：1周前</text>
+</view>
+<view class="user1">
+    <text class="type">C++</text>
+    <text class="font1">User1/xxx</text>
+    <view class="like">
+      <image class="icon_size" src="/pages/images/收藏.png"></image>
+    </view>
+    <text class="font3">111</text>
+    <view class="share">
+      <image class="icon_size" src="/pages/images/收藏.png"></image>
+    </view>
+    <text class="font3">111</text>
+    <view class="count">
+      <image class="icon_size" src="/pages/images/协作仓库.png"></image>
+    </view>
+    <text class="font3">10</text>
+    <text class="font2">最近一次更新：1周前</text>
+</view>
+<view class="user1">
+    <text class="type">C++</text>
+    <text class="font1">User1/xxx</text>
+    <view class="like">
+      <image class="icon_size" src="/pages/images/收藏.png"></image>
+    </view>
+    <text class="font3">111</text>
+    <view class="share">
+      <image class="icon_size" src="/pages/images/收藏.png"></image>
+    </view>
+    <text class="font3">111</text>
+    <view class="count">
+      <image class="icon_size" src="/pages/images/协作仓库.png"></image>
+    </view>
+    <text class="font3">10</text>
+    <text class="font2">最近一次更新：1周前</text>
+</view>
+<view class="user1">
+    <text class="type">C++</text>
+    <text class="font1">User1/xxx</text>
+    <view class="like">
+      <image class="icon_size" src="/pages/images/收藏.png"></image>
+    </view>
+    <text class="font3">111</text>
+    <view class="share">
+      <image class="icon_size" src="/pages/images/收藏.png"></image>
+    </view>
+    <text class="font3">111</text>
+    <view class="count">
+      <image class="icon_size" src="/pages/images/协作仓库.png"></image>
+    </view>
+    <text class="font3">10</text>
+    <text class="font2">最近一次更新：1周前</text>
+</view>
+</view>

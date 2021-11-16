@@ -1,2 +1,39 @@
 <!--pages/recommend/recommend.wxml-->
-<text>pages/recommend/recommend.wxml</text>
+
+<view class="container" >
+
+ <view class="index" >
+  <image class="bg" src="/pages/images/background1.png"></image>
+ </view>
+
+ <view class='page_row' bindtap="suo">
+    <view class="search">
+      <view class="df search_arr">
+        <image class="searchcion" src="/pages/images/searchicon.png"></image>
+        <input class="" value="{{searchValue}}"/>
+      </view>
+    </view>
+    <view class='sousuo'>搜索</view>
+  </view>
+
+ <view class="BT">
+
+  <button class="recommend1" bindtap="recommend1">   
+   <text style="font-size:12px">microsoft/power Toys\nC# 62,509 3,449
+   </text>
+   <image class="recommendlogo" src="/pages/images/recommendlogo.png"> </image>
+  </button>
+
+  <button class="recommend2" bindtap="recommend2"> 
+    <text style="font-size:12px">CyC2018/CS-Notes\nJava 62,509 3,449</text>
+    <image class="recommendlogo" src="/pages/images/recommendlogo.png"></image>
+  </button>
+
+  <button class="recommend3" bindtap="recommend3"> 
+    <text style="font-size:12px">User2/xxx\nC++ 111 111</text>
+    <image class="recommendlogo" src="/pages/images/recommendlogo.png"></image>
+  </button>
+
+ </view>
+
+</view>
