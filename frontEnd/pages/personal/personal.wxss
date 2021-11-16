@@ -29,6 +29,7 @@
   margin-left: 33%;
   border-radius: 50%;
 }
+/* 图标大小 */
 .icon_size{
   width: 55rpx;
   height: 55rpx;
@@ -37,6 +38,7 @@
   width: 90rpx;
   height: 90rpx;
 }
+/* 图标位置 */
 .setting{
   margin-top: 15%;
   margin-left: 17%;
@@ -45,6 +47,7 @@
   margin-top: 15%;
   margin-left: 4%;
 }
+/* 字体 */
 .font1{
   margin-top: 17%;
   margin-left: 1%;
@@ -53,6 +56,7 @@
 .font2{
   font-size:25rpx;
 }
+/* 图标位置 */
 .func1{
   margin-top: 4%;
   margin-left: 14%;
