@@ -1,0 +1,6 @@
+/* pages/setup/setup.wxss */
+.hengxian{
+width:100%;     
+height:2rpx;
+background:rgb(78, 72, 72);
+}

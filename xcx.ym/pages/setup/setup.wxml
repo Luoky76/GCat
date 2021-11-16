@@ -1,0 +1,23 @@
+<!--pages/setup/setup.wxml-->
+<!--pages/setup/setup.wxml-->
+<view class="row1">
+<!--用户名选择框-->>
+<view class="line2">
+<text>用户名</text>
+<input>
+</view>
+<!--仓库名输入框-->
+<view class="line2">
+<text>仓库名</text>
+</view>
+</view>
+
+<view class="line1">
+<view>
+<text>仓库描述</text>
+<textarea>
+
+</textarea>
+<view class="hengxian"></view>
+</view>
+</view>
