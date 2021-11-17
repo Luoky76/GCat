@@ -1,5 +1,5 @@
 // pages/repos/repos.js
-var app = getApp()  
+var app = getApp()
 Page({
 
   /**

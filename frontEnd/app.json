@@ -1,13 +1,14 @@
 {
   "pages":[
     "pages/personal/personal",
-    "pages/cooperation-repos/cooperation-repos",
     "pages/repos/repos",
+    "pages/comment/comment",
+    "pages/cooperation-repos/cooperation-repos",
+    "pages/starrepos-list/starrepos-list",
     "pages/recommend/recommend", 
     "pages/message/message",
     "pages/myrepos-list/myrepos-list",
     "pages/cooperationrepos-list/cooperationrepos-list",
-    "pages/starrepos-list/starrepos-list",
     "pages/history-list/history-list",
     "pages/my-repos/my-repos",
     "pages/weeklog/weeklog",
