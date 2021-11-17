@@ -8,6 +8,11 @@ Page({
 
     },
 
+    cooperationrepos:function(){
+        wx.navigateTo({
+           url:'/pages/cooperation-repos/cooperation-repos',
+        })
+      },
     /**
      * 生命周期函数--监听页面加载
      */

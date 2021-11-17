@@ -5,7 +5,7 @@
  <image class="bg" src="/pages/images/background2.png"></image>
 </view>
 
-<view class="user">
+<view class="user" bindtap='cooperationrepos'>
     <text class="type">C++</text>
     <text class="font1">User2/xxx</text>
     <view class="like">
