@@ -1,6 +1,6 @@
 
 from datetime import datetime, timedelta
-
+ACTIONTYPE=("push", "commit", "pull", "remote", "merge")
 
 def stemp2str(timeStamp: float):
     """
@@ -23,5 +23,5 @@ def utc2chn(UTCstr: str):
     return CHNstr
 
 
-if __name__ == "__main__":
-    print(utc2chn('2021-11-16T0:0:0Z'))
+def Actionchange(action: dict):
+    pass
