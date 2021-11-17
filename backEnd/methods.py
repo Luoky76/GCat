@@ -1,6 +1,7 @@
 
 from datetime import datetime, timedelta
-ACTIONTYPE=("push", "commit", "pull", "remote", "merge")
+from typing import Tuple
+
 
 def stemp2str(timeStamp: float):
     """
@@ -23,5 +24,24 @@ def utc2chn(UTCstr: str):
     return CHNstr
 
 
-def Actionchange(action: dict):
-    pass
+def ActionExtract(action: dict) -> tuple:
+    """
+        从动作json字典指定actionKind提取（类型,时间）元组
+    """
+    ActionType = None
+    ActionTime = None
+
+    if action["type"] == "PushEvent":
+        ActionType = "push"
+        ActionTime = utc2chn(action["created_at"])
+
+    elif action["type"] == "PullRequestEvent":
+        if (action["payload"]["pull_request"]["merged_at"] != None):
+            ActionType = "merge"
+            ActionTime = utc2chn(
+                action["payload"]["pull_request"]["merged_at"])
+
+    if ActionType and ActionTime:
+        return [ActionType, ActionTime]
+    else:
+        return None
