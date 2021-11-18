@@ -1,5 +1,6 @@
 import base64
 import codecs
+import github
 import pandas as pd
 import numpy as np
 import jieba.posseg
@@ -29,7 +30,7 @@ def dataprepos(text, stopkey):
 
 # 推送推荐仓库的full_name列表
 class Repositoryrcmd():
-    def __init__(self, g):
+    def __init__(self, g:Github):
         self.user = g.get_user()
 
     """
@@ -85,7 +86,7 @@ class Repositoryrcmd():
         result = self.__getKeywords_tfidf(readme_list, 2)
         return result
 
-    def getRcmd(self):
+    def getRcmd(self,g:Github):
         md_list = self.__get_keyword()
         result_list = list()
         for each_md in md_list:
