@@ -1,4 +1,7 @@
 from flask import Flask
+from exts import db
+from models import Record
+import config
 
 app = Flask(__name__)
 
