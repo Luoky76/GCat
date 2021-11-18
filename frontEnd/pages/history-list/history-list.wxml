@@ -66,7 +66,7 @@
     <view class="like">
       <image class="icon_size" src="/pages/images/蓝点2.png"></image>
     </view>
-    <text class="font3" decode="{{true}}">NUll&nbsp;&nbsp;&nbsp;&nbsp;</text>
+    <text class="font3" decode="{{true}}">NUll &nbsp;&nbsp;&nbsp;&nbsp;</text>
    
     <text class="font4">2021/11/2 14:28:43</text>
 </view>
