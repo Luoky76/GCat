@@ -5,11 +5,8 @@
  <image class="bg" src="/pages/images/background2.png"></image>
 </view>
 
-<<<<<<< Updated upstream
-<view class="user" bindtap='cooperationrepos'>
-=======
 <navigator url="../cooperation-repos/cooperation-repos"  class="user">
->>>>>>> Stashed changes
+
     <text class="type">C++</text>
     <text class="font1">User2/xxx</text>
     <view class="like">
