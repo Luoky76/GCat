@@ -6,7 +6,9 @@ Page({
      * 页面的初始数据
      */
     data: {
-        
+        url_list:[],
+        list : ['https://api.github.com/repos/sindresorhus/awesome', 'https://api.github.com/repos/public-apis/public-apis', 'https://api.github.com/repos/github/gitignore', 'https://api.github.com/repos/vinta/awesome-python', 'https://api.github.com/repos/jlevy/the-art-of-command-line', 'https://api.github.com/repos/30-seconds/30-seconds-of-code', 'https://api.github.com/repos/microsoft/TypeScript', 'https://api.github.com/repos/animate-css/animate.css', 'https://api.github.com/repos/avelino/awesome-go', 'https://api.github.com/repos/jwasham/coding-interview-university', 'https://api.github.com/repos/kamranahmedse/developer-roadmap', 'https://api.github.com/repos/trekhleb/javascript-algorithms', 'https://api.github.com/repos/TheAlgorithms/Python', 'https://api.github.com/repos/ossu/computer-science', 'https://api.github.com/repos/jlevy/the-art-of-command-line', 'https://api.github.com/repos/microsoft/terminal', 'https://api.github.com/repos/iluwatar/java-design-patterns', 'https://api.github.com/repos/MisterBooo/LeetCodeAnimation', 'https://api.github.com/repos/axios/axios', 'https://api.github.com/repos/PanJiaChen/vue-element-admin', 'https://api.github.com/repos/netdata/netdata', 'https://api.github.com/repos/gin-gonic/gin', 'https://api.github.com/repos/httpie/httpie', 'https://api.github.com/repos/ansible/ansible', 'https://api.github.com/repos/psf/requests', 'https://api.github.com/repos/square/okhttp', 'https://api.github.com/repos/yarnpkg/yarn', 'https://api.github.com/repos/TranslucentTB/TranslucentTB', 'https://api.github.com/repos/42wim/matterbridge', 'https://api.github.com/repos/nslog11/Gitter', 'https://api.github.com/repos/AnySoftKeyboard/AnySoftKeyboard', 'https://api.github.com/repos/sozu-proxy/sozu', 'https://api.github.com/repos/fossasia/susi_gitterbot', 'https://api.github.com/repos/digicorp/propeller', 'https://api.github.com/repos/Makuna/NeoPixelBus', 'https://api.github.com/repos/sierra-library/sierra'],
+        repo:[],
     },
 
     /**
@@ -20,7 +22,40 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-
+        var var_token = toString( wx.getStorageSync('token'))
+        var _this = this;
+        wx.request({
+            url: 'http://127.0.0.1:5000//GcatServer',
+            method:'get',
+            header: {
+                'content-type': 'application/text'
+            },
+            data: {
+                eventID: 422743326,
+                userID: "ShakingSH",
+                eType: "Recommend",
+                eTime: 1459994552.51,
+                token: var_token
+            },
+            success: function(res) {
+              _this.setData({
+                url_list : res.data.eDetail
+              });
+            }
+          })
+        var that = this;
+        this.data.url_list.forEach(element => {
+            wx.request({
+              url: element,
+              success:function(res){
+                console.log(res)
+                that.data.repo.push({full_name:res.data.full_name, language:res.data.language, star:res.data.stargazers_count, url:res.data.repos_url})
+                that.setData({
+                    repo:that.data.repo
+                })
+              }
+            })
+        })
     },
 
     /**
