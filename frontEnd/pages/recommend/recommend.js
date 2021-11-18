@@ -15,48 +15,53 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+      var var_token =  wx.getStorageSync('token')
+      var _this = this;
+      wx.request({
+          url: 'http://127.0.0.1:5000//GcatServer',
+          method:'post',
+          // header: {
+          //     'content-type': 'application/json'
+          // },
+          dataType:JSON,
+          data: {
+              eventID: 422743326,
+              userID: "ShakingSH",
+              eType: "Recommend",
+              eTime: 1459994552.51,
+              eDetail:{},
+              token: var_token
+          },
+          success: function(res) {
+            //console.log(res)
+            //返回的json是以字符串形式的要转换成json形式
+            var resDataJson=JSON.parse(res.data);
+            _this.setData({
+              url_list : resDataJson.eDetail
+            });
+            //console.log(_this.data.url_list);
+          }
+        })
+      var that = this;
+      this.data.url_list.forEach(element => {
+          wx.request({
+            url: element,
+            success:function(res){
+              console.log(res)
+              that.data.repo.push({full_name:res.data.full_name, language:res.data.language, star:res.data.stargazers_count, url:res.data.repos_url})
+              that.setData({
+                  repo:that.data.repo
+              })
+            }
+          })
+      })
+  
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onReady: function () {
-        var var_token = toString( wx.getStorageSync('token'))
-        var _this = this;
-        wx.request({
-            url: 'http://127.0.0.1:5000//GcatServer',
-            method:'get',
-            header: {
-                'content-type': 'application/text'
-            },
-            data: {
-                eventID: 422743326,
-                userID: "ShakingSH",
-                eType: "Recommend",
-                eTime: 1459994552.51,
-                token: var_token
-            },
-            success: function(res) {
-              _this.setData({
-                url_list : res.data.eDetail
-              });
-            }
-          })
-        var that = this;
-        this.data.url_list.forEach(element => {
-            wx.request({
-              url: element,
-              success:function(res){
-                console.log(res)
-                that.data.repo.push({full_name:res.data.full_name, language:res.data.language, star:res.data.stargazers_count, url:res.data.repos_url})
-                that.setData({
-                    repo:that.data.repo
-                })
-              }
-            })
-        })
-    },
+    onReady: function () {},
 
     /**
      * 生命周期函数--监听页面显示
