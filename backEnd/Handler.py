@@ -1,24 +1,23 @@
+from GEvent import GEvent
+from github import Github
+import repositoryrcmd
+import UserInfo
 
-class AbstractEventHandler():
-    pass
 
-class EventDistributer(AbstractEventHandler):
-    pass
+def EventDistributer(EventRequest: GEvent)->GEvent:
+    if EventRequest.eType == "GetInfo":
+        return GetInfoEventHandler(EventRequest)
+    if EventRequest.eType == "Recommend":
+        return RecommendEventHandler(EventRequest)
 
-class RecommendEventHandler(AbstractEventHandler):
-    pass
+def GetInfoEventHandler(gEvent: GEvent)->GEvent:
+    if "actionList" in gEvent.eDetail:
+        (gEvent.eDetail)["actionList"] = UserInfo.getActionList(
+            gEvent.userID, gEvent.eTime)
+    return gEvent
 
-class GetInfoEventHandler(AbstractEventHandler):
-    pass
-
-class ChangeUserInfoEventHandler(AbstractEventHandler):
-    pass
-
-class LoginEventHandler(AbstractEventHandler):
-    pass
-
-class CreateRepoEventHandler(AbstractEventHandler):
-    pass
-
-class UpdateRepoEventHandler(AbstractEventHandler):
-    pass
+def RecommendEventHandler(gEvent: GEvent)->GEvent:
+    g = Github(gEvent.token)
+    obj = repositoryrcmd.Repositoryrcmd(g)
+    gEvent.eDetail = obj.getRcmd()
+    return gEvent

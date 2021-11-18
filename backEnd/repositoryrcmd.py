@@ -11,9 +11,8 @@ from github import Github
 import requests
 
 # 测试的时候可以将以下语句取消注释，这里使用了我（高旭）的GitHub账号设置的token
-# g = Github("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")
+# g = Github("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")
 stopkey = [w.strip() for w in codecs.open('data/stopWord.txt', 'r', encoding='utf-8').readlines()]
-
 
 def dataprepos(text, stopkey):
     l = []
@@ -30,7 +29,7 @@ def dataprepos(text, stopkey):
 
 # 推送推荐仓库的full_name列表
 class Repositoryrcmd():
-    def __init__(self):
+    def __init__(self, g):
         self.user = g.get_user()
 
     """
@@ -86,7 +85,7 @@ class Repositoryrcmd():
         result = self.__getKeywords_tfidf(readme_list, 2)
         return result
 
-    def get_recommend(self):
+    def getRcmd(self):
         md_list = self.__get_keyword()
         result_list = list()
         for each_md in md_list:
@@ -96,8 +95,8 @@ class Repositoryrcmd():
                     if cnt == 9:
                         break
                     cnt += 1
-                    print(repo.full_name)
-                    result_list.append(repo.full_name)
+                    print(repo.url)
+                    result_list.append(repo.url)
         return result_list
 
 # def getKeywords_tfidf(corpus,topK):
