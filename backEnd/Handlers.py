@@ -1,5 +1,7 @@
-
+import GEvent
 class AbstractEventHandler():
+    def evExecute(newEvent:GEvent):
+        pass
     pass
 
 class EventDistributer(AbstractEventHandler):
