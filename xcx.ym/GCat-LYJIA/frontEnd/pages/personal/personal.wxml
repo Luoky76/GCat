@@ -1,0 +1,55 @@
+<!--pages/personal/personal.wxml-->
+<!-- 背景 -->
+<view class="index" >
+  <image class="bg" src="/pages/images/bg.jpg"></image>
+</view>
+<!-- 用户 -->
+<view class="user">
+    <!-- 用户头像 -->
+    <view>
+      <image class="userinfo-avatar" src="/pages/images/男生-黄.png" mode="scaleToFill"></image>
+    </view>
+    <!-- 设置 -->
+    <view class="setting">
+      <image class="icon_size" src="/pages/images/设置.png"></image>
+    </view>
+    <text class="font1">设置</text>
+    <!-- 新手教程 -->
+    <view class="course">
+      <image class="icon_size" src="/pages/images/播放.png"></image>
+    </view>
+    <text class="font1">新手教程</text>
+</view>
+<view class="function">
+    <!-- 设置 -->
+    <view class="func1">
+      <image class="func_size" bindtap='historylist' src="/pages/images/历史浏览.png"></image>
+      <text class="font2">\n历史浏览</text>
+    </view>
+    <!-- 新手教程 -->
+    <view class="func2">
+      <image class="func_size" bindtap='myreposlist' src="/pages/images/个人仓库.png"></image>
+      <text class="font2">\n个人仓库</text>
+    </view>
+    <!-- 协作仓库 -->
+    <view class="func2">
+      <image class="func_size" bindtap='cooperationreposlist' src="/pages/images/协作仓库.png"></image>
+      <text class="font2">\n协作仓库</text>
+    </view>
+    <!-- 协作仓库 -->
+    <view class="func3">
+      <image class="func_size" src="/pages/images/个人周报.png"></image>
+      <text class="font2">\n个人周报</text>
+    </view>
+    <!-- 协作仓库 -->
+    <view class="func4">
+      <image class="func_size" bindtap='starreposlist' src="/pages/images/收藏.png"></image>
+      <text class="font2">\n收藏夹</text>
+    </view>
+    <!-- 协作仓库 -->
+    <view class="func4">
+      <image class="func_size" src="/pages/images/快速建仓.png"></image>
+      <text class="font2">\n快速建仓</text>
+    </view>
+</view>
+

@@ -1,1 +1,88 @@
-/* pages/my-repos/my-repos.wxss */
+/* pages/weeklog/my-repos.wxss */
+/* 页面背景 */
+.bg{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    z-index:-1; 
+  }
+  .kuang{
+    height:1000rpx;
+    margin-top: 15rpx;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-radius: 50rpx;
+    background-color:rgba(255,255,255,0.81);
+    display: flex;
+    box-shadow:1rpx 4rpx 12rpx rgba(0,0,0,0.4);
+    }
+    .like1{
+      margin-top: 2%;
+      margin-left: 3%;
+    }
+    .like2{
+    position: absolute;
+    margin-top: 40%;
+    }
+    .like3{
+      position: absolute;
+      margin-top: 65%;
+    }
+  .icon_size{
+    width: 65rpx;
+    height: 65rpx;
+  }
+  .cat{
+    position: absolute;
+    width: 400rpx;
+    height: 500rpx;
+    margin-left: -18%;
+    margin-top: 85%;
+  }
+  .font1{
+    position: absolute;
+    margin-top: 42%;
+    margin-left: 35%;
+    font-size:28rpx;
+    color:rgb(32, 32, 32);
+  }
+  .font2{
+    position: absolute;
+    margin-top: 42%;
+    margin-left: 10%;
+    font-size:35rpx;
+    color:rgb(32, 32, 32);
+  }
+  .font3{
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 15%;
+    font-size:40rpx;
+    color:rgb(32, 32, 32);
+    font-weight:650;
+  }
+  .font4{
+    margin-left: -10%;
+    margin-top: 7%;
+    font-size:35rpx;
+    color:rgb(32, 32, 32);
+  }
+  .font5{
+    position: absolute;
+    margin-top: 47%;
+    margin-left: 10%;
+    font-size:35rpx;
+    color:rgb(32, 32, 32);
+  }
+  .font6{
+    position: absolute;
+    margin-top: 60%;
+    margin-left: 10%;
+    font-size:35rpx;
+    color:rgb(32, 32, 32);
+  }
