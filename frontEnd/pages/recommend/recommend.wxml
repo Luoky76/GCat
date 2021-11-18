@@ -19,19 +19,19 @@
  <view class="BT">
 
   <button class="recommend1" bindtap="recommend1">   
-   <text style="font-size:12px">microsoft/power Toys\nC# 62,509 3,449
-   </text>
+   <text style="font-size:12px">microsoft/power Toys\nC# 62,509 3,449</text>
    <image class="recommendlogo" src="/pages/images/recommendlogo.png"> </image>
   </button>
 
   <button class="recommend2" bindtap="recommend2"> 
-    <text style="font-size:12px">CyC2018/CS-Notes\nJava 62,509 3,449</text>
+    <text style="font-size:12px">CyC2018/CS-Notesxx\nJava 62,509 3,449</text>
     <image class="recommendlogo" src="/pages/images/recommendlogo.png"></image>
   </button>
 
   <button class="recommend3" bindtap="recommend3"> 
-    <text style="font-size:12px">User2/xxx\nC++ 111 111</text>
-    <image class="recommendlogo" src="/pages/images/recommendlogo.png"></image>
+
+    <text style="font-size:12px" decode="{{true}}">User2/xxxxxxxxxxxxxx\nC++ 111111 111111</text>
+    <image class="recommendlogo"  decode="{{true}}" src="/pages/images/recommendlogo.png">&nbsp;&nbsp;&nbsp;&nbsp;</image>
   </button>
 
  </view>

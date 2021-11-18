@@ -1,0 +1,21 @@
+<!--pages/login/login.wxml-->
+<view class="index" >
+ <image class="bg" src="/pages/images/background2.png"></image>
+</view>
+
+<view class="login">
+      <image class="icon_size" src="/pages/images/Gcat.png"></image>
+      <text class="font">登录Github账号</text>
+</view>
+
+<view class="inputView">
+<input class="input" placeholder="请输入Github账号"/>
+</view>
+
+<view class="inputView">
+<input class="input" placeholder="请输入密码"/>
+</view>
+
+<view class='view'>
+  <button bindtap='log' size='mini' disabled='{{disabled}}'>登录</button>
+</view>

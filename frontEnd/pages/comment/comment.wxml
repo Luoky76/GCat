@@ -1,0 +1,16 @@
+<!--pages/comment/comment.wxml-->
+<!-- 背景 -->
+<view>
+  <image class="bg" src="/pages/images/bg.jpg"></image>
+</view>
+<!-- 评论信息 -->
+<view>
+  <image class="img" src="/pages/images/b1.png" mode="scaleToFill"></image>
+  <text class="font">User1\n：非常棒\n</text>
+  <text class="time_font">2021-11-03 15:15</text>
+</view>
+<view>
+  <image class="img" src="/pages/images/b.png" mode="scaleToFill"></image>
+  <text class="font">User3\n：有可以改进的地方\n</text>
+  <text class="time_font">2021-11-04 15:15</text>
+</view>
