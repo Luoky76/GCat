@@ -7,7 +7,7 @@ import UserInfo
 def EventDistributer(EventRequest: GEvent)->GEvent:
     if EventRequest.eType == "GetInfo":
         return GetInfoEventHandler(EventRequest)
-    if EventRequest.eType == "Recommend":
+    elif EventRequest.eType == "Recommend":
         return RecommendEventHandler(EventRequest)
 
 def GetInfoEventHandler(gEvent: GEvent)->GEvent:
