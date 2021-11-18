@@ -1,13 +1,13 @@
 <!--pages/cooperation-repos/cooperation-repos.wxml-->
 <!-- 背景 -->
 <view>
-  <image class="bg" src="/pages/images/bg2.png"></image>
+  <image class="bg" src="/pages/images/bg.jpg"></image>
 </view>
 <!-- 仓库名称 -->
 <view class="title_font">仓库名</view>
 <!-- 收藏按钮 -->
 <view>
-  <image class="icon" src="/pages/images/收藏.png"></image>
+  <image class="icon" src="/pages/images/star.png"></image>
 </view>
 <!-- 查看选择 -->
 <view class="swiper-tab">
@@ -27,19 +27,19 @@
       <!-- 仓库信息 -->
       <view class="right_column">
         <view>
-          <image class="detail_icon" src="../images/个人仓库.png"></image>
+          <image class="detail_icon" src="../images/person.png"></image>
           <text class="font">User2</text>
         </view>
         <view>
-          <image class="detail_icon" src="../images/更新.png"></image>
+          <image class="detail_icon" src="../images/update.png"></image>
           <text class="font">2021/11/2 15:31:33</text>
         </view>
         <view>
-          <image class="detail_icon" src="../images/显示.png"></image>
+          <image class="detail_icon" src="../images/eye.png"></image>
           <text class="font">31</text>
         </view>
         <view>
-          <image class="detail_icon" src="../images/收藏.png"></image>
+          <image class="detail_icon" src="../images/star.png"></image>
           <text class="font">112</text>
         </view>
       </view>
@@ -57,7 +57,7 @@
   <!-- 合并请求 -->
   <swiper-item>
     <view class="merge_detail">
-      <image class="merge_icon" src="../images/分享.png"></image>
+      <image class="merge_icon" src="../images/commit.png"></image>
       <view class="right_column">
         <view>
           <text class="merge_font">这里是commit描述\nUser2 2021.10.31</text>
@@ -68,16 +68,16 @@
   <!-- 代码文件 -->
   <swiper-item>
     <button class="code1" style="width:97%">
-      <image class="detail_icon" src="../images/文件夹.png"></image>file1
+      <image class="detail_icon" src="../images/allfile.png"></image>file1
     </button>
     <button class="code2" style="width:97%">
-      <image class="detail_icon" src="../images/文件.png"></image>file2
+      <image class="detail_icon" src="../images/file.png"></image>file2
     </button>
     <button class="code2" style="width:97%">
-      <image class="detail_icon" src="../images/文件.png"></image>file3
+      <image class="detail_icon" src="../images/file.png"></image>file3
     </button>
     <button class="code2" style="width:97%">
-      <image class="detail_icon" src="../images/文件.png"></image>file4
+      <image class="detail_icon" src="../images/file.png"></image>file4
     </button>
   </swiper-item>
   <!-- 协作者 -->
@@ -85,16 +85,16 @@
     <view class="co_detail">
       <!-- 头像 -->
       <view>
-        <image class="co_img" src="/pages/images/男生-黄.png" mode="scaleToFill"></image>
+        <image class="co_img" src="/pages/images/user.png" mode="scaleToFill"></image>
       </view>
       <!-- 信息 -->
       <view class="right_column">
         <view>
-          <image class="detail_icon" src="../images/个人仓库.png"></image>
+          <image class="detail_icon" src="../images/person.png"></image>
           <text class="font">User2</text>
         </view>
         <view>
-          <image class="detail_icon" src="../images/更新.png"></image>
+          <image class="detail_icon" src="../images/update.png"></image>
           <text class="font">2021/11/2 15:31:33</text>
         </view>
       </view>

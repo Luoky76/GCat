@@ -17,9 +17,9 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#000",
+    "navigationBarBackgroundColor": "#F8F8F8",
     "navigationBarTitleText": "G猫的魔法",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle":"black"
   }, 
    "tabBar": {
       "selectedColor": "#f4645f",
