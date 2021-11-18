@@ -9,7 +9,7 @@ def main():
     json_data = dict(request.get_json())
     gEvent = GEvent(json_data)
     gEvent = Handler.EventDistributer(gEvent)
-    return gEvent
+    return gEvent.json()
 
 
 if __name__ == '__main__':

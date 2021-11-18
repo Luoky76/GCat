@@ -10,5 +10,5 @@ def EventDistributer(gEvent: GEvent)->GEvent:
 def GetInfoEventHandler(gEvent: GEvent)->GEvent:
     if "actionList" in gEvent.eDetail:
         (gEvent.eDetail)["actionList"] = UserInfo.getActionList(
-            gEvent.userID, gEvent.eTime)
+            userID=gEvent.userID, earlyTime=gEvent.eTime)
     return gEvent
