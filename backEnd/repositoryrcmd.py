@@ -11,7 +11,7 @@ from github import Github
 import requests
 
 # 测试的时候可以将以下语句取消注释，这里使用了我（高旭）的GitHub账号设置的token
-# g = Github("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")
+# g = Github("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")
 stopkey = [w.strip() for w in codecs.open('data/stopWord.txt', 'r', encoding='utf-8').readlines()]
 
 def dataprepos(text, stopkey):
@@ -165,7 +165,7 @@ if __name__ == "__main__":
     #     readme_list.append(readme_str)
     # result = getKeywords_tfidf(readme_list, 2)
     # obj = Repositoryrcmd()
-    # repo = obj.get_recommend()
-    # print(type(repo))
+    # repo = obj.getRcmd()
+    # # print(type(repo))
     # print(repo)
     pass

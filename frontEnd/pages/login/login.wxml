@@ -9,11 +9,7 @@
 </view>
 
 <view class="inputView">
-<input class="input" placeholder="请输入Github账号"/>
-</view>
-
-<view class="inputView">
-<input class="input" placeholder="请输入密码"/>
+<input class="input" placeholder="请输入token" bindinput="login"/>
 </view>
 
 <view class='view'>

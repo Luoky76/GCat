@@ -5,14 +5,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+      inputValue :""
     },
-    log:function(){
-        wx.switchTab({
-           url:'/pages/recommend/recommend',
-        })
-      },
-
     /**
      * 生命周期函数--监听页面加载
      */
@@ -67,5 +61,29 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+    
+    login:function(e){
+      console.log(e);
+      this.setData({
+        inputValue: e.detail.value
+      })
+    },
+
+    log:function(){
+      console.log(this.data.inputValue) 
+      wx.setStorage({
+        key:"token",
+        data:this.data.inputValue,
+        success: function() {
+          console.log('写入value1成功')
+          wx.switchTab({
+            url:'/pages/recommend/recommend',
+         })
+        },
+        fail: function() {
+          console.log('写入value1发生错误')
+        }
+      })
     }
 })

@@ -18,6 +18,7 @@ def GetInfoEventHandler(gEvent: GEvent)->GEvent:
 
 def RecommendEventHandler(gEvent: GEvent)->GEvent:
     g = Github(gEvent.token)
+    print(11111)
     obj = repositoryrcmd.Repositoryrcmd(g)
     gEvent.eDetail = obj.getRcmd()
     return gEvent
