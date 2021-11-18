@@ -29,13 +29,9 @@
   </button>
 
   <button class="recommend3" bindtap="recommend3"> 
-<<<<<<< Updated upstream
-    <text style="font-size:12px" decode="{{true}}">User2/xxx\nC++ 111 111</text>
-    <image class="recommendlogo"  src="/pages/images/recommendlogo.png"></image>
-=======
+
     <text style="font-size:12px" decode="{{true}}">User2/xxxxxxxxxxxxxx\nC++ 111111 111111</text>
     <image class="recommendlogo"  decode="{{true}}" src="/pages/images/recommendlogo.png">&nbsp;&nbsp;&nbsp;&nbsp;</image>
->>>>>>> Stashed changes
   </button>
 
  </view>
