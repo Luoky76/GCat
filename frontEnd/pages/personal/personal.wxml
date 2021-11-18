@@ -7,48 +7,48 @@
 <view class="user">
     <!-- 用户头像 -->
     <view>
-      <image class="userinfo-avatar" src="/pages/images/男生-黄.png" mode="scaleToFill"></image>
+      <image class="userinfo-avatar" src="/pages/images/user.png" mode="scaleToFill"></image>
     </view>
     <!-- 设置 -->
     <view class="setting">
-      <image class="icon_size" src="/pages/images/设置.png"></image>
+      <image class="icon_size" src="/pages/images/setting.png"></image>
     </view>
     <text class="font1">设置</text>
     <!-- 新手教程 -->
     <view class="course">
-      <image class="icon_size" src="/pages/images/播放.png"></image>
+      <image class="icon_size" src="/pages/images/course.png"></image>
     </view>
     <text class="font1">新手教程</text>
 </view>
 <view class="function">
     <!-- 历史浏览 -->
     <navigator url="../history-list/history-list" class="func1">
-      <image class="func_size" src="/pages/images/历史浏览.png" bindtap=""></image>
+      <image class="func_size" src="/pages/images/history.png" bindtap=""></image>
       <text class="font2">\n历史浏览</text>
     </navigator>
     <!-- 个人仓库 -->
     <navigator url="../myrepos-list/myrepos-list" class="func2">
-      <image class="func_size" src="/pages/images/个人仓库.png"></image>
+      <image class="func_size" src="/pages/images/person.png"></image>
       <text class="font2">\n个人仓库</text>
     </navigator>
     <!-- 协作仓库 -->
     <navigator url="../cooperationrepos-list/cooperationrepos-list" class="func2">
-      <image class="func_size" src="/pages/images/协作仓库.png"></image>
+      <image class="func_size" src="/pages/images/corepo.png"></image>
       <text class="font2">\n协作仓库</text>
     </navigator>
     <!-- 个人周报 -->
     <navigator url="../weeklog/weeklog" class="func3">
-      <image class="func_size" src="/pages/images/个人周报.png"></image>
+      <image class="func_size" src="/pages/images/news.png"></image>
       <text class="font2">\n个人周报</text>
     </navigator>
     <!-- 收藏夹 -->
     <navigator url="../starrepos-list/starrepos-list" class="func4">
-      <image class="func_size" src="/pages/images/收藏.png"></image>
+      <image class="func_size" src="/pages/images/star.png"></image>
       <text class="font2">\n收藏夹</text>
     </navigator>
     <!-- 快速建仓 -->
     <navigator url="../setup/setup" class="func4">
-      <image class="func_size" src="/pages/images/快速建仓.png"></image>
+      <image class="func_size" src="/pages/images/setuprepos.png"></image>
       <text class="font2">\n快速建仓</text>
     </navigator>
 </view>
