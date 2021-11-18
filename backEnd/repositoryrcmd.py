@@ -30,8 +30,8 @@ def dataprepos(text, stopkey):
 
 # 推送推荐仓库的full_name列表
 class Repositoryrcmd():
-    def __init__(self, g:Github):
-        self.user = g.get_user()
+    def __init__(self, g:Github)->None:
+        self.__user = g.get_user()
 
     """
            TF-IDF权重：
@@ -77,7 +77,7 @@ class Repositoryrcmd():
             :return:返回一个keyword[[]]列表
         """
         readme_list = list()
-        for repo in self.user.get_starred():
+        for repo in self.__user.get_starred():
             content = repo.get_readme()
             decode_content = base64.b64decode(content.content)
             readme_str = str(decode_content, 'utf-8')
@@ -86,7 +86,7 @@ class Repositoryrcmd():
         result = self.__getKeywords_tfidf(readme_list, 2)
         return result
 
-    def getRcmd(self,g:Github):
+    def getRcmd(self,g:Github)->list:
         md_list = self.__get_keyword()
         result_list = list()
         for each_md in md_list:
