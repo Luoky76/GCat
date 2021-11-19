@@ -11,10 +11,15 @@ Page({
      */
     winWidth: 0,
     winHeight: 0,
-    // tab切换  
     currentTab: 0,
-    full_name:"sindresorhus/awesome",
+    // full_name:"sindresorhus/awesome",
+    full_name:"",
     avatar_url:"",
+    user:"",
+    create_time:"",
+    watchers:"",
+    stargazers_count:"",
+    readme:"",
   },
 
   /**
@@ -23,9 +28,15 @@ Page({
   onLoad: function (options) {
     var that = this;
     var var_token =  wx.getStorageSync('token');
+    // var var_token = "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";
     var value = options.full_name;
     that.setData({
       full_name:value
+    })
+    var strs= new Array();
+    strs=this.data.full_name.split("/"); 
+    that.setData({
+      user:strs[0]
     })
     /** 
      * 获取系统信息 
@@ -39,17 +50,30 @@ Page({
       }
     });
     wx.request({
-      url: 'https://api.github.com/repos/'+that.data.full_name+"?accesstoken="+var_token,
+      url: 'https://api.github.com/repos/'+that.data.full_name,
       method:'get',
-      header:{
-        "Accept":"application/vnd.github.v3+json",
-        "token":var_token,
-      },
+      // header:{
+      //   "Authorization": "token ghp_16C7e42F292c6912E7710c838347Ae178B4a"
+      // },
       success:function(res){
         console.log(res)
         var value = res;
         that.setData({
-          avatar_url:value.owner.avatar_url
+          avatar_url:value.data.owner.avatar_url,
+          create_time:value.data.created_at,
+          watchers:value.data.watchers,
+          stargazers_count:value.data.stargazers_count,
+        })
+      }
+    })
+    wx.request({
+      url: 'https://raw.githubusercontent.com/'+that.data.full_name+"/master/README.md",
+      method:'get',
+      success:function(res){
+        console.log(res)
+        let value = res;
+        that.setData({
+          readme:value.data
         })
       }
     })

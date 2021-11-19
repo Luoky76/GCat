@@ -26,19 +26,19 @@
       <view class="right_column">
         <view>
           <image class="detail_icon" src="../images/person.png"></image>
-          <text class="font">User2</text>
+          <text class="font">{{user}}</text>
         </view>
         <view>
           <image class="detail_icon" src="../images/update.png"></image>
-          <text class="font">2021/11/2 15:31:33</text>
+          <text class="font">{{create_time}}</text>
         </view>
         <view>
           <image class="detail_icon" src="../images/eye.png"></image>
-          <text class="font">31</text>
+          <text class="font">{{watchers}}</text>
         </view>
         <view>
           <image class="detail_icon" src="../images/star.png"></image>
-          <text class="font">112</text>
+          <text class="font">{{stargazers_count}}</text>
         </view>
       </view>
     </view>
@@ -49,7 +49,7 @@
     <!-- README -->
     <button class="readme" style="width:97%">README.md</button>
     <view class="readme_detail">
-      <text class="font">这里是README.md的内容</text>
+      <text class="font">{{readme}}</text>
     </view>
   </swiper-item>
   <!-- 代码文件 -->
