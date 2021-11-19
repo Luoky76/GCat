@@ -55,10 +55,10 @@ class Repositoryrcmd():
         # 5、打印词语权重
         keys = []
         for i in range(len(weight)):
-            print(u"-------这里输出第", i + 1, u"篇文本的词语tf-idf------")
+            #print(u"-------这里输出第", i + 1, u"篇文本的词语tf-idf------")
             df_word, df_weight = [], []  # 当前文章的所有词汇列表、词汇对应权重列表
             for j in range(len(word)):
-                print(word[j], weight[i][j])
+                #print(word[j], weight[i][j])
                 df_word.append(word[j])
                 df_weight.append(weight[i][j])
             df_word = pd.DataFrame(df_word, columns=['word'])
@@ -68,7 +68,7 @@ class Repositoryrcmd():
             keyword = np.array(word_weight['word'])  # 选择词汇列并转成数组格式
             word_split = [keyword[x] for x in range(0, topK)]  # 抽取前topK个词汇作为关键词
             keys.append(word_split)
-        print(keys)
+        #print(keys)
         return keys
 
     def __get_keyword(self):
@@ -96,7 +96,7 @@ class Repositoryrcmd():
                     if cnt == 9:
                         break
                     cnt += 1
-                    print(repo.url)
+                    #print(repo.url)
                     result_list.append(repo.url)
         return result_list
 

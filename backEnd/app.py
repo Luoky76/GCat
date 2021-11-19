@@ -1,4 +1,4 @@
-from flask import Flask, request, json
+from flask import Flask, request, jsonify
 from GEvent import GEvent
 import Handler
 
@@ -9,7 +9,7 @@ def main():
     json_data = dict(request.get_json())
     gEvent = GEvent(json_data)
     gEvent = Handler.EventDistributer(gEvent)
-    return gEvent.json()
+    return jsonify(gEvent.json())
 
 
 if __name__ == '__main__':
