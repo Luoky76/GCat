@@ -1,6 +1,7 @@
 class GEvent():
 
     def __init__(self, Dict: dict):
+        self.token = str(Dict["token"])
         self.eventID = int(Dict["eventID"])
         self.eType = str(Dict["eType"])
         self.eTime = float(Dict["eTime"])
