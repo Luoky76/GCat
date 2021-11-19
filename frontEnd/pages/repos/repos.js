@@ -13,6 +13,8 @@ Page({
     winHeight: 0,
     // tab切换  
     currentTab: 0,
+    full_name:"sindresorhus/awesome",
+    avatar_url:"",
   },
 
   /**
@@ -20,6 +22,11 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    var var_token =  wx.getStorageSync('token');
+    var value = options.full_name;
+    that.setData({
+      full_name:value
+    })
     /** 
      * 获取系统信息 
      */
@@ -31,6 +38,21 @@ Page({
         });
       }
     });
+    wx.request({
+      url: 'https://api.github.com/repos/'+that.data.full_name+"?accesstoken="+var_token,
+      method:'get',
+      header:{
+        "Accept":"application/vnd.github.v3+json",
+        "token":var_token,
+      },
+      success:function(res){
+        console.log(res)
+        var value = res;
+        that.setData({
+          avatar_url:value.owner.avatar_url
+        })
+      }
+    })
   },
 
   /**

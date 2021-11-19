@@ -7,7 +7,7 @@ Page({
      */
     data: {
         url_list:[],
-        list : ['https://api.github.com/repos/sindresorhus/awesome', 'https://api.github.com/repos/public-apis/public-apis', 'https://api.github.com/repos/github/gitignore', 'https://api.github.com/repos/vinta/awesome-python', 'https://api.github.com/repos/jlevy/the-art-of-command-line', 'https://api.github.com/repos/30-seconds/30-seconds-of-code', 'https://api.github.com/repos/microsoft/TypeScript', 'https://api.github.com/repos/animate-css/animate.css', 'https://api.github.com/repos/avelino/awesome-go', 'https://api.github.com/repos/jwasham/coding-interview-university', 'https://api.github.com/repos/kamranahmedse/developer-roadmap', 'https://api.github.com/repos/trekhleb/javascript-algorithms', 'https://api.github.com/repos/TheAlgorithms/Python', 'https://api.github.com/repos/ossu/computer-science', 'https://api.github.com/repos/jlevy/the-art-of-command-line', 'https://api.github.com/repos/microsoft/terminal', 'https://api.github.com/repos/iluwatar/java-design-patterns', 'https://api.github.com/repos/MisterBooo/LeetCodeAnimation', 'https://api.github.com/repos/axios/axios', 'https://api.github.com/repos/PanJiaChen/vue-element-admin', 'https://api.github.com/repos/netdata/netdata', 'https://api.github.com/repos/gin-gonic/gin', 'https://api.github.com/repos/httpie/httpie', 'https://api.github.com/repos/ansible/ansible', 'https://api.github.com/repos/psf/requests', 'https://api.github.com/repos/square/okhttp', 'https://api.github.com/repos/yarnpkg/yarn', 'https://api.github.com/repos/TranslucentTB/TranslucentTB', 'https://api.github.com/repos/42wim/matterbridge', 'https://api.github.com/repos/nslog11/Gitter', 'https://api.github.com/repos/AnySoftKeyboard/AnySoftKeyboard', 'https://api.github.com/repos/sozu-proxy/sozu', 'https://api.github.com/repos/fossasia/susi_gitterbot', 'https://api.github.com/repos/digicorp/propeller', 'https://api.github.com/repos/Makuna/NeoPixelBus', 'https://api.github.com/repos/sierra-library/sierra'],
+        // list : ['https://api.github.com/repos/sindresorhus/awesome', 'https://api.github.com/repos/public-apis/public-apis', 'https://api.github.com/repos/github/gitignore', 'https://api.github.com/repos/vinta/awesome-python', 'https://api.github.com/repos/jlevy/the-art-of-command-line', 'https://api.github.com/repos/30-seconds/30-seconds-of-code', 'https://api.github.com/repos/microsoft/TypeScript', 'https://api.github.com/repos/animate-css/animate.css', 'https://api.github.com/repos/avelino/awesome-go', 'https://api.github.com/repos/jwasham/coding-interview-university', 'https://api.github.com/repos/kamranahmedse/developer-roadmap', 'https://api.github.com/repos/trekhleb/javascript-algorithms', 'https://api.github.com/repos/TheAlgorithms/Python', 'https://api.github.com/repos/ossu/computer-science', 'https://api.github.com/repos/jlevy/the-art-of-command-line', 'https://api.github.com/repos/microsoft/terminal', 'https://api.github.com/repos/iluwatar/java-design-patterns', 'https://api.github.com/repos/MisterBooo/LeetCodeAnimation', 'https://api.github.com/repos/axios/axios', 'https://api.github.com/repos/PanJiaChen/vue-element-admin', 'https://api.github.com/repos/netdata/netdata', 'https://api.github.com/repos/gin-gonic/gin', 'https://api.github.com/repos/httpie/httpie', 'https://api.github.com/repos/ansible/ansible', 'https://api.github.com/repos/psf/requests', 'https://api.github.com/repos/square/okhttp', 'https://api.github.com/repos/yarnpkg/yarn', 'https://api.github.com/repos/TranslucentTB/TranslucentTB', 'https://api.github.com/repos/42wim/matterbridge', 'https://api.github.com/repos/nslog11/Gitter', 'https://api.github.com/repos/AnySoftKeyboard/AnySoftKeyboard', 'https://api.github.com/repos/sozu-proxy/sozu', 'https://api.github.com/repos/fossasia/susi_gitterbot', 'https://api.github.com/repos/digicorp/propeller', 'https://api.github.com/repos/Makuna/NeoPixelBus', 'https://api.github.com/repos/sierra-library/sierra'],
         repo:[],
     },
 
@@ -20,9 +20,9 @@ Page({
       wx.request({
           url: 'http://127.0.0.1:5000//GcatServer',
           method:'post',
-          // header: {
-          //     'content-type': 'application/json'
-          // },
+          header: {
+              'content-type': 'application/json',
+          },
           dataType:JSON,
           data: {
               eventID: 422743326,
@@ -33,29 +33,33 @@ Page({
               token: var_token
           },
           success: function(res) {
-            //console.log(res)
+            console.log(res)
             //返回的json是以字符串形式的要转换成json形式
             var resDataJson=JSON.parse(res.data);
             _this.setData({
               url_list : resDataJson.eDetail
             });
-            //console.log(_this.data.url_list);
+            console.log(_this.data.url_list);
+            var that = _this;
+            _this.data.url_list.forEach(element => {
+                wx.request({
+                  url: element,
+                  method:'get',
+                  header:{
+                    "Accept":"application/vnd.github.v3+json",
+                    "token":var_token,
+                  },
+                  success:function(res){
+                    console.log(res)
+                    that.data.repo.push({full_name:res.data.full_name, language:res.data.language, star:res.data.stargazers_count, url:res.data.repos_url})
+                    that.setData({
+                        repo:that.data.repo
+                    })
+                  }
+                })
+            })
           }
         })
-      var that = this;
-      this.data.url_list.forEach(element => {
-          wx.request({
-            url: element,
-            success:function(res){
-              console.log(res)
-              that.data.repo.push({full_name:res.data.full_name, language:res.data.language, star:res.data.stargazers_count, url:res.data.repos_url})
-              that.setData({
-                  repo:that.data.repo
-              })
-            }
-          })
-      })
-  
     },
 
     /**
@@ -103,5 +107,12 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+
+    torepo:function(e){
+      let full_name = e.currentTarget.dataset.full_name;
+      wx.navigateTo({
+        url: '../repos/repos?id='+full_name,
+      })
     }
 })

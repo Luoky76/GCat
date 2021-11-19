@@ -4,7 +4,7 @@
   <image class="bg" src="/pages/images/bg.jpg"></image>
 </view>
 <!-- 仓库名称 -->
-<view class="title_font">仓库名</view>
+<view class="title_font">{{full_name}}</view>
 <!-- 收藏按钮 -->
 <view>
   <image class="icon" src="/pages/images/star.png"></image>
@@ -20,7 +20,7 @@
     <view class="main_detail">
       <!-- 仓库头像 -->
       <view>
-        <image class="img" src="/pages/images/logo.png" mode="scaleToFill"></image>
+        <image class="img" src="{{avatar_url}}" mode="scaleToFill"></image>
       </view>
       <!-- 仓库信息 -->
       <view class="right_column">
