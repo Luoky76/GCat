@@ -4,9 +4,6 @@
     <list default="true" id="5a945b6c-f4f7-45bf-91bc-84407277619e" name="变更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/repositoryrcmd.py" beforeDir="false" afterPath="$PROJECT_DIR$/repositoryrcmd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontEnd/pages/recommend/recommend.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/recommend/recommend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontEnd/pages/recommend/recommend.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/recommend/recommend.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontEnd/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/project.config.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +155,7 @@
       <workItem from="1637253820809" duration="3000" />
       <workItem from="1637253920042" duration="6000" />
       <workItem from="1637254083494" duration="1252000" />
-      <workItem from="1637306780204" duration="4597000" />
+      <workItem from="1637306780204" duration="7224000" />
     </task>
     <servers />
   </component>

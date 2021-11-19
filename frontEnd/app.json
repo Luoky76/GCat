@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/repos/repos",
     "pages/login/login",
+    "pages/repos/repos",
     "pages/personal/personal",
     "pages/comment/comment",
     "pages/cooperation-repos/cooperation-repos",
