@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5a945b6c-f4f7-45bf-91bc-84407277619e" name="变更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/Handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/repositoryrcmd.py" beforeDir="false" afterPath="$PROJECT_DIR$/repositoryrcmd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontEnd/pages/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/login/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontEnd/pages/login/login.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/login/login.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontEnd/pages/recommend/recommend.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/recommend/recommend.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontEnd/pages/recommend/recommend.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/recommend/recommend.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontEnd/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/project.config.json" afterDir="false" />
@@ -161,6 +158,7 @@
       <workItem from="1637253820809" duration="3000" />
       <workItem from="1637253920042" duration="6000" />
       <workItem from="1637254083494" duration="1252000" />
+      <workItem from="1637306780204" duration="4597000" />
     </task>
     <servers />
   </component>
@@ -182,7 +180,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/backEnd$keyextract_tfidf.coverage" NAME="keyextract_tfidf 覆盖结果" MODIFIED="1637215657901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../keyword_extraction-master" />
     <SUITE FILE_PATH="coverage/backEnd$repositoryrcmd.coverage" NAME="repositoryrcmd 覆盖结果" MODIFIED="1637251571144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backEnd$Flask__app_py_.coverage" NAME="Flask (app.py) 覆盖结果" MODIFIED="1637255171074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/backEnd$Flask__app_py_.coverage" NAME="Flask (app.py) 覆盖结果" MODIFIED="1637306799774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/backEnd$UserInfo.coverage" NAME="UserInfo 覆盖结果" MODIFIED="1637152564519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

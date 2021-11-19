@@ -1,8 +1,8 @@
 {
   "pages":[
+    "pages/repos/repos",
     "pages/login/login",
     "pages/personal/personal",
-    "pages/repos/repos",
     "pages/comment/comment",
     "pages/cooperation-repos/cooperation-repos",
     "pages/starrepos-list/starrepos-list",
