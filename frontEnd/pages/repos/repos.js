@@ -12,8 +12,8 @@ Page({
     winWidth: 0,
     winHeight: 0,
     currentTab: 0,
-    // full_name:"sindresorhus/awesome",
-    full_name:"",
+    full_name:"sindresorhus/awesome",
+    // full_name:"",
     avatar_url:"",
     user:"",
     create_time:"",
@@ -29,13 +29,13 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    var var_token =  wx.getStorageSync('token');
-    // var var_token = "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";
-    var value = options.full_name;
-    console.log(value)
-    that.setData({
-      full_name:value
-    })
+    // var var_token =  wx.getStorageSync('token');
+    var var_token = "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";
+    // var value = options.full_name;
+    // console.log(value)
+    // that.setData({
+    //   full_name:value
+    // })
     var strs= new Array();
     strs=this.data.full_name.split("/"); 
     that.setData({
@@ -82,9 +82,14 @@ Page({
       success:function(res){
         console.log(res)
         console.log(atob(res.data.content))
-        let value = atob(res.data.content);
+        let value =atob(res.data.content);
+        let data = app.towxml.toJson(
+          value,               // `markdown`或`html`文本内容
+          'markdown',             // `markdown`或`html`
+          that                     // 当前页面的`this`（2.1.0或以上的版本该参数不可省略）
+        );
         that.setData({
-          readme:value
+          readme:data
         })
       }
     })

@@ -112,7 +112,7 @@ Page({
       //console.log(e)
       let full_name = e.currentTarget.dataset.full_name;
       wx.navigateTo({
-        url: '../repos/repos?id='+full_name,
+        url: '../repos/repos?full_name='+full_name,
       })
     }
 })

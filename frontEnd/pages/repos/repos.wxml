@@ -49,7 +49,9 @@
     <!-- README -->
     <button class="readme" style="width:97%">README.md</button>
     <scroll-view class="readme_detail" scroll-y>
-      <rich-text class="rich" nodes="{{readme}}"></rich-text>
+      <!-- <rich-text class="rich" nodes="{{readme}}"></rich-text> -->
+      <import src="/towxml/entry.wxml"/>
+      <template is="entry" class="rich" data="{{...readme}}"/>
       <!-- <text class="font">{{readme}}</text> -->
     </scroll-view>
   </swiper-item>

@@ -1,6 +1,7 @@
 import requests
 import time
 from methods import *
+from github import Github
 
 ActionTypes = ("push", "commit", "pull", "remote", "merge")
 UserReposApi = "https://api.github.com/users/{}/repos"
@@ -41,3 +42,39 @@ def getActionList(userID: str, earlyTime: float, actionKind: str = ActionTypes) 
                 actionList.append(Action)
 
     return actionList
+
+def getRepoContent(username, reponame) ->dict:
+    """ getRepoContent(username, reponame)\n
+        获取指定仓库代码文件
+        :param username:用户名
+        :param reponame:仓库名
+        :return:返回一个字典{文件路径：文件类型}
+    """
+    g = Github()
+    user = g.get_user(username)
+    repo = user.get_repo(reponame)
+    file_dict = {}
+    for content in repo.get_contents(""):
+        file_dict[content.path] = content.type
+    return file_dict
+
+def getRepoContentDetail(username, reponame, filepath, type):
+    """ getRepoContentDetail(username, reponame, filepath, type)\n
+        获取指定仓库代码文件
+        :param username:用户名
+        :param reponame:仓库名
+        :param filepath:文件路径
+        :param type:文件类型
+        :return:返回一个字符串 or 一个字典{文件路径：文件类型}，视文件类型而定
+    """
+    g = Github()
+    user = g.get_user(username)
+    repo = user.get_repo(reponame)
+    content = repo.get_contents(filepath)
+    file_dict = {}
+    if type == "file":
+        return content.decoded_content
+    elif type == "dir":
+        for in_content in content:
+            file_dict[in_content.name] = in_content.type
+        return file_dict
