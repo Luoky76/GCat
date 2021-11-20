@@ -11,10 +11,17 @@ Page({
      */
     winWidth: 0,
     winHeight: 0,
-    // tab切换  
     currentTab: 0,
-    full_name:"sindresorhus/awesome",
+    // full_name:"sindresorhus/awesome",
+    full_name:"",
     avatar_url:"",
+    user:"",
+    create_time:"",
+    subscribers_count:"",
+    stargazers_count:"",
+    readme:"",
+    default_branch:"",
+    download_url:"",
   },
 
   /**
@@ -23,9 +30,15 @@ Page({
   onLoad: function (options) {
     var that = this;
     var var_token =  wx.getStorageSync('token');
+    // var var_token = "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";
     var value = options.full_name;
     that.setData({
       full_name:value
+    })
+    var strs= new Array();
+    strs=this.data.full_name.split("/"); 
+    that.setData({
+      user:strs[0]
     })
     /** 
      * 获取系统信息 
@@ -39,17 +52,38 @@ Page({
       }
     });
     wx.request({
-      url: 'https://api.github.com/repos/'+that.data.full_name+"?accesstoken="+var_token,
+      url: 'https://api.github.com/repos/'+that.data.full_name,
       method:'get',
-      header:{
-        "Accept":"application/vnd.github.v3+json",
-        "token":var_token,
+      // header:{
+      //   "Authorization": "token ghp_16C7e42F292c6912E7710c838347Ae178B4a"
+      // },
+      data: {
+        token: var_token
       },
       success:function(res){
         console.log(res)
         var value = res;
         that.setData({
-          avatar_url:value.owner.avatar_url
+          avatar_url:value.data.owner.avatar_url,
+          create_time:value.data.created_at,
+          subscribers_count:value.data.subscribers_count,
+          stargazers_count:value.data.stargazers_count,
+          default_branch:value.data.default_branch,
+        })
+      }
+    })
+    wx.request({
+      url: "https://api.github.com/repos/"+that.data.full_name+"/readme",
+      method:'get',
+      data: {
+        token: var_token
+      },
+      success:function(res){
+        console.log(res)
+        console.log(atob(res.data.content))
+        let value = atob(res.data.content);
+        that.setData({
+          readme:value
         })
       }
     })

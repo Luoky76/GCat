@@ -45,9 +45,8 @@ Page({
                 wx.request({
                   url: element,
                   method:'get',
-                  header:{
-                    "Accept":"application/vnd.github.v3+json",
-                    "token":var_token,
+                  data: {
+                    token: var_token
                   },
                   success:function(res){
                     console.log(res)

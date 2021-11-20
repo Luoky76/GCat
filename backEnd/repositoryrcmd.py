@@ -12,7 +12,7 @@ from github import Github
 import requests
 
 # 测试的时候可以将以下语句取消注释，这里使用了我（高旭）的GitHub账号设置的token
-# g = Github("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")
+# g = Github("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")
 stopkey = [w.strip() for w in codecs.open('data/stopWord.txt', 'r', encoding='utf-8').readlines()]
 
 def dataprepos(text, stopkey):
