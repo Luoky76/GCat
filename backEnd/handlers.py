@@ -1,7 +1,7 @@
 from gevent import GEvent
 from github import Github
 from repositoryrcmd import RepositoryRcmd
-import UserInfo
+import userinfo
 
 
 def EventDistributer(EventRequest: GEvent) -> GEvent:
@@ -20,10 +20,10 @@ def GetInfoEventHandler(gEvent: GEvent) -> GEvent:
         返回对象.eDetail["信息"]=所求信息
     """
     if "newEvents" in gEvent.eDetail:
-        gEvent.eDetail["newEvents"] = UserInfo.getActionList(
+        gEvent.eDetail["newEvents"] = userinfo.getActionList(
             gEvent.token, gEvent.eTime)
     if "newRepos" in gEvent.eDetail:
-        gEvent.eDetail["newRepos"] = UserInfo.getNewRepository(
+        gEvent.eDetail["newRepos"] = userinfo.getNewRepository(
             gEvent.token, gEvent.eTime)
     return gEvent
 
