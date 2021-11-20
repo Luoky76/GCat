@@ -38,6 +38,7 @@ def ActionExtract(action: dict) -> tuple:
     """
     ActionType = None
     ActionTime = None
+    ActionRepo = None
 
     if action["type"] == "PushEvent":
         ActionType = "push"
@@ -49,7 +50,11 @@ def ActionExtract(action: dict) -> tuple:
             ActionTime = utc2cst(
                 action["payload"]["pull_request"]["merged_at"])
 
-    if ActionType and ActionTime:
-        return [ActionType, ActionTime]
+    ActionRepo = {
+        "name": action["repo"]["name"],
+        "url": action["repo"]["url"]
+    }
+    if ActionType and ActionTime and ActionRepo:
+        return {"Type": ActionType, "Time": ActionTime, "Repo": ActionRepo}
     else:
         return None

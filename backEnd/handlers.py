@@ -19,9 +19,12 @@ def GetInfoEventHandler(gEvent: GEvent) -> GEvent:
     """
         返回对象.eDetail["信息"]=所求信息
     """
-    if "actionList" in gEvent.eDetail:
-        (gEvent.eDetail)["actionList"] = UserInfo.getActionList(
-            gEvent.userID, gEvent.eTime)
+    if "newEvents" in gEvent.eDetail:
+        gEvent.eDetail["newEvents"] = UserInfo.getActionList(
+            gEvent.token, gEvent.eTime)
+    if "newRepos" in gEvent.eDetail:
+        gEvent.eDetail["newRepos"] = UserInfo.getNewRepository(
+            gEvent.token, gEvent.eTime)
     return gEvent
 
 

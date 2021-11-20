@@ -5,15 +5,13 @@ class GEvent():
         self.eventID = int(Dict["eventID"])
         self.eType = str(Dict["eType"])
         self.eTime = float(Dict["eTime"])
-        self.userID = str(Dict["userID"])
         self.eDetail = dict(Dict["eDetail"])
 
-    def toJson(self):
+    def toJson(self) -> dict:
         js = {
             "eventID": self.eventID,
             "eType": self.eType,
             "eTime": self.eTime,
-            "userID": self.userID,
             "eDetail": self.eDetail
         }
         return js
