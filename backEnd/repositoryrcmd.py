@@ -24,7 +24,7 @@ def dataprepos(text, stopkey):
 
 
 # 推送推荐仓库的full_name列表
-class Repositoryrcmd():
+class RepositoryRcmd():
     def __init__(self, g:Github)->None:
         self.__user = g.get_user()
 
