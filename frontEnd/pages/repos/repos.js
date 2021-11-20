@@ -17,9 +17,11 @@ Page({
     avatar_url:"",
     user:"",
     create_time:"",
-    watchers:"",
+    subscribers_count:"",
     stargazers_count:"",
     readme:"",
+    default_branch:"",
+    download_url:"",
   },
 
   /**
@@ -28,7 +30,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     var var_token =  wx.getStorageSync('token');
-    // var var_token = "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";
+    // var var_token = "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";
     var value = options.full_name;
     that.setData({
       full_name:value
@@ -55,25 +57,33 @@ Page({
       // header:{
       //   "Authorization": "token ghp_16C7e42F292c6912E7710c838347Ae178B4a"
       // },
+      data: {
+        token: var_token
+      },
       success:function(res){
         console.log(res)
         var value = res;
         that.setData({
           avatar_url:value.data.owner.avatar_url,
           create_time:value.data.created_at,
-          watchers:value.data.watchers,
+          subscribers_count:value.data.subscribers_count,
           stargazers_count:value.data.stargazers_count,
+          default_branch:value.data.default_branch,
         })
       }
     })
     wx.request({
-      url: 'https://raw.githubusercontent.com/'+that.data.full_name+"/master/README.md",
+      url: "https://api.github.com/repos/"+that.data.full_name+"/readme",
       method:'get',
+      data: {
+        token: var_token
+      },
       success:function(res){
         console.log(res)
-        let value = res;
+        console.log(atob(res.data.content))
+        let value = atob(res.data.content);
         that.setData({
-          readme:value.data
+          readme:value
         })
       }
     })

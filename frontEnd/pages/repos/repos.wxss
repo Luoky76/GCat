@@ -121,6 +121,7 @@
   background-color: rgba(255, 255, 255, 0.81);
   display: flex;
   box-shadow: 1rpx 4rpx 12rpx rgba(0, 0, 0, 0.4);
+  overflow: hidden;
 }
 
 /* 代码文件 */
@@ -140,4 +141,9 @@
   border-radius: 25rpx;
   box-shadow: 1rpx 4rpx 10rpx rgba(0, 0, 0, 0.4);
   font-size: 30rpx;
+}
+
+.rich{
+  height:1000rpx;
+  width: 100%;
 }

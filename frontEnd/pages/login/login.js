@@ -72,18 +72,9 @@ Page({
 
     log:function(){
       console.log(this.data.inputValue) 
-      wx.setStorage({
-        key:"token",
-        data:this.data.inputValue,
-        success: function() {
-          console.log('写入value1成功')
-          wx.switchTab({
-            url:'/pages/recommend/recommend',
-         })
-        },
-        fail: function() {
-          console.log('写入value1发生错误')
-        }
-      })
+      wx.setStorageSync('token', 'this.data.inputValue')
+      wx.switchTab({
+        url:'/pages/recommend/recommend',
+     })
     }
 })
