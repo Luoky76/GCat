@@ -1,6 +1,6 @@
-from GEvent import GEvent
+from gevent import GEvent
 from github import Github
-import repositoryrcmd
+from repositoryrcmd import RepositoryRcmd
 import UserInfo
 
 
@@ -18,6 +18,6 @@ def GetInfoEventHandler(gEvent: GEvent)->GEvent:
 
 def RecommendEventHandler(gEvent: GEvent)->GEvent:
     g = Github(gEvent.token)
-    obj = repositoryrcmd.Repositoryrcmd(g)
+    obj = RepositoryRcmd(g)
     gEvent.eDetail = obj.getRcmd(g)
     return gEvent
