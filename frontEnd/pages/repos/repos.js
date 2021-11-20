@@ -32,6 +32,7 @@ Page({
     var var_token =  wx.getStorageSync('token');
     // var var_token = "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";
     var value = options.full_name;
+    console.log(value)
     that.setData({
       full_name:value
     })

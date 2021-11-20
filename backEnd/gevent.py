@@ -17,10 +17,3 @@ class GEvent():
             "eDetail": self.eDetail
         }
         return js
-    """
-    def __getattr__(self, key):
-            value = self.get(key)
-            return GEvent(value) if isinstance(value,dict) else value
-    def __setattr__(self, key, value):
-            self[key] = value
-    """

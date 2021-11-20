@@ -20,10 +20,7 @@ Page({
       wx.request({
           url: 'http://127.0.0.1:5000//GcatServer',
           method:'post',
-          header: {
-              'content-type': 'application/json',
-          },
-          dataType:JSON,
+          dataType:"json",
           data: {
               eventID: 422743326,
               userID: "ShakingSH",
@@ -33,11 +30,8 @@ Page({
               token: var_token
           },
           success: function(res) {
-            console.log(res)
-            //返回的json是以字符串形式的要转换成json形式
-            var resDataJson=JSON.parse(res.data);
             _this.setData({
-              url_list : resDataJson.eDetail
+              url_list : res.data.eDetail
             });
             console.log(_this.data.url_list);
             var that = _this;
@@ -49,8 +43,14 @@ Page({
                     token: var_token
                   },
                   success:function(res){
-                    console.log(res)
-                    that.data.repo.push({full_name:res.data.full_name, language:res.data.language, star:res.data.stargazers_count, url:res.data.repos_url})
+                    //console.log(res)
+                    that.data.repo.push(
+                      {
+                        full_name:res.data.full_name,
+                        language:res.data.language,
+                        star:res.data.stargazers_count,
+                        url:res.data.repos_url
+                      })
                     that.setData({
                         repo:that.data.repo
                     })
@@ -109,6 +109,7 @@ Page({
     },
 
     torepo:function(e){
+      //console.log(e)
       let full_name = e.currentTarget.dataset.full_name;
       wx.navigateTo({
         url: '../repos/repos?id='+full_name,

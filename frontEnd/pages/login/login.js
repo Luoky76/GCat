@@ -71,8 +71,7 @@ Page({
     },
 
     log:function(){
-      console.log(this.data.inputValue) 
-      wx.setStorageSync('token', 'this.data.inputValue')
+      wx.setStorageSync('token', this.data.inputValue)
       wx.switchTab({
         url:'/pages/recommend/recommend',
      })
