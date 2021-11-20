@@ -1,6 +1,6 @@
 class GEvent():
 
-    def __init__(self, Dict: dict):
+    def __init__(self, Dict: dict) -> None:
         self.token = str(Dict["token"])
         self.eventID = int(Dict["eventID"])
         self.eType = str(Dict["eType"])
@@ -8,7 +8,7 @@ class GEvent():
         self.userID = str(Dict["userID"])
         self.eDetail = dict(Dict["eDetail"])
 
-    def json(self):
+    def toJson(self):
         js = {
             "eventID": self.eventID,
             "eType": self.eType,

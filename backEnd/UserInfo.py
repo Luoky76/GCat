@@ -1,5 +1,4 @@
 import requests
-import time
 from methods import *
 
 ActionTypes = ("push", "commit", "pull", "remote", "merge")
@@ -14,7 +13,6 @@ def getNewRepositoryCnt(userID: str, earlyTime: float) -> int:
         :param earlyTime:查找时间起点
         :return:仓库数量
     """
-    count = 0
     data = requests.get(UserReposApi.format(userID)).json()  # 获取json数据
     earlyTime = stemp2str(earlyTime)  # 时间格式化
     reposList = [repo for repo in data if earlyTime <= repo["created_at"]]
