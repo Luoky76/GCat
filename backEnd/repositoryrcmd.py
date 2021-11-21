@@ -7,24 +7,10 @@ from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction.text import CountVectorizer
 from github import Github
 
-<<<<<<< HEAD
 stopkey = [w.strip() for w in codecs.open(
     'data/stopWord.txt', 'r', encoding='utf-8').readlines()]
 
 # 推送推荐仓库的full_name列表
-=======
-stopkey = [w.strip() for w in codecs.open('data/stopWord.txt', 'r', encoding='utf-8').readlines()]
-
-def dataprepos(text, stopkey):
-    l = []
-    pos = ['n', 'nz', 'v', 'vd', 'vn', 'l', 'a', 'd']  # 定义选取的词性
-    seg = jieba.posseg.cut(text)  # 分词
-    for i in seg:
-        if i.word not in stopkey and i.flag in pos:  # 去停用词 + 词性筛选
-            l.append(i.word)
-    return l
-
->>>>>>> main
 
 
 class RepositoryRcmd():
@@ -88,12 +74,9 @@ class RepositoryRcmd():
         return result
 
     def getRcmd(self, g: Github) -> list:
-<<<<<<< HEAD
         """
             返回推荐仓库列表
         """
-=======
->>>>>>> main
         md_list = self.__get_keyword()
         result_list = list()
         for each_md in md_list:
