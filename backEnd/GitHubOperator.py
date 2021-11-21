@@ -103,14 +103,4 @@ if __name__ == '__main__':
     # print(type(repo))
     # print(type(repo.get_issue(1)))
     # print(repo.get_issues().title)
-
-
-
-
-
-
-
-
-
-
-
+    pass
