@@ -2,10 +2,7 @@ from gevent import GEvent
 from github import Github
 from repositoryrcmd import RepositoryRcmd
 import UserInfo
-<<<<<<< HEAD
-=======
 import GitHubOperator
->>>>>>> gx
 
 
 def EventDistributer(EventRequest: GEvent)->GEvent:
@@ -13,8 +10,6 @@ def EventDistributer(EventRequest: GEvent)->GEvent:
         return GetInfoEventHandler(EventRequest)
     elif EventRequest.eType == "Recommend":
         return RecommendEventHandler(EventRequest)
-<<<<<<< HEAD
-=======
     elif EventRequest.eType == "GetFileList":
         return GetFileListHandler(EventRequest)
     elif EventRequest.eType == "GetFile":
@@ -29,7 +24,6 @@ def EventDistributer(EventRequest: GEvent)->GEvent:
         return FollowHandler(EventRequest)
     elif EventRequest.eType == "DeclineFollow":
         return DeclineFollowHandler(EventRequest)
->>>>>>> gx
 
 def GetInfoEventHandler(gEvent: GEvent)->GEvent:
     if "actionList" in gEvent.eDetail:
@@ -41,9 +35,6 @@ def RecommendEventHandler(gEvent: GEvent)->GEvent:
     g = Github(gEvent.token)
     obj = RepositoryRcmd(g)
     gEvent.eDetail = obj.getRcmd(g)
-<<<<<<< HEAD
-    return gEvent
-=======
     return gEvent
 
 def GetFileListHandler(gEvent: GEvent)->GEvent:
@@ -90,4 +81,3 @@ def DeclineFollowHandler(gEvent: GEvent)->GEvent:
     else:
         gEvent.eDetail = "failed"
     return gEvent
->>>>>>> gx
