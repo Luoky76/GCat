@@ -7,7 +7,7 @@
 <view class="title_font">{{full_name}}</view>
 <!-- 收藏按钮 -->
 <view>
-  <image class="icon" src="/pages/images/star.png"></image>
+  <image class="icon" src="{{starsrc}}" bindtap="starred"></image>
 </view>
 <!-- 查看选择 -->
 <view class="swiper-tab">

@@ -22,6 +22,8 @@ Page({
     readme:"",
     default_branch:"",
     download_url:"",
+    starsrc:"",
+    hasstar:""
   },
 
   /**
@@ -52,6 +54,34 @@ Page({
         });
       }
     });
+    wx.request({
+      url: 'http://127.0.0.1:5000//GcatServer',
+      method:'post',
+      dataType:"json",
+      data: {
+        token: var_token,
+        eventID: 422743326,
+        userID: "ShakingSH",
+        eType: "CheckStar",
+        eTime: 1459994552.51,
+        eDetail:{
+          full_name:that.data.full_name
+        },
+      },
+      success:function(res){
+        if(res === "yes"){
+          that.setData({
+            starsrc:"/pages/images/star0.png",
+            hasstar:"yes"
+          })
+        }
+        else{
+          that.setData({
+            starsrc:"/pages/images/star.png"
+          })
+        }
+      }
+    })
     wx.request({
       url: 'https://api.github.com/repos/'+that.data.full_name,
       method:'get',
@@ -164,5 +194,51 @@ Page({
         currentTab: e.target.dataset.current
       })
     }
+  },
+  starred:function(){
+    // var var_token =  wx.getStorageSync('token');
+    var var_token = "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";
+    var type;
+    if(this.data.hasstar === "yes")
+    {
+      this.setData({
+        hasstar:"no"
+      })
+      type = "DeclineStar"
+    }
+    else
+    {
+      this.setData({
+        hasstar:"yes"
+      })
+      type = "Star"
+    }
+    wx.request({
+      url: 'http://127.0.0.1:5000//GcatServer',
+      method:'post',
+      dataType:"json",
+      data: {
+        token: var_token,
+        eventID: 422743326,
+        userID: "ShakingSH",
+        eType: type,
+        eTime: 1459994552.51,
+        eDetail:{
+          full_name:that.data.full_name
+        },
+      },
+      success:function(res){
+        if(type === "Star"){
+          that.setData({
+            starsrc:"/pages/images/star.png"
+          })
+        }
+        else{
+          that.setData({
+            starsrc:"/pages/images/star0.png"
+          })
+        }
+      }
+    })
   }
 })
