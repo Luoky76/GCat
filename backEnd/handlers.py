@@ -14,6 +14,20 @@ def EventDistributer(EventRequest: GEvent) -> GEvent:
         return GetInfoEventHandler(EventRequest)
     elif EventRequest.eType == "Recommend":
         return RecommendEventHandler(EventRequest)
+    elif EventRequest.eType == "GetFileList":
+        return GetFileListHandler(EventRequest)
+    elif EventRequest.eType == "GetFile":
+        return GetFileHandler(EventRequest)
+    elif EventRequest.eType == "CheckStar":
+        return CheckStarHandler(EventRequest)
+    elif EventRequest.eType == "Star":
+        return StarHandler(EventRequest)
+    elif EventRequest.eType == "DeclineStar":
+        return DeclineStarHandler(EventRequest)
+    elif EventRequest.eType == "Follow":
+        return FollowHandler(EventRequest)
+    elif EventRequest.eType == "DeclineFollow":
+        return DeclineFollowHandler(EventRequest)
 
 
 def GetInfoEventHandler(gEvent: GEvent) -> GEvent:

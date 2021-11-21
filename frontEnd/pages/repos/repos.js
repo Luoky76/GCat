@@ -12,8 +12,8 @@ Page({
     winWidth: 0,
     winHeight: 0,
     currentTab: 0,
-    // full_name:"sindresorhus/awesome",
-    full_name:"",
+    full_name:"sindresorhus/awesome",
+    // full_name:"",
     avatar_url:"",
     user:"",
     create_time:"",
@@ -22,6 +22,8 @@ Page({
     readme:"",
     default_branch:"",
     download_url:"",
+    starsrc:"",
+    hasstar:""
   },
 
   /**
@@ -29,13 +31,13 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    var var_token =  wx.getStorageSync('token');
-    // var var_token = "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";
-    var value = options.full_name;
-    console.log(value)
-    that.setData({
-      full_name:value
-    })
+    // var var_token =  wx.getStorageSync('token');
+    var var_token = "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";
+    // var value = options.full_name;
+    // console.log(value)
+    // that.setData({
+    //   full_name:value
+    // })
     var strs= new Array();
     strs=this.data.full_name.split("/"); 
     that.setData({
@@ -52,6 +54,34 @@ Page({
         });
       }
     });
+    wx.request({
+      url: 'http://127.0.0.1:5000//GcatServer',
+      method:'post',
+      dataType:"json",
+      data: {
+        token: var_token,
+        eventID: 422743326,
+        userID: "ShakingSH",
+        eType: "CheckStar",
+        eTime: 1459994552.51,
+        eDetail:{
+          full_name:that.data.full_name
+        },
+      },
+      success:function(res){
+        if(res === "yes"){
+          that.setData({
+            starsrc:"/pages/images/star0.png",
+            hasstar:"yes"
+          })
+        }
+        else{
+          that.setData({
+            starsrc:"/pages/images/star.png"
+          })
+        }
+      }
+    })
     wx.request({
       url: 'https://api.github.com/repos/'+that.data.full_name,
       method:'get',
@@ -82,9 +112,14 @@ Page({
       success:function(res){
         console.log(res)
         console.log(atob(res.data.content))
-        let value = atob(res.data.content);
+        let value =atob(res.data.content);
+        let data = app.towxml.toJson(
+          value,               // `markdown`或`html`文本内容
+          'markdown',             // `markdown`或`html`
+          that                     // 当前页面的`this`（2.1.0或以上的版本该参数不可省略）
+        );
         that.setData({
-          readme:value
+          readme:data
         })
       }
     })
@@ -159,5 +194,51 @@ Page({
         currentTab: e.target.dataset.current
       })
     }
+  },
+  starred:function(){
+    // var var_token =  wx.getStorageSync('token');
+    var var_token = "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";
+    var type;
+    if(this.data.hasstar === "yes")
+    {
+      this.setData({
+        hasstar:"no"
+      })
+      type = "DeclineStar"
+    }
+    else
+    {
+      this.setData({
+        hasstar:"yes"
+      })
+      type = "Star"
+    }
+    wx.request({
+      url: 'http://127.0.0.1:5000//GcatServer',
+      method:'post',
+      dataType:"json",
+      data: {
+        token: var_token,
+        eventID: 422743326,
+        userID: "ShakingSH",
+        eType: type,
+        eTime: 1459994552.51,
+        eDetail:{
+          full_name:that.data.full_name
+        },
+      },
+      success:function(res){
+        if(type === "Star"){
+          that.setData({
+            starsrc:"/pages/images/star.png"
+          })
+        }
+        else{
+          that.setData({
+            starsrc:"/pages/images/star0.png"
+          })
+        }
+      }
+    })
   }
 })

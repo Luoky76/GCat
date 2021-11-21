@@ -39,10 +39,10 @@ class RepositoryRcmd():
         # 5、打印词语权重
         keys = []
         for i in range(len(weight)):
-            #print(u"-------这里输出第", i + 1, u"篇文本的词语tf-idf------")
+            # print(u"-------这里输出第", i + 1, u"篇文本的词语tf-idf------")
             df_word, df_weight = [], []  # 当前文章的所有词汇列表、词汇对应权重列表
             for j in range(len(word)):
-                #print(word[j], weight[i][j])
+                # print(word[j], weight[i][j])
                 df_word.append(word[j])
                 df_weight.append(weight[i][j])
             df_word = pd.DataFrame(df_word, columns=['word'])
