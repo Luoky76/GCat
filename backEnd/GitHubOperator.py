@@ -90,13 +90,19 @@ def checkstar(repoID:str, token) -> bool:
     else:
         return False
 
+def getissue(repoID:str):
+    return
 
 def create_repo(repoID) -> str:
     """创建仓库"""
     pass
 
-
-
+if __name__ == '__main__':
+    # g = Github("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")
+    # repo = g.get_repo("sindresorhus/awesome")
+    # print(type(repo))
+    # print(type(repo.get_issue(1)))
+    # print(repo.get_issues().title)
 
 
 
