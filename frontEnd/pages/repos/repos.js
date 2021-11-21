@@ -32,7 +32,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     // var var_token =  wx.getStorageSync('token');
-    var var_token = "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";
+    var var_token = "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";
     // var value = options.full_name;
     // console.log(value)
     // that.setData({
@@ -196,19 +196,20 @@ Page({
     }
   },
   starred:function(){
+    var that = this;
     // var var_token =  wx.getStorageSync('token');
-    var var_token = "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";
+    var var_token = "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";
     var type;
     if(this.data.hasstar === "yes")
     {
-      this.setData({
+      that.setData({
         hasstar:"no"
       })
       type = "DeclineStar"
     }
     else
     {
-      this.setData({
+      that.setData({
         hasstar:"yes"
       })
       type = "Star"
@@ -230,12 +231,12 @@ Page({
       success:function(res){
         if(type === "Star"){
           that.setData({
-            starsrc:"/pages/images/star.png"
+            starsrc:"/pages/images/star0.png"
           })
         }
         else{
           that.setData({
-            starsrc:"/pages/images/star0.png"
+            starsrc:"/pages/images/star.png"
           })
         }
       }
