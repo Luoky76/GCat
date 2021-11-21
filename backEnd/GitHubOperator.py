@@ -4,10 +4,10 @@ import requests
 import time
 from github.Repository import Repository
 
-g = Github('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')
+# g = Github('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')
 # username = 'fireflylxx'
 
-user = g.get_user()
+# user = g.get_user()
 # Actions = ('follow', 'declineFollow', 'star', 'declineStar')
 # creat_type = ('CreatRepo', 'DropRepo')
 #
@@ -38,8 +38,10 @@ user = g.get_user()
 # }
 
 
-def follower(otheruserID:str) -> bool:
+def follower(otheruserID:str, token) -> bool:
     """获取用户关注"""
+    g = Github(token)
+    user = g.get_user()
     if user.has_in_following(otheruserID):
         return False
     else:
@@ -47,8 +49,10 @@ def follower(otheruserID:str) -> bool:
         return True
 
 
-def declineFollower(otheruserID:str) -> bool:
+def declineFollower(otheruserID:str, token) -> bool:
     """取消用户关注"""
+    g = Github(token)
+    user = g.get_user()
     if user.has_in_following(otheruserID):
         user.remove_from_following(otheruserID)
         return True
@@ -56,19 +60,32 @@ def declineFollower(otheruserID:str) -> bool:
         return False
 
 
-def star(repoID:str) -> bool:
+def star(repoID:str, token) -> bool:
     """收藏"""
-    if user.has_in_starred(repoID):
+    g = Github(token)
+    user = g.get_user()
+    if user.has_in_starred(g.get_repo(repoID)):
         return False
     else:
-        user.add_to_starred(repoID)
+        user.add_to_starred(g.get_repo(repoID))
         return True
 
 
-def declineStar(repoID:str) -> bool:
+def declineStar(repoID:str, token) -> bool:
     """取关"""
-    if user.has_in_starred(repoID):
-        user.remove_from_starred(repoID)
+    g = Github(token)
+    user = g.get_user()
+    if user.has_in_starred(g.get_repo(repoID)):
+        user.remove_from_starred(g.get_repo(repoID))
+        return True
+    else:
+        return False
+
+def checkstar(repoID:str, token) -> bool:
+    """收藏"""
+    g = Github(token)
+    user = g.get_user()
+    if user.has_in_starred(g.get_repo(repoID)):
         return True
     else:
         return False

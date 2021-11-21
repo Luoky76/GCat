@@ -1,5 +1,12 @@
 /* pages/repos/repos.wxss */
 /* 页面背景 */
+/**基础风格样式**/
+@import '/towxml/style/main.wxss';
+/**如果页面有动态主题切换，则需要将使用到的样式全部引入**/
+/**主题配色（浅色样式）**/
+@import '/towxml/style/theme/light.wxss';
+/**主题配色（深色样式）**/
+@import '/towxml/style/theme/dark.wxss';
 .bg {
   position: fixed;
   top: 0;
@@ -81,7 +88,7 @@
   display: flex;
   flex-direction: column;
   margin-left: 6%;
-  margin-top: 5%;
+  margin-top: 0;
 }
 
 /* 用户信息字体 */
@@ -89,6 +96,7 @@
   position: absolute;
   font-size: 30rpx;
   margin-left: 1%;
+  margin-top: 1%;
   color: #CE6C25;
 }
 
