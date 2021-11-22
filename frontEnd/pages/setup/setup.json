@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "component": true,
+  "usingComponents": {},
+  "navigationBarTitleText": "新建仓库"
 }

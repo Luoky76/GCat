@@ -16,6 +16,7 @@ Page({
     // full_name:"",
     avatar_url:"",
     user:"",
+    reponame:"",
     create_time:"",
     subscribers_count:"",
     stargazers_count:"",
@@ -23,16 +24,38 @@ Page({
     default_branch:"",
     download_url:"",
     starsrc:"",
-    hasstar:""
+    hasstar:"",
+    file_list:[],
+    dir_list:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // var map = {'.editorconfig': 'file', '.gitattributes': 'file', '.github': 'dir', 'awesome.md': 'file', 'code-of-conduct.md': 'file', 'contributing.md': 'file', 'create-list.md': 'file', 'license': 'file', 'media': 'dir', 'pull_request_template.md': 'file', 'readme.md': 'file'};
+    // var dirlist=[]
+    // var filelist=[]
+    // for (var key in map)
+    // {
+    //   if(map[key] === "file")
+    //   {
+    //     filelist.push(key);
+    //   }
+    //   else if(map[key] === "dir")
+    //   {
+    //     dirlist.push(key);
+    //   }
+    // }
+    // console.log(dirlist)
+    // console.log(filelist)
+    // this.setData({
+    //   file_list:filelist,
+    //   dir_list:dirlist,
+    // })
     var that = this;
     // var var_token =  wx.getStorageSync('token');
-    var var_token = "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";
+    var var_token = "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";
     // var value = options.full_name;
     // console.log(value)
     // that.setData({
@@ -41,7 +64,8 @@ Page({
     var strs= new Array();
     strs=this.data.full_name.split("/"); 
     that.setData({
-      user:strs[0]
+      user:strs[0],
+      reponame:strs[1]
     })
     /** 
      * 获取系统信息 
@@ -61,7 +85,6 @@ Page({
       data: {
         token: var_token,
         eventID: 422743326,
-        userID: "ShakingSH",
         eType: "CheckStar",
         eTime: 1459994552.51,
         eDetail:{
@@ -120,6 +143,41 @@ Page({
         );
         that.setData({
           readme:data
+        })
+      }
+    })
+    wx.request({
+      url: 'http://127.0.0.1:5000//GcatServer',
+      method:'post',
+      dataType:"json",
+      data:{
+        token: var_token,
+        eventID: 422743326,
+        eType: "GetFileList",
+        eTime: 1459994552.51,
+        eDetail:{
+          username:strs[0],
+          reponame:strs[1]
+        },
+      },
+      success:function(res){
+        var dirlist=[]
+        var filelist=[]
+        var result = res.data.eDetail
+        for (var key in result)
+        {
+          if(result[key] === "file")
+          {
+            filelist.pus(key);
+          }
+          else if(result[key] === "dir")
+          {
+            dirlist.push(key);
+          }
+        }
+        that.setData({
+          file_list:filelist,
+          dir_list:dirlist,
         })
       }
     })
@@ -198,7 +256,7 @@ Page({
   starred:function(){
     var that = this;
     // var var_token =  wx.getStorageSync('token');
-    var var_token = "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";
+    var var_token = "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";
     var type;
     if(this.data.hasstar === "yes")
     {
@@ -221,7 +279,6 @@ Page({
       data: {
         token: var_token,
         eventID: 422743326,
-        userID: "ShakingSH",
         eType: type,
         eTime: 1459994552.51,
         eDetail:{
@@ -240,6 +297,19 @@ Page({
           })
         }
       }
+    })
+  },
+  todir:function(e){
+    let item = e.currentTarget.dataset.item;
+    var that = this;
+    wx.navigateTo({
+      url: '../dir/dir?item='+item+'&user='+that.data.user+'&reponame'+that.data.reponame,
+    })
+  },
+  tofile:function(e){
+    let item = e.currentTarget.dataset.item;
+    wx.navigateTo({
+      url: '../file/file?item='+item+'&user='+that.data.user+'&reponame'+that.data.reponame,
     })
   }
 })

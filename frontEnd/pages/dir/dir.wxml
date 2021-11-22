@@ -1,0 +1,10 @@
+<!--pages/dir/dir.wxml-->
+<view>
+  <image class="bg" src="/pages/images/bg.jpg"></image>
+</view>
+<button class="code1" style="width:97%" wx:for="{{dir_list}}" data-item="{{item}}" bindtap="todir">
+  <image class="detail_icon" src="../images/allfile.png"></image>{{item}}
+</button>
+<button class="code2" style="width:97%" wx:for="{{file_list}}" data-="{{item}}" bindtap="tofile">
+  <image class="detail_icon" src="../images/file.png"></image>{{item}}
+</button>
