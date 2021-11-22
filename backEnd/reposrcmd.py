@@ -10,6 +10,7 @@ from github import Github
 stopkey = [w.strip() for w in codecs.open(
     'data/stopWord.txt', 'r', encoding='utf-8').readlines()]
 
+
 # 推送推荐仓库的full_name列表
 
 

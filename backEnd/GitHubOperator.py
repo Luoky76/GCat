@@ -98,9 +98,9 @@ def create_repo(repoID) -> str:
     pass
 
 if __name__ == '__main__':
-    # g = Github("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")
-    # repo = g.get_repo("sindresorhus/awesome")
-    # print(type(repo))
-    # print(type(repo.get_issue(1)))
-    # print(repo.get_issues().title)
+    g = Github("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")
+    repo = g.get_repo("sindresorhus/awesome")
+    print(type(repo))
+    print(type(repo.get_issue(1)))
+    print(repo.get_issues().title)
     pass

@@ -4,6 +4,24 @@
     <list default="true" id="4695e872-1aca-4455-878f-b9b9a833df8c" name="变更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GitHubOperator.py" beforeDir="false" afterPath="$PROJECT_DIR$/GitHubOperator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reposrcmd.py" beforeDir="false" afterPath="$PROJECT_DIR$/reposrcmd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userinfo.py" beforeDir="false" afterPath="$PROJECT_DIR$/userinfo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/pages/my-repos/my-repos.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/my-repos/my-repos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/pages/my-repos/my-repos.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/my-repos/my-repos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/pages/my-repos/my-repos.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/my-repos/my-repos.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/pages/my-repos/my-repos.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/my-repos/my-repos.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/pages/recommend/recommend.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/recommend/recommend.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/pages/repos/repos.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/repos/repos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/pages/setup/setup.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/setup/setup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/pages/setup/setup.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/setup/setup.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/pages/setup/setup.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/setup/setup.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/pages/setup/setup.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/setup/setup.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/pages/weeklog/weeklog.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/weeklog/weeklog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/pages/weeklog/weeklog.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/weeklog/weeklog.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/pages/weeklog/weeklog.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/weeklog/weeklog.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontEnd/pages/weeklog/weeklog.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/weeklog/weeklog.wxss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +43,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
-  <component name="RunManager" selected="Python.GitHubOperator">
+  <component name="RunManager" selected="Python.userinfo">
     <configuration name="GitHubOperator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -114,10 +132,56 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="reposrcmd" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\ProgramData\Anaconda3\envs\flaskenv\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/reposrcmd.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="userinfo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\ProgramData\Anaconda3\envs\flaskenv\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/userinfo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.GitHubOperator" />
+        <item itemvalue="Python.userinfo" />
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.GitHubOperator" />
+        <item itemvalue="Python.reposrcmd" />
       </list>
     </recent_temporary>
   </component>
@@ -131,6 +195,8 @@
       <updated>1637485022003</updated>
       <workItem from="1637485023627" duration="78000" />
       <workItem from="1637489693359" duration="4876000" />
+      <workItem from="1637575670594" duration="4745000" />
+      <workItem from="1637585050047" duration="3673000" />
     </task>
     <servers />
   </component>
@@ -138,8 +204,9 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/app_py$GitHubOperator.coverage" NAME="GitHubOperator 覆盖结果" MODIFIED="1637507758534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/app_py$app.coverage" NAME="app 覆盖结果" MODIFIED="1637485088453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/app_py$backEnd.coverage" NAME="backEnd 覆盖结果" MODIFIED="1637489790879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/app_py$userinfo.coverage" NAME="userinfo 覆盖结果" MODIFIED="1637587060508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/app_py$GitHubOperator.coverage" NAME="GitHubOperator 覆盖结果" MODIFIED="1637586676419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/app_py$app.coverage" NAME="app 覆盖结果" MODIFIED="1637586783406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/app_py$backEnd.coverage" NAME="backEnd 覆盖结果" MODIFIED="1637585532679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

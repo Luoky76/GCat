@@ -14,7 +14,7 @@
   <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">首页</view>
   <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="1" bindtap="swichNav">代码文件</view>
 </view>
-<swiper current="{{currentTab}}" bindchange="bindChange" style="height:{{winHeight - 31}}px">
+<swiper current="{{currentTab}}" bindchange="bindChange" style="height:{{winHeight - 31}}px" display-multiple-items="" >
   <!-- 首页 -->
   <swiper-item>
     <view class="main_detail">
@@ -57,17 +57,11 @@
   </swiper-item>
   <!-- 代码文件 -->
   <swiper-item>
-    <button class="code1" style="width:97%">
-      <image class="detail_icon" src="../images/allfile.png"></image>file1
+    <button class="code1" style="width:97%" wx:for="{{dir_list}}" data-item="{{item}}" bindtap="todir">
+      <image class="detail_icon" src="../images/allfile.png"></image>{{item}}
     </button>
-    <button class="code2" style="width:97%">
-      <image class="detail_icon" src="../images/file.png"></image>file2
-    </button>
-    <button class="code2" style="width:97%">
-      <image class="detail_icon" src="../images/file.png"></image>file3
-    </button>
-    <button class="code2" style="width:97%">
-      <image class="detail_icon" src="../images/file.png"></image>file4
+    <button class="code2" style="width:97%" wx:for="{{file_list}}" data-="{{item}}" bindtap="tofile">
+      <image class="detail_icon" src="../images/file.png"></image>{{item}}
     </button>
   </swiper-item>
 </swiper>

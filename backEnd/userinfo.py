@@ -50,14 +50,14 @@ def getActionList(usrtoken: str, earlytime: float, actionkind: str = ACTIONTYPES
     return {"count": len(newEventList), "eventList": newEventList}
 
 
-def getRepoContent(username, reponame) -> dict:
+def getRepoContent(username, reponame, token) -> dict:
     """ getRepoContent(username, reponame)\n
         获取指定仓库代码文件
         :param username:用户名
         :param reponame:仓库名
         :return:返回一个字典{文件路径：文件类型}
     """
-    user = Github().get_user(username)
+    user = Github(token).get_user(username)
     repo = user.get_repo(reponame)
     file_dict = {}
     for content in repo.get_contents(""):
@@ -65,7 +65,7 @@ def getRepoContent(username, reponame) -> dict:
     return file_dict
 
 
-def getRepoContentDetail(username, reponame, filepath, type) -> Any:
+def getRepoContentDetail(username, reponame, filepath, type, token) -> Any:
     """ getRepoContentDetail(username, reponame, filepath, type)\n
         获取指定仓库代码文件
         :param username:用户名
@@ -74,7 +74,7 @@ def getRepoContentDetail(username, reponame, filepath, type) -> Any:
         :param type:文件类型
         :return:返回一个字符串 or 一个字典{文件路径：文件类型}，视文件类型而定
     """
-    user = Github().get_user(username)
+    user = Github(token).get_user(username)
     repo = user.get_repo(reponame)
     content = repo.get_contents(filepath)
     file_dict = {}
@@ -84,3 +84,6 @@ def getRepoContentDetail(username, reponame, filepath, type) -> Any:
         for in_content in content:
             file_dict[in_content.name] = in_content.type
         return file_dict
+
+if __name__ == '__main__':
+    print(getRepoContent("sindresorhus", "awesome", "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"))

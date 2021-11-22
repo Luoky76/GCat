@@ -18,7 +18,7 @@
 
  <view class="BT">
 
-  <button class="recommend1" bindtap="recommend1" wx:for="{{repo}}" data-full_name="{{item.full_name}}" bindtap="torepo">   
+  <button class="recommend1" wx:for="{{repo}}" data-full_name="{{item.full_name}}" bindtap="torepo">   
    <text style="font-size:12px">{{item.full_name}}\n{{item.language}} {{item.star}}</text>
    <image class="recommendlogo" src="/pages/images/recommendlogo.png"> </image>
   </button>

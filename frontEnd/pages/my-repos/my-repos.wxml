@@ -1,2 +1,34 @@
-<!--pages/my-repos/my-repos.wxml-->
-<text>pages/my-repos/my-repos.wxml</text>
+<!--pages/weeklog/my-repos.wxml-->
+<!-- 背景 -->
+<image class="bg" src="/pages/images/bg.jpg"></image>
+<view class="kuang">
+
+    <view class="like1">
+      <image class="icon_size" src="/pages/images/标签.png"></image>
+    </view>
+    <text class="font3">abdo–eldesokey/nconv</text>
+
+    <text class="font4">
+    A PyTorch implomentation for our work，"Conhclence Propagation through CNNs for Quided sparse Depth Regression"
+    </text>
+
+    <view class="like2">
+      <image class="icon_size" src="/pages/images/收藏.png"></image>
+    </view>
+    <text class="font2">62</text>
+    <text class="font1">python GPL-3.0 license</text>
+
+    <text class="font5">
+      Updated on 8 Jun 2020
+    </text>
+
+    <view class="like3">
+      <image class="icon_size" src="/pages/images/检查.png"></image>
+    </view>
+    <text class="font6">
+      http://github.com/abdo-eldesokey/nconv
+    </text>
+
+    <image class="cat" src="/pages/images/猫.png"></image>
+</view>
+

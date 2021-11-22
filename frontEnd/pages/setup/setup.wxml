@@ -1,2 +1,57 @@
 <!--pages/setup/setup.wxml-->
-<text>pages/setup/setup.wxml</text>
+
+<!-- 背景 -->
+<view>
+  <image class="bg" src="/pages/images/bg.jpg"></image>
+</view>
+<view class="txt1">新建仓库</view>
+
+<view class="txt2">用户名</view>
+<view class="xiala">
+
+  <view class='select_box'>
+ <view class='select' catchtap='selectTap'>
+  <text class='select_text'>{{List1[index]}}</text>
+ </view>
+ <view class='option_box' style='height:{{show?(List1.length>5?300:List1.length*30):0}}rpx;'>
+  <text class='option' style='{{index==List1.length-1&&"border:0;"}}' wx:for='{{List1}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+ </view>
+</view>
+
+</view>
+
+  <!--仓库名输入框-->
+    <view class="ckname">
+      <view class="txt3">仓库名</view>
+      <input  class="input" bindinput="bindKeyInput" placeholder="单行输入"/>
+    </view>
+
+<view class="p2">
+      <view>仓库描述</view>
+      <textarea placeholder="多行输入"/>
+</view>
+<view class="hengxian1"></view>
+
+<view class="p3">
+  <text>Public/Private</text>
+<picker bindchange="bindPickerChange" value="{{nub}}" range="{{List2}}">  
+  <view class="picker">  
+  {{List2[nub]}}(点击更改)  
+  </view>  
+</picker>  
+</view>
+<view class="hengxian2"></view>
+
+<view class="p4">
+<view class="dr">导入其他仓库文件</view>
+<button class="butt1">选择仓库</button>
+</view>
+
+<image class="cat" src="/pages/images/猫.png"></image>
+
+<button class="cancel">
+<text>取消</text>
+</button>
+<button class="yes">
+<text>确认</text>
+</button>
