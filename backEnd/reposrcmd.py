@@ -2,27 +2,17 @@ import base64
 import codecs
 import pandas as pd
 import numpy as np
-import jieba.posseg
-import jieba.analyse
+import methods
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction.text import CountVectorizer
-from click.globals import push_context
 from github import Github
 
-stopkey = [w.strip() for w in codecs.open('data/stopWord.txt', 'r', encoding='utf-8').readlines()]
-
-def dataprepos(text, stopkey):
-    l = []
-    pos = ['n', 'nz', 'v', 'vd', 'vn', 'l', 'a', 'd']  # 定义选取的词性
-    seg = jieba.posseg.cut(text)  # 分词
-    for i in seg:
-        if i.word not in stopkey and i.flag in pos:  # 去停用词 + 词性筛选
-            l.append(i.word)
-    return l
-
-
+stopkey = [w.strip() for w in codecs.open(
+    'data/stopWord.txt', 'r', encoding='utf-8').readlines()]
 
 # 推送推荐仓库的full_name列表
+
+
 class RepositoryRcmd():
     def __init__(self, g: Github) -> None:
         self.__user = g.get_user()
@@ -57,10 +47,13 @@ class RepositoryRcmd():
                 df_weight.append(weight[i][j])
             df_word = pd.DataFrame(df_word, columns=['word'])
             df_weight = pd.DataFrame(df_weight, columns=['weight'])
-            word_weight = pd.concat([df_word, df_weight], axis=1)  # 拼接词汇列表和权重列表
-            word_weight = word_weight.sort_values(by="weight", ascending=False)  # 按照权重值降序排列
+            word_weight = pd.concat(
+                [df_word, df_weight], axis=1)  # 拼接词汇列表和权重列表
+            word_weight = word_weight.sort_values(
+                by="weight", ascending=False)  # 按照权重值降序排列
             keyword = np.array(word_weight['word'])  # 选择词汇列并转成数组格式
-            word_split = [keyword[x] for x in range(0, topK)]  # 抽取前topK个词汇作为关键词
+            word_split = [keyword[x]
+                          for x in range(0, topK)]  # 抽取前topK个词汇作为关键词
             keys.append(word_split)
         # print(keys)
         return keys
@@ -75,12 +68,15 @@ class RepositoryRcmd():
             content = repo.get_readme()
             decode_content = base64.b64decode(content.content)
             readme_str = str(decode_content, 'utf-8')
-            dataprepos(readme_str, stopkey)  # 文本预处理
+            readme_str = " ".join(methods.dataprepos(readme_str, stopkey))  # 文本预处理
             readme_list.append(readme_str)
         result = self.__getKeywords_tfidf(readme_list, 2)
         return result
 
     def getRcmd(self, g: Github) -> list:
+        """
+            返回推荐仓库列表
+        """
         md_list = self.__get_keyword()
         result_list = list()
         for each_md in md_list:
