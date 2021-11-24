@@ -8,4 +8,26 @@
     background-size: cover;
     z-index: -1;
   }
+  .detail_icon {
+    width: 40rpx;
+    height: 40rpx;
+  }  
+  
+  .code1 {
+    margin-top: 4%;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #463b34af;
+    border-radius: 25rpx;
+    box-shadow: 1rpx 4rpx 10rpx rgba(0, 0, 0, 0.4);
+    font-size: 30rpx;
+  }
+  
+  .code2 {
+    margin-top: 2%;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #463b34af;
+    border-radius: 25rpx;
+    box-shadow: 1rpx 4rpx 10rpx rgba(0, 0, 0, 0.4);
+    font-size: 30rpx;
+  }
   

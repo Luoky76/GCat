@@ -5,7 +5,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+      url_list : ['https://api.github.com/repos/sindresorhus/awesome', 'https://api.github.com/repos/public-apis/public-apis', 'https://api.github.com/repos/github/gitignore', 'https://api.github.com/repos/vinta/awesome-python', 'https://api.github.com/repos/jlevy/the-art-of-command-line'],
+      // list:"",
     },
     myrepos:function(){
         wx.navigateTo({

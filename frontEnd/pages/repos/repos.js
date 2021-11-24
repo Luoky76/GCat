@@ -55,7 +55,7 @@ Page({
     // })
     var that = this;
     // var var_token =  wx.getStorageSync('token');
-    var var_token = "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";
+    var var_token = "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";
     // var value = options.full_name;
     // console.log(value)
     // that.setData({
@@ -168,7 +168,7 @@ Page({
         {
           if(result[key] === "file")
           {
-            filelist.pus(key);
+            filelist.push(key);
           }
           else if(result[key] === "dir")
           {
@@ -256,7 +256,7 @@ Page({
   starred:function(){
     var that = this;
     // var var_token =  wx.getStorageSync('token');
-    var var_token = "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";
+    var var_token = "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";
     var type;
     if(this.data.hasstar === "yes")
     {
@@ -302,14 +302,20 @@ Page({
   todir:function(e){
     let item = e.currentTarget.dataset.item;
     var that = this;
+    console.log(item)
+    console.log(that.data.user)
+    console.log(that.data.reponame)
     wx.navigateTo({
-      url: '../dir/dir?item='+item+'&user='+that.data.user+'&reponame'+that.data.reponame,
+      url: '../dir/dir?item='+item+'&user='+that.data.user+'&reponame='+that.data.reponame,
     })
   },
   tofile:function(e){
     let item = e.currentTarget.dataset.item;
+    console.log(item)
+    console.log(that.data.user)
+    console.log(that.data.reponame)
     wx.navigateTo({
-      url: '../file/file?item='+item+'&user='+that.data.user+'&reponame'+that.data.reponame,
+      url: '../file/file?item='+item+'&user='+that.data.user+'&reponame='+that.data.reponame,
     })
   }
 })

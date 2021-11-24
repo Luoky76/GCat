@@ -25,6 +25,11 @@ Page({
             user:v2,
             reponame:v3,
         })
+        console.log(that.data.filepath)
+        console.log(that.data.user)
+        console.log(that.data.reponame)
+        // var var_token =  wx.getStorageSync('token');
+        var var_token = "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";
         wx.request({
             url: 'http://127.0.0.1:5000//GcatServer',
             method:'post',
@@ -37,7 +42,8 @@ Page({
               eDetail:{
                 username:that.data.user,
                 reponame:that.data.reponame,
-                filepath:that.data.filepath
+                filepath:that.data.filepath,
+                type:"dir"
               },
             },
             success:function(res){
@@ -48,7 +54,7 @@ Page({
               {
                 if(result[key] === "file")
                 {
-                  filelist.pus(key);
+                  filelist.push(key);
                 }
                 else if(result[key] === "dir")
                 {
@@ -110,5 +116,18 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+    todir:function(e){
+      let item = e.currentTarget.dataset.item;
+      var that = this;
+      wx.navigateTo({
+        url: '../dir/dir?item='+item+'&user='+that.data.user+'&reponame'+that.data.reponame,
+      })
+    },
+    tofile:function(e){
+      let item = e.currentTarget.dataset.item;
+      wx.navigateTo({
+        url: '../file/file?item='+item+'&user='+that.data.user+'&reponame'+that.data.reponame,
+      })
     }
 })
