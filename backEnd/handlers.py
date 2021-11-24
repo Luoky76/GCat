@@ -55,14 +55,14 @@ def RecommendEventHandler(gEvent: GEvent) -> GEvent:
 
 def GetFileListHandler(gEvent: GEvent) -> GEvent:
     res = userinfo.getRepoContent(
-        gEvent.edetail["username"], gEvent.edetail["reponame"], gEvent.etype)
+        gEvent.edetail["username"], gEvent.edetail["reponame"], gEvent.token)
     gEvent.edetail = res
     return gEvent
 
 
 def GetFileHandler(gEvent: GEvent) -> GEvent:
-    res = userinfo.getRepoContent(
-        gEvent.edetail["username"], gEvent.edetail["reponame"], gEvent.edetail["filepath"], gEvent.edetail["type"], gEvent.etype)
+    res = userinfo.getRepoContentDetail(
+        gEvent.edetail["username"], gEvent.edetail["reponame"], gEvent.edetail["filepath"], gEvent.edetail["type"], gEvent.token)
     gEvent.edetail = res
     return gEvent
 
