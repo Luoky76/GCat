@@ -1,11 +1,16 @@
 class GEvent():
 
     def __init__(self, Dict: dict) -> None:
-        self.token = str(Dict["token"])
-        self.eventid = int(Dict["eventID"])
-        self.etype = str(Dict["eType"])
-        self.etime = float(Dict["eTime"])
-        self.edetail = dict(Dict["eDetail"])
+        if "token" in Dict:
+            self.token = str(Dict["token"])
+        if "eventID" in Dict:
+            self.eventid = int(Dict["eventID"])
+        if "eType" in Dict:
+            self.etype = str(Dict["eType"])
+        if "eTime" in Dict:
+            self.etime = float(Dict["eTime"])
+        if "eDetail" in Dict:
+            self.edetail = dict(Dict["eDetail"])
 
     def toJson(self) -> dict:
         """ 将获得GEvent类的dict形式"""
