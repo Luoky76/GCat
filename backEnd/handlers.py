@@ -39,11 +39,12 @@ def GetInfoEventHandler(gEvent: GEvent) -> GEvent:
         返回对象.eDetail["信息"]=所求信息
     """
     timefrom = (datetime.now()-timedelta(days=7)).timestamp()
-    timefrom = 0
+
     if "newEvents" in gEvent.edetail:
-        if "type" in gEvent.edetail["newEvents"]:
-            gEvent.edetail["newEvents"] = userinfo.getActionList(
-                gEvent.token, timefrom, gEvent.edetail["newEvents"]["type"])
+        if gEvent.edetail["newEvents"] != None:
+            if "type" in gEvent.edetail["newEvents"]:
+                gEvent.edetail["newEvents"] = userinfo.getActionList(
+                    gEvent.token, timefrom, gEvent.edetail["newEvents"]["type"])
         else:
             gEvent.edetail["newEvents"] = userinfo.getActionList(
                 gEvent.token, timefrom)
@@ -126,5 +127,5 @@ def GetRepoInfoHandler(gEvent: GEvent):
     if "collaborator_list" in gEvent.edetail:
         gEvent.edetail["collaborator_list"] = repoinfo.getCollaborator(
             gEvent.token, gEvent.edetail["full_name"])
-    
+
     return gEvent
