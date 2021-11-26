@@ -51,7 +51,7 @@ def getPullrequet(usrtoken: str, reponame: str) -> dict:
             actor = event.actor.login
             time = methods.utc2cst(datetime.strftime(
                 event.created_at, '%Y-%m-%dT%H:%M:%SZ'))
-            msg.append({"actor": actor, "time": time})
+            msg.append({"login": actor, "time": time})
     return msg
 
 
@@ -59,5 +59,5 @@ def getCollaborator(usrtoken: str, reponame: str):
     repo = Github(usrtoken).get_repo(reponame)
     msg = []
     for co in repo.get_collaborators():
-        msg.append({"name": co.login, "avatar": co.avatar_url})
+        msg.append({"login": co.login, "avatar_url": co.avatar_url})
     return msg

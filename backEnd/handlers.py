@@ -1,3 +1,4 @@
+from userinfo import ACTIONTYPES
 from gevent import GEvent
 from github import Github
 from datetime import datetime, timedelta
@@ -36,7 +37,6 @@ def EventDistributer(gEvent: GEvent) -> GEvent:
         return Create_repoEventHandler(gEvent)
 
 
-
 def GetInfoHandler(gEvent: GEvent) -> GEvent:
     """
         返回对象.eDetail["信息"]=所求信息
@@ -45,18 +45,31 @@ def GetInfoHandler(gEvent: GEvent) -> GEvent:
 
     if "newEvents" in gEvent.edetail:
         if gEvent.edetail["newEvents"] != None:
+
             if "type" in gEvent.edetail["newEvents"]:
                 typereqest = gEvent.edetail["newEvents"]["type"]
+            else:
+                typereqest = ACTIONTYPES
+
             if "time" in gEvent.edetail["newEvents"]:
                 timefrom = gEvent.edetail["newEvents"]["time"]
+            else:
+                timefrom = (datetime.now()-timedelta(days=7)).timestamp()
+
             gEvent.edetail["newEvents"] = userinfo.getActionList(
                 gEvent.token, timefrom, typereqest)
+
         else:
             gEvent.edetail["newEvents"] = userinfo.getActionList(
                 gEvent.token, timefrom)
+
     if "newRepos" in gEvent.edetail:
+        if gEvent.edetail["newRepos"] != None:
+            timefrom = gEvent.edetail["newRepos"]["time"]
+
         gEvent.edetail["newRepos"] = userinfo.getNewRepository(
             gEvent.token, timefrom)
+            
     if "myrepos" in gEvent.edetail:
         gEvent.edetail["myrepos"] = userinfo.getMyRepos(gEvent.token)
     if "collrepos" in gEvent.edetail:
@@ -82,6 +95,7 @@ def GetFileListHandler(gEvent: GEvent) -> GEvent:
         gEvent.edetail["username"], gEvent.edetail["reponame"], gEvent.token)
     gEvent.edetail = res
     return gEvent
+
 
 def GetFileHandler(gEvent: GEvent) -> GEvent:
     res = repoinfo.getRepoContentDetail(
@@ -129,6 +143,7 @@ def DeclineFollowHandler(gEvent: GEvent) -> GEvent:
         gEvent.edetail = "failed"
     return gEvent
 
+
 def GetRepoInfoHandler(gEvent: GEvent):
     if "pull_request_list" in gEvent.edetail:
         gEvent.edetail["pull_request_list"] = repoinfo.getPullrequet(
@@ -139,8 +154,8 @@ def GetRepoInfoHandler(gEvent: GEvent):
 
     return gEvent
 
+
 def Create_repoEventHandler(gEvent: GEvent) -> GEvent:
     if GitHubOperator.create_repo(gEvent.edetail["reponame"], gEvent.edetail["file_dict"], gEvent.token):
         gEvent.edetail = "success"
     return gEvent
-
