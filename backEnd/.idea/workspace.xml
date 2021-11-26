@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4695e872-1aca-4455-878f-b9b9a833df8c" name="变更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontEnd/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontEnd/pages/cooperation-repos/cooperation-repos.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/cooperation-repos/cooperation-repos.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontEnd/pages/dir/dir.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/dir/dir.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontEnd/pages/file/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/file/file.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontEnd/pages/myrepos-list/myrepos-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontEnd/pages/myrepos-list/myrepos-list.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +218,7 @@
       <workItem from="1637810003099" duration="7950000" />
       <workItem from="1637887211589" duration="8454000" />
       <workItem from="1637915956489" duration="1243000" />
-      <workItem from="1637934026304" duration="5048000" />
+      <workItem from="1637934026304" duration="7763000" />
     </task>
     <servers />
   </component>

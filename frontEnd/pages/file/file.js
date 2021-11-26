@@ -44,10 +44,11 @@ Page({
               },
             },
             success:function(res){
-              let rescode="";
-              rescode = app.towxml.toJson(res.data.edetail, 'bytes');
+              console.log(res.data.edetail)
+              var rescode = res.data.edetail
+              var data = app.towxml.toJson(rescode, 'markdown');
               that.setData({
-                code:rescode,
+                code:data,
               })
             }
           })
