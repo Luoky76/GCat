@@ -4,6 +4,10 @@
     "pages/file/file",
     "pages/cooperation-repos/cooperation-repos",
     "pages/repos/repos",
+<<<<<<< HEAD
+=======
+    "pages/personal/personal",
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
     "pages/weeklog/weeklog",
     "pages/my-repos/my-repos",
     "pages/setup/setup",
@@ -15,6 +19,10 @@
     "pages/myrepos-list/myrepos-list",
     "pages/cooperationrepos-list/cooperationrepos-list",
     "pages/dir/dir",
+<<<<<<< HEAD
+=======
+    "pages/file/file",
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
     "pages/history-list/history-list"
   ],
   "window":{

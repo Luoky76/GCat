@@ -106,6 +106,7 @@ def create_repo(repoID:str ,file_dict:dict, token) -> bool:
     return True
 
 if __name__ == '__main__':
+<<<<<<< HEAD
     # g = Github("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")
     # repo = g.get_repo("sindresorhus/awesome")
     # print(type(repo))
@@ -128,4 +129,11 @@ if __name__ == '__main__':
     # for path in file_list:
     #     content = repo.get_contents(path)
     #     repo.create_file(content.path, "初始化", content.decoded_content)
+=======
+    g = Github("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")
+    repo = g.get_repo("sindresorhus/awesome")
+    print(type(repo))
+    print(type(repo.get_issue(1)))
+    print(repo.get_issues().title)
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
     pass

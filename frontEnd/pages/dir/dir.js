@@ -25,11 +25,14 @@ Page({
             user:v2,
             reponame:v3,
         })
+<<<<<<< HEAD
         console.log(that.data.filepath)
         console.log(that.data.user)
         console.log(that.data.reponame)
         // var var_token =  wx.getStorageSync('token');
         var var_token = "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";
+=======
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
         wx.request({
             url: 'http://127.0.0.1:5000//GcatServer',
             method:'post',
@@ -39,11 +42,18 @@ Page({
               eventID: 422743326,
               eType: "GetFile",
               eTime: 1459994552.51,
+<<<<<<< HEAD
               edetail:{
                 username:that.data.user,
                 reponame:that.data.reponame,
                 filepath:that.data.filepath,
                 type:"dir"
+=======
+              eDetail:{
+                username:that.data.user,
+                reponame:that.data.reponame,
+                filepath:that.data.filepath
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
               },
             },
             success:function(res){
@@ -54,7 +64,11 @@ Page({
               {
                 if(result[key] === "file")
                 {
+<<<<<<< HEAD
                   filelist.push(key);
+=======
+                  filelist.pus(key);
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
                 }
                 else if(result[key] === "dir")
                 {
@@ -116,6 +130,7 @@ Page({
      */
     onShareAppMessage: function () {
 
+<<<<<<< HEAD
     },
     todir:function(e){
       let item = e.currentTarget.dataset.item;
@@ -129,5 +144,7 @@ Page({
       wx.navigateTo({
         url: '../file/file?item='+item+'&user='+that.data.user+'&reponame'+that.data.reponame,
       })
+=======
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
     }
 })

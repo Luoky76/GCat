@@ -11,9 +11,9 @@ def EventDistributer(gEvent: GEvent) -> GEvent:
         返回对象包含所求信息
     """
     if gEvent.etype == "GetInfo":
-        return GetInfoEventHandler(gEvent)
+        return GetInfoHandler(gEvent)
     elif gEvent.etype == "Recommend":
-        return RecommendEventHandler(gEvent)
+        return RecommendHandler(gEvent)
     elif gEvent.etype == "GetFileList":
         return GetFileListHandler(gEvent)
     elif gEvent.etype == "GetFile":
@@ -28,11 +28,16 @@ def EventDistributer(gEvent: GEvent) -> GEvent:
         return FollowHandler(gEvent)
     elif gEvent.etype == "DeclineFollow":
         return DeclineFollowHandler(gEvent)
+<<<<<<< HEAD
     elif gEvent.etype == "CreateRepo":
         return Create_repoEventHandler(gEvent)
+=======
+    elif gEvent.etype == "ChangeUserInfo":
+        return ChangeUserInfoHandler(gEvent)
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
 
 
-def GetInfoEventHandler(gEvent: GEvent) -> GEvent:
+def GetInfoHandler(gEvent: GEvent) -> GEvent:
     """
         返回对象.eDetail["信息"]=所求信息
     """
@@ -47,7 +52,7 @@ def GetInfoEventHandler(gEvent: GEvent) -> GEvent:
     return gEvent
 
 
-def RecommendEventHandler(gEvent: GEvent) -> GEvent:
+def RecommendHandler(gEvent: GEvent) -> GEvent:
     """
         返回对象.eDtail=推荐仓库列表
     """
@@ -59,14 +64,22 @@ def RecommendEventHandler(gEvent: GEvent) -> GEvent:
 
 def GetFileListHandler(gEvent: GEvent) -> GEvent:
     res = userinfo.getRepoContent(
+<<<<<<< HEAD
         gEvent.edetail["username"], gEvent.edetail["reponame"], gEvent.token)
+=======
+        gEvent.edetail["username"], gEvent.edetail["reponame"], gEvent.etype)
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
     gEvent.edetail = res
     return gEvent
 
-
 def GetFileHandler(gEvent: GEvent) -> GEvent:
+<<<<<<< HEAD
     res = userinfo.getRepoContentDetail(
         gEvent.edetail["username"], gEvent.edetail["reponame"], gEvent.edetail["filepath"], gEvent.edetail["type"], gEvent.token)
+=======
+    res = userinfo.getRepoContent(
+        gEvent.edetail["username"], gEvent.edetail["reponame"], gEvent.edetail["filepath"], gEvent.edetail["type"], gEvent.etype)
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
     gEvent.edetail = res
     return gEvent
 
@@ -110,7 +123,41 @@ def DeclineFollowHandler(gEvent: GEvent) -> GEvent:
         gEvent.edetail = "failed"
     return gEvent
 
+<<<<<<< HEAD
 def Create_repoEventHandler(gEvent: GEvent) -> GEvent:
     if GitHubOperator.create_repo(gEvent.edetail["reponame"], gEvent.edetail["file_dict"], gEvent.token):
         gEvent.edetail = "success"
+=======
+def ChangeUserInfoHandler(gEvent: GEvent) -> GEvent:
+    if "follow" in gEvent.edetail:
+        if GitHubOperator.follower(gEvent.edetail["follow"], gEvent.token):
+            gEvent.edetail["follow"] = "success"
+        else:
+            gEvent.edetail["follow"] = "error"
+
+    if "declineFollow" in gEvent.edetail:
+        if GitHubOperator.declineFollower(gEvent.edetail["declineFollow"], gEvent.token):
+            gEvent.edetail["declineFollow"] = "success"
+        else:
+            gEvent.edetail["declineFollow"] = "error"
+
+    if "star" in gEvent.edetail:
+        if GitHubOperator.declineStar(gEvent.edetail["star"], gEvent.token):
+            gEvent.edetail["star"] = "success"
+        else:
+            gEvent.edetail["star"] = "error"
+
+    if "declineStar" in gEvent.edetail:
+        if GitHubOperator.declineStar(gEvent.edetail["declineStar"], gEvent.token):
+            gEvent.edetail["declineStar"] = "success"
+        else:
+            gEvent.edetail["declineStar"] = "error"
+
+    if "checkStar" in gEvent.edetail:
+        if GitHubOperator.checkstar(gEvent.edetail["checkStar"], gEvent.token):
+            gEvent.edetail["checkStar"] = "yes"
+        else:
+            gEvent.edetail["checkStar"] = "no"
+
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
     return gEvent

@@ -55,7 +55,11 @@ Page({
     // })
     var that = this;
     // var var_token =  wx.getStorageSync('token');
+<<<<<<< HEAD
     var var_token = "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";
+=======
+    var var_token = "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";
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
     // var value = options.full_name;
     // console.log(value)
     // that.setData({
@@ -155,7 +159,11 @@ Page({
         eventID: 422743326,
         eType: "GetFileList",
         eTime: 1459994552.51,
+<<<<<<< HEAD
         edetail:{
+=======
+        eDetail:{
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
           username:strs[0],
           reponame:strs[1]
         },
@@ -168,7 +176,11 @@ Page({
         {
           if(result[key] === "file")
           {
+<<<<<<< HEAD
             filelist.push(key);
+=======
+            filelist.pus(key);
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
           }
           else if(result[key] === "dir")
           {
@@ -256,7 +268,11 @@ Page({
   starred:function(){
     var that = this;
     // var var_token =  wx.getStorageSync('token');
+<<<<<<< HEAD
     var var_token = "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";
+=======
+    var var_token = "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";
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
     var type;
     if(this.data.hasstar === "yes")
     {
@@ -302,20 +318,30 @@ Page({
   todir:function(e){
     let item = e.currentTarget.dataset.item;
     var that = this;
+<<<<<<< HEAD
     console.log(item)
     console.log(that.data.user)
     console.log(that.data.reponame)
     wx.navigateTo({
       url: '../dir/dir?item='+item+'&user='+that.data.user+'&reponame='+that.data.reponame,
+=======
+    wx.navigateTo({
+      url: '../dir/dir?item='+item+'&user='+that.data.user+'&reponame'+that.data.reponame,
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
     })
   },
   tofile:function(e){
     let item = e.currentTarget.dataset.item;
+<<<<<<< HEAD
     console.log(item)
     console.log(that.data.user)
     console.log(that.data.reponame)
     wx.navigateTo({
       url: '../file/file?item='+item+'&user='+that.data.user+'&reponame='+that.data.reponame,
+=======
+    wx.navigateTo({
+      url: '../file/file?item='+item+'&user='+that.data.user+'&reponame'+that.data.reponame,
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
     })
   }
 })

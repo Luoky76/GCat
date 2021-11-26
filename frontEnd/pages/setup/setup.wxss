@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 .bg{
     position:fixed;
@@ -8,3 +9,162 @@
     background-size:cover;
     z-index:-1; 
 }
+=======
+.select_box{
+    background: #fff;
+    width: 150%;
+    margin: 30rpx auto;
+    position: relative;
+   }
+   .select{
+    box-sizing: border-box;
+    width: 100%;
+    height: 70rpx;
+    border:1px solid #efefef;
+    border-radius: 8rpx;
+    display: flex;
+    align-items: center;
+    padding: 0 20rpx;
+   }
+   .select_text{
+    font-size: 30rpx;
+    flex: 1;
+   }
+   .select_img_rotate{
+    transform:rotate(180deg); 
+   }
+   .option_box{
+    position: absolute;
+    top: 70rpx;
+    width: 100%;
+    border:1px solid #efefef;
+    box-sizing: border-box;
+    height: 0;
+    overflow-y: auto;
+    border-top: 0;
+    background: #fff;
+    transition: height 0.3s;
+   }
+   .option{
+    display: block;
+    line-height: 40rpx;
+    font-size: 30rpx;
+    border-bottom: 1px solid #efefef;
+    padding: 10rpx;
+   }
+   /* pages/setup/setup.wxss */
+  .hengxian1{
+    width:90%;     
+    height:2rpx;
+    position: absolute; 
+    margin-top: 72%;
+    margin-left: 5%;
+    background:rgb(31, 28, 28);
+    }
+    .hengxian2{
+        width:90%;     
+        height:2rpx;
+        position: absolute; 
+        margin-top: 100%;
+        margin-left: 5%;
+        background:rgb(31, 28, 28);
+        }
+    .bg{
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background-size:cover;
+        z-index:-1; 
+    }
+    .ck{
+        height:1100rpx;
+        margin-top: 8%;
+        margin-left: 10%;
+        margin-right: 10%;
+        border-radius: 50rpx;
+        background-color:rgba(255,255,255,0.81);
+        display: flex;
+        box-shadow:1rpx 4rpx 12rpx rgba(0,0,0,0.4);
+        }
+    .txt1{
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        text-align: center;
+        }
+    .txt2{
+        position: absolute;    
+        margin-top: 5%;
+        margin-left: 2%;
+    }
+    .txt3{
+        position: absolute;    
+        margin-top: 3%;
+        margin-left: 2%;
+    }
+    .input{
+        position: absolute;    
+        margin-top: 18%;
+        margin-left: 2%;
+    }
+    .xiala{
+        position: absolute;    
+        margin-top: 8%;
+        margin-left: 0%;
+    }
+    .ckname{
+        width: 40%;
+        position: absolute;    
+        margin-top: 4%;
+        margin-left: 60%;
+    }
+    .p2{
+        position: absolute; 
+        margin-top: 35%;
+        height: 180rpx;
+    }
+    .p3{
+        position: absolute; 
+        margin-top: 81%;
+    }
+    .p4{
+        position: absolute; 
+        margin-top: 105%;
+        height: 150rpx;
+    }
+    .butt1{
+        margin-left: 0;
+        height: 90rpx;
+        width:80%;
+    }
+    .cancel{
+        width: 25%;
+        position: absolute;    
+        margin-top: 130%;
+        margin-left: 35%;
+        height: 90rpx;
+        background-color: rgb(248, 250, 245);
+        color:darkgrey;
+    }
+    .yes{
+        width: 25%;
+        position: absolute;    
+        margin-top: 130%;
+        margin-left: 65%;
+        height: 90rpx;
+        background-color: rgb(136, 243, 29);
+        color:darkgrey;
+    }
+    .cat{
+        position: absolute; 
+        margin-top: 120%;
+        margin-left: -5%;
+        height: 400rpx;
+        width:350rpx;
+    }
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9

@@ -1,21 +1,29 @@
 // pages/file/file.js
+<<<<<<< HEAD
 var app = getApp()
+=======
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
+<<<<<<< HEAD
         user:"",
         reponame:"",
         filepath:"",
         code:"",
+=======
+
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+<<<<<<< HEAD
         // var that = this;
         // var v1 = options.item;
         // var v2 = options.user;
@@ -57,6 +65,9 @@ Page({
         this.setData({
             code:data,
         })
+=======
+
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
     },
 
     /**
