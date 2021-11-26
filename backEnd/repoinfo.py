@@ -1,9 +1,11 @@
+from typing import Union
 import methods
 from github import Github
 from datetime import datetime
 
 
-def getRepoContent(username, reponame, token) -> dict:
+def getRepoContent(username: str, reponame: str,
+                   token: str) -> dict:
     """ getRepoContent(username, reponame)\n
         获取指定仓库代码文件
         :param username:用户名
@@ -18,7 +20,9 @@ def getRepoContent(username, reponame, token) -> dict:
     return file_dict
 
 
-def getRepoContentDetail(username, reponame, filepath, type, token):
+def getRepoContentDetail(username: str, reponame: str,
+                         filepath: str, type: str, token: str
+                         ) -> Union[str, dict]:
     """ getRepoContentDetail(username, reponame, filepath, type)\n
         获取指定仓库代码文件
         :param username:用户名
@@ -39,7 +43,7 @@ def getRepoContentDetail(username, reponame, filepath, type, token):
         return file_dict
 
 
-def getPullrequet(usrtoken: str, reponame: str):
+def getPullrequet(usrtoken: str, reponame: str) -> dict:
     repo = Github(usrtoken).get_repo(reponame)
     msg = []
     for event in repo.get_events():
