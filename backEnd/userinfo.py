@@ -54,8 +54,6 @@ def getActionList(usrtoken: str,
     return {"count": len(newEventList), "eventList": newEventList}
 
 def getMyRepos(token)->list:
-<<<<<<< HEAD
-=======
     """ getMyRepos(token)\n
         获取指定仓库代码文件
         :param token:用户口令
@@ -80,7 +78,6 @@ def getCollRepos(token)->list:
     return repos
 
 def getStarRepos(token)->list:
->>>>>>> main
     """ getMyRepos(token)\n
         获取指定仓库代码文件
         :param token:用户口令
