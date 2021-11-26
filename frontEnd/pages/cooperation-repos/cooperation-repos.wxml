@@ -4,7 +4,7 @@
   <image class="bg" src="/pages/images/bg.jpg"></image>
 </view>
 <!-- 仓库名称 -->
-<view class="title_font">仓库名</view>
+<view class="title_font">{{full_name}}</view>
 <!-- 收藏按钮 -->
 <view>
   <image class="icon" src="/pages/images/star.png"></image>
@@ -22,25 +22,25 @@
     <view class="main_detail">
       <!-- 仓库头像 -->
       <view>
-        <image class="img" src="/pages/images/logo.png" mode="scaleToFill"></image>
+        <image class="img" src="{{avatar_url}}" mode="scaleToFill"></image>
       </view>
       <!-- 仓库信息 -->
       <view class="right_column">
         <view>
           <image class="detail_icon" src="../images/person.png"></image>
-          <text class="font">User2</text>
+          <text class="font">{{user}}</text>
         </view>
         <view>
           <image class="detail_icon" src="../images/update.png"></image>
-          <text class="font">2021/11/2 15:31:33</text>
+          <text class="font">{{create_time}}</text>
         </view>
         <view>
           <image class="detail_icon" src="../images/eye.png"></image>
-          <text class="font">31</text>
+          <text class="font">{{subscribers_count}}</text>
         </view>
         <view>
           <image class="detail_icon" src="../images/star.png"></image>
-          <text class="font">112</text>
+          <text class="font">{{stargazers_count}}</text>
         </view>
       </view>
     </view>
@@ -50,52 +50,50 @@
     </navigator>
     <!-- README -->
     <button class="readme" style="width:97%">README.md</button>
-    <view class="readme_detail">
-      <text class="font">这里是README.md的内容</text>
-    </view>
+    <scroll-view class="readme_detail" scroll-y>
+      <!-- <rich-text class="rich" nodes="{{readme}}"></rich-text> -->
+      <import src="/towxml/entry.wxml"/>
+      <template is="entry" class="rich" data="{{...readme}}"/>
+      <!-- <text class="font">{{readme}}</text> -->
+    </scroll-view>
   </swiper-item>
   <!-- 合并请求 -->
   <swiper-item>
-    <view class="merge_detail">
+    <view class="merge_detail" wx:for="{{pull_request_list}}">
       <image class="merge_icon" src="../images/commit.png"></image>
       <view class="right_column">
         <view>
-          <text class="merge_font">这里是commit描述\nUser2 2021.10.31</text>
+          <text class="merge_font" >{{item.actor}}</text>
+          <text class="merge_font" >{{item.time}}</text>
         </view>
       </view>
     </view>
   </swiper-item>
   <!-- 代码文件 -->
   <swiper-item>
-    <button class="code1" style="width:97%">
-      <image class="detail_icon" src="../images/allfile.png"></image>file1
+    <button class="code1" style="width:97%" wx:for="{{dir_list}}" data-item="{{item}}" bindtap="todir">
+      <image class="detail_icon" src="../images/allfile.png"></image>{{item}}
     </button>
-    <button class="code2" style="width:97%">
-      <image class="detail_icon" src="../images/file.png"></image>file2
-    </button>
-    <button class="code2" style="width:97%">
-      <image class="detail_icon" src="../images/file.png"></image>file3
-    </button>
-    <button class="code2" style="width:97%">
-      <image class="detail_icon" src="../images/file.png"></image>file4
+    <button class="code2" style="width:97%" wx:for="{{file_list}}" data-="{{item}}" bindtap="tofile">
+      <image class="detail_icon" src="../images/file.png"></image>{{item}}
     </button>
   </swiper-item>
   <!-- 协作者 -->
   <swiper-item>
-    <view class="co_detail">
+    <view class="co_detail" wx:for="{{collaborator_list}}">
       <!-- 头像 -->
       <view>
-        <image class="co_img" src="/pages/images/user.png" mode="scaleToFill"></image>
+        <image class="co_img" src="{{item}}" mode="scaleToFill"></image>
       </view>
       <!-- 信息 -->
       <view class="right_column">
         <view>
           <image class="detail_icon" src="../images/person.png"></image>
-          <text class="font">User2</text>
+          <text class="font">{{item}}</text>
         </view>
         <view>
           <image class="detail_icon" src="../images/update.png"></image>
-          <text class="font">2021/11/2 15:31:33</text>
+          <text class="font">{{item}}</text>
         </view>
       </view>
     </view>

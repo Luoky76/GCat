@@ -28,7 +28,7 @@ Page({
               eventID: 422743326,
               eType: "Recommend",
               eTime: 1459994552.51,
-              eDetail:{},
+              edetail:{},
               token: var_token
           },
           success: function(res) {

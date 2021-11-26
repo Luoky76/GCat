@@ -66,7 +66,7 @@ def getRepoContent(username, reponame, token) -> dict:
 
 
 def getRepoContentDetail(username, reponame, filepath, type, token) -> Any:
-    """ getRepoContentDetail(username, reponame, filepath, type)\n
+    """ getRepoContentDetail(username, reponame, filepath, type, token)\n
         获取指定仓库代码文件
         :param username:用户名
         :param reponame:仓库名
@@ -85,5 +85,20 @@ def getRepoContentDetail(username, reponame, filepath, type, token) -> Any:
             file_dict[in_content.name] = in_content.type
         return file_dict
 
+def getMyRepos(token)->list:
+    """ getMyRepos(token)\n
+        获取指定仓库代码文件
+        :param token:用户口令
+        :return:返回一个列表
+    """
+    user = Github(token).get_user()
+    repos = []
+    for repo in user.get_repos(type = "owner"):
+        repos.append(repo.url)
+    return repos
+
 if __name__ == '__main__':
-    print(getRepoContent("sindresorhus", "awesome", "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"))
+    # g = Github("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")
+    # for repo in g.get_user().get_repos(type = "owner"):
+    #     print(repo.full_name)
+    print(getMyRepos("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"))

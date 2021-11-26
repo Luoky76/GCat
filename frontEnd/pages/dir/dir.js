@@ -39,7 +39,7 @@ Page({
               eventID: 422743326,
               eType: "GetFile",
               eTime: 1459994552.51,
-              eDetail:{
+              edetail:{
                 username:that.data.user,
                 reponame:that.data.reponame,
                 filepath:that.data.filepath,

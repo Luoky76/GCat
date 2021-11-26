@@ -84,7 +84,7 @@ class RepositoryRcmd():
             for each_word in each_md:
                 cnt = 0
                 for repo in g.search_repositories(each_word, "stars", "desc"):
-                    if cnt == 9:
+                    if cnt == 2:
                         break
                     cnt += 1
                     # print(repo.url)

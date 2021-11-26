@@ -5,7 +5,7 @@ class GEvent():
         self.eventid = int(Dict["eventID"])
         self.etype = str(Dict["eType"])
         self.etime = float(Dict["eTime"])
-        self.edetail = dict(Dict["eDetail"])
+        self.edetail = dict(Dict["edetail"])
 
     def toJson(self) -> dict:
         """ 将获得GEvent类的dict形式"""

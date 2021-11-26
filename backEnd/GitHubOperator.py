@@ -93,14 +93,39 @@ def checkstar(repoID:str, token) -> bool:
 def getissue(repoID:str):
     return
 
-def create_repo(repoID) -> str:
+def create_repo(repoID:str ,file_dict:dict, token) -> bool:
     """创建仓库"""
-    pass
+    g = Github(token)
+    user = g.get_user()
+    repo = user.create_repo(repoID)
+    for source_repo_name in file_dict.keys():
+        source_repo = g.get_repo(source_repo_name)
+        for item in file_dict[source_repo_name]:
+            content = source_repo.get_contents(item)
+            repo.create_file(content.path, "初始化", content.decoded_content)
+    return True
 
 if __name__ == '__main__':
-    g = Github("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")
-    repo = g.get_repo("sindresorhus/awesome")
-    print(type(repo))
-    print(type(repo.get_issue(1)))
-    print(repo.get_issues().title)
+    # g = Github("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")
+    # repo = g.get_repo("sindresorhus/awesome")
+    # print(type(repo))
+    # print(type(repo.get_issue(1)))
+    # print(repo.get_issue(1).title)
+    # print(repo.get_issue(1).user)
+    # pass
+    # g = Github("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")
+    # source_repo = g.get_repo("ShakingSH/CPP_Test")
+    # content = source_repo.get_contents("test.c")
+    # # print(type(content))
+    # # print(content.path)
+    # repo = g.get_repo("ShakingSH/10.26test")
+    # repo.create_file(content.path, "初始化", content.decoded_content)
+    # create_repo("createtest4", {"ShakingSH/CPP_Test":["test.c", "test2.cpp", "code_test.cpp"]}, "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")
+    # g = Github("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")
+    # user = g.get_user()
+    # repo = user.create_repo("createtest7")
+    # file_list = ["ShakingSH/CPP_Test/test.c", "ShakingSH/CPP_Test/test2.cpp", "ShakingSH/CPP_Test/code_test.cpp"]
+    # for path in file_list:
+    #     content = repo.get_contents(path)
+    #     repo.create_file(content.path, "初始化", content.decoded_content)
     pass

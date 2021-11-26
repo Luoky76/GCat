@@ -36,7 +36,7 @@ Page({
         //       eventID: 422743326,
         //       eType: "GetFile",
         //       eTime: 1459994552.51,
-        //       eDetail:{
+        //       edetail:{
         //         username:that.data.user,
         //         reponame:that.data.reponame,
         //         filepath:that.data.filepath,
@@ -52,7 +52,7 @@ Page({
         //     }
         //   })
         var test = "from flask import Flask, request, jsonify\nfrom gevent import GEvent\nfrom handlers import EventDistributer\n\napp = Flask(__name__)\n\n\n@app.route('/GcatServer', methods=['POST', 'GET'])\ndef main():\n    gEvent = GEvent(dict(request.get_json()))  # \xe6\x8f\x90\xe5\x8f\x96\xe6\x8a\xa5\xe6\x96\x87GEvent\xe4\xbf\xa1\xe6\x81\xaf\n    gEvent = EventDistributer(gEvent)  # \xe5\x88\x86\xe5\x8f\x91\xe8\x8e\xb7\xe5\x8f\x96\xe9\x9c\x80\xe6\xb1\x82\xe5\x86\x85\xe5\xae\xb9\n    return jsonify(gEvent.toJson())  # \xe8\xbf\x94\xe5\x9b\x9ejson\xe6\x8a\xa5\xe6\x96\x87\n\n\nif __name__ == '__main__':\n    # \xe5\xa4\x9a\xe7\xba\xbf\xe7\xa8\x8b\xe5\x90\xaf\xe5\x8a\xa8\xe5\x90\x8e\xe7\xab\xaf\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\n    app.run(debug=True, threaded=True)\n"
-        let data = app.towxml.toJson(test,'html');
+        let data = app.towxml.toJson(test,'markdown');
         console.log(data);
         this.setData({
             code:data,

@@ -28,6 +28,8 @@ def EventDistributer(gEvent: GEvent) -> GEvent:
         return FollowHandler(gEvent)
     elif gEvent.etype == "DeclineFollow":
         return DeclineFollowHandler(gEvent)
+    elif gEvent.etype == "CreateRepo":
+        return Create_repoEventHandler(gEvent)
 
 
 def GetInfoEventHandler(gEvent: GEvent) -> GEvent:
@@ -40,6 +42,8 @@ def GetInfoEventHandler(gEvent: GEvent) -> GEvent:
     if "newRepos" in gEvent.edetail:
         gEvent.edetail["newRepos"] = userinfo.getNewRepository(
             gEvent.token, gEvent.etime)
+    if "myrepos" in gEvent.edetail:
+        gEvent.edetail["myrepos"] = userinfo.getMyRepos(gEvent.token)
     return gEvent
 
 
@@ -104,4 +108,9 @@ def DeclineFollowHandler(gEvent: GEvent) -> GEvent:
         gEvent.edetail = "success"
     else:
         gEvent.edetail = "failed"
+    return gEvent
+
+def Create_repoEventHandler(gEvent: GEvent) -> GEvent:
+    if GitHubOperator.create_repo(gEvent.edetail["reponame"], gEvent.edetail["file_dict"], gEvent.token):
+        gEvent.edetail = "success"
     return gEvent

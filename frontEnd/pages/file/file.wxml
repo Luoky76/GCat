@@ -3,4 +3,4 @@
   <image class="bg" src="/pages/images/bg.jpg"></image>
 </view>
 <import src="/towxml/entry.wxml"/>
-<template is="entry" class="rich" data="{{...readme}}"/>
+<template is="entry" class="rich" data="{{...code}}"/>

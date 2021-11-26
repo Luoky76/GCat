@@ -55,7 +55,7 @@ Page({
     // })
     var that = this;
     // var var_token =  wx.getStorageSync('token');
-    var var_token = "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";
+    var var_token = "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";
     // var value = options.full_name;
     // console.log(value)
     // that.setData({
@@ -87,7 +87,7 @@ Page({
         eventID: 422743326,
         eType: "CheckStar",
         eTime: 1459994552.51,
-        eDetail:{
+        edetail:{
           full_name:that.data.full_name
         },
       },
@@ -155,7 +155,7 @@ Page({
         eventID: 422743326,
         eType: "GetFileList",
         eTime: 1459994552.51,
-        eDetail:{
+        edetail:{
           username:strs[0],
           reponame:strs[1]
         },
@@ -256,7 +256,7 @@ Page({
   starred:function(){
     var that = this;
     // var var_token =  wx.getStorageSync('token');
-    var var_token = "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";
+    var var_token = "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";
     var type;
     if(this.data.hasstar === "yes")
     {
@@ -281,7 +281,7 @@ Page({
         eventID: 422743326,
         eType: type,
         eTime: 1459994552.51,
-        eDetail:{
+        edetail:{
           full_name:that.data.full_name
         },
       },
