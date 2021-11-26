@@ -14,9 +14,9 @@ def EventDistributer(gEvent: GEvent) -> GEvent:
         返回对象包含所求信息
     """
     if gEvent.etype == "GetInfo":
-        return GetInfoEventHandler(gEvent)
+        return GetInfoHandler(gEvent)
     elif gEvent.etype == "Recommend":
-        return RecommendEventHandler(gEvent)
+        return RecommendHandler(gEvent)
     elif gEvent.etype == "GetFileList":
         return GetFileListHandler(gEvent)
     elif gEvent.etype == "GetFile":
@@ -33,9 +33,12 @@ def EventDistributer(gEvent: GEvent) -> GEvent:
         return DeclineFollowHandler(gEvent)
     elif gEvent.etype == "GetRepoInfo":
         return GetRepoInfoHandler(gEvent)
+    elif gEvent.etype == "CreateRepo":
+        return Create_repoEventHandler(gEvent)
 
 
-def GetInfoEventHandler(gEvent: GEvent) -> GEvent:
+
+def GetInfoHandler(gEvent: GEvent) -> GEvent:
     """
         返回对象.eDetail["信息"]=所求信息
     """
@@ -60,18 +63,18 @@ def GetInfoEventHandler(gEvent: GEvent) -> GEvent:
         else:
             gEvent.edetail["newEvents"] = userinfo.getActionList(
                 gEvent.token, timefrom)
-
     if "newRepos" in gEvent.edetail:
         if gEvent.edetail["newRepos"] != None:
             timefrom = gEvent.edetail["newRepos"]["time"]
 
         gEvent.edetail["newRepos"] = userinfo.getNewRepository(
             gEvent.token, timefrom)
-
+    if "myrepos" in gEvent.edetail:
+        gEvent.edetail["myrepos"] = userinfo.getMyRepos(gEvent.token)
     return gEvent
 
 
-def RecommendEventHandler(gEvent: GEvent) -> GEvent:
+def RecommendHandler(gEvent: GEvent) -> GEvent:
     """
         返回对象.eDtail=推荐仓库列表
     """
@@ -86,7 +89,6 @@ def GetFileListHandler(gEvent: GEvent) -> GEvent:
         gEvent.edetail["username"], gEvent.edetail["reponame"], gEvent.token)
     gEvent.edetail = res
     return gEvent
-
 
 def GetFileHandler(gEvent: GEvent) -> GEvent:
     res = repoinfo.getRepoContentDetail(
@@ -134,7 +136,6 @@ def DeclineFollowHandler(gEvent: GEvent) -> GEvent:
         gEvent.edetail = "failed"
     return gEvent
 
-
 def GetRepoInfoHandler(gEvent: GEvent):
     if "pull_request_list" in gEvent.edetail:
         gEvent.edetail["pull_request_list"] = repoinfo.getPullrequet(
@@ -144,3 +145,9 @@ def GetRepoInfoHandler(gEvent: GEvent):
             gEvent.token, gEvent.edetail["full_name"])
 
     return gEvent
+
+def Create_repoEventHandler(gEvent: GEvent) -> GEvent:
+    if GitHubOperator.create_repo(gEvent.edetail["reponame"], gEvent.edetail["file_dict"], gEvent.token):
+        gEvent.edetail = "success"
+    return gEvent
+

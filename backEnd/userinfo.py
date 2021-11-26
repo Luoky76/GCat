@@ -51,5 +51,22 @@ def getActionList(usrtoken: str,
                         newEventList.append(action)
 
     newEventList.sort(key=lambda e: e["Time"], reverse=True)
-
     return {"count": len(newEventList), "eventList": newEventList}
+
+def getMyRepos(token)->list:
+    """ getMyRepos(token)\n
+        获取指定仓库代码文件
+        :param token:用户口令
+        :return:返回一个列表
+    """
+    user = Github(token).get_user()
+    repos = []
+    for repo in user.get_repos(type = "owner"):
+        repos.append(repo.url)
+    return repos
+
+if __name__ == '__main__':
+    # g = Github("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")
+    # for repo in g.get_user().get_repos(type = "owner"):
+    #     print(repo.full_name)
+    print(getMyRepos("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"))
