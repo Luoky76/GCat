@@ -4,41 +4,8 @@ import requests
 import time
 from github.Repository import Repository
 
-# g = Github('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')
-# username = 'fireflylxx'
 
-# user = g.get_user()
-# Actions = ('follow', 'declineFollow', 'star', 'declineStar')
-# creat_type = ('CreatRepo', 'DropRepo')
-#
-# repo = user.get_repos()
-# following = user.get_following()
-# star = user.get_starred()
-# print(type(g.get_repo("Luoky76/GCat")))
-# print(type(user))
-# user.add_to_starred(g.get_repo("Luoky76/GCat"))
-# user.create_repo("new-test")
-# user.add_to_starred(g.get_repo("Luoky76/GCat"))
-# FollowReposApi = 'https:api.github.com/users/{}/followers'
-# StarReposApi = 'https:api.github.com/users/{}/starred'
-# ReposApi = 'https:api.github.com/users/{}/repos'
-#
-# data = {
-#     "eventID": 422743327,
-#     "userID": "fireflylxx",
-#     "userToken": "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",
-#     "eType": "ChangeUserInfo",
-#     "eDetail": {
-#         "follow": "fireflylxx",
-#         "declineFollow": "ShakingSH",
-#         "star": "Luoky76/Gcat",
-#         "declineStar": "Luoky76/GCatDoc"
-#     },
-#     "eTime": 125599946663.62
-# }
-
-
-def follower(otheruserID:str, token) -> bool:
+def follower(otheruserID: str, token) -> bool:
     """获取用户关注"""
     g = Github(token)
     user = g.get_user()
@@ -49,7 +16,7 @@ def follower(otheruserID:str, token) -> bool:
         return True
 
 
-def declineFollower(otheruserID:str, token) -> bool:
+def declineFollower(otheruserID: str, token) -> bool:
     """取消用户关注"""
     g = Github(token)
     user = g.get_user()
@@ -60,7 +27,7 @@ def declineFollower(otheruserID:str, token) -> bool:
         return False
 
 
-def star(repoID:str, token) -> bool:
+def star(repoID: str, token) -> bool:
     """收藏"""
     g = Github(token)
     user = g.get_user()
@@ -71,7 +38,7 @@ def star(repoID:str, token) -> bool:
         return True
 
 
-def declineStar(repoID:str, token) -> bool:
+def declineStar(repoID: str, token) -> bool:
     """取关"""
     g = Github(token)
     user = g.get_user()
@@ -81,7 +48,8 @@ def declineStar(repoID:str, token) -> bool:
     else:
         return False
 
-def checkstar(repoID:str, token) -> bool:
+
+def checkstar(repoID: str, token) -> bool:
     """收藏"""
     g = Github(token)
     user = g.get_user()
@@ -90,17 +58,11 @@ def checkstar(repoID:str, token) -> bool:
     else:
         return False
 
-def getissue(repoID:str):
+
+def getissue(repoID: str):
     return
+
 
 def create_repo(repoID) -> str:
     """创建仓库"""
-    pass
-
-if __name__ == '__main__':
-    g = Github("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")
-    repo = g.get_repo("sindresorhus/awesome")
-    print(type(repo))
-    print(type(repo.get_issue(1)))
-    print(repo.get_issues().title)
     pass
