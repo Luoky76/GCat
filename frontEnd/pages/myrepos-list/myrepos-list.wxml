@@ -7,7 +7,7 @@
 
 <view class="BT">
 <button class="recommend1" wx:for="{{repo}}" data-full_name="{{item.full_name}}" bindtap="torepo">   
- <text style="font-size:12px">{{item.full_name}}\n{{item.language}} {{item.star}}</text>
+ <text style="font-size:12px">{{item.full_name}}\nlanguage{{item.language}} 收藏数{{item.star}}</text>
 </button>
 </view>
 </view>

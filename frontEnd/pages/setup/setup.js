@@ -1,5 +1,4 @@
 Page({
-<<<<<<< HEAD
 
   /**
    * 页面的初始数据
@@ -33,8 +32,8 @@ Page({
       path_dict:path
     })
     var that = this;
-    // var var_token =  wx.getStorageSync('token');
-    var var_token = "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";
+    var var_token =  wx.getStorageSync('token');
+    // var var_token = "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";
     wx.request({
       url: 'http://127.0.0.1:5000//GcatServer',
       method:'post',
@@ -117,55 +116,3 @@ Page({
 
   },
 })
-=======
- 
-  data: {
-  show:false,//控制下拉列表的显示隐藏，false隐藏、true显示
-  List1:['user1','user2','user3','user4'],//下拉列表的数据
-  List2:['public','private'],
-  index:0,//选择的下拉列表下标
-  nub:0
-  },
-  // 点击下拉显示框
-  selectTap(){
-  this.setData({
-   show: !this.data.show
-  });
-  },
-  // 点击下拉列表
-  optionTap(e){
-  let Index=e.currentTarget.dataset.index;//获取点击的下拉列表的下标
-  this.setData({
-   index:Index,
-   show:!this.data.show
-  });
-  },
-
-  onLoad: function (options) {
-   
-  },
-  
-  bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      nub: e.detail.value
-    })
-  },
-  bindButtonTap:function(){
-    this.setData({
-      focus:true
-    })
-  },
-  bindKeyInput:function(e){
-    this.setData({
-      inputValue:e.detail.value
-    })
-  },
-  bindHideKeyboard:function(e){
-    if(e.detail.value === "close"){
-      //收起键盘
-      wx.hideKeyboard();
-    }
-  }
- })
->>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9

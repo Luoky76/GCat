@@ -83,17 +83,13 @@
     <view class="co_detail" wx:for="{{collaborator_list}}">
       <!-- 头像 -->
       <view>
-        <image class="co_img" src="{{item}}" mode="scaleToFill"></image>
+        <image class="co_img" src="{{item.avatar}}" mode="scaleToFill"></image>
       </view>
       <!-- 信息 -->
       <view class="right_column">
         <view>
           <image class="detail_icon" src="../images/person.png"></image>
-          <text class="font">{{item}}</text>
-        </view>
-        <view>
-          <image class="detail_icon" src="../images/update.png"></image>
-          <text class="font">{{item}}</text>
+          <text class="font">{{item.name}}</text>
         </view>
       </view>
     </view>

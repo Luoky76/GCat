@@ -59,6 +59,10 @@ def GetInfoHandler(gEvent: GEvent) -> GEvent:
             gEvent.token, timefrom)
     if "myrepos" in gEvent.edetail:
         gEvent.edetail["myrepos"] = userinfo.getMyRepos(gEvent.token)
+    if "collrepos" in gEvent.edetail:
+        gEvent.edetail["collrepos"] = userinfo.getCollRepos(gEvent.token)
+    if "starrepos" in gEvent.edetail:
+        gEvent.edetail["starrepos"] = userinfo.getStarRepos(gEvent.token)
     return gEvent
 
 
@@ -69,6 +73,7 @@ def RecommendHandler(gEvent: GEvent) -> GEvent:
     g = Github(gEvent.token)
     obj = RepositoryRcmd(g)
     gEvent.edetail = obj.getRcmd(g)
+    print(gEvent.edetail)
     return gEvent
 
 

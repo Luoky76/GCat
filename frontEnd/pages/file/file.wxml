@@ -1,10 +1,6 @@
 <!--pages/file/file.wxml-->
-<<<<<<< HEAD
 <view>
   <image class="bg" src="/pages/images/bg.jpg"></image>
 </view>
 <import src="/towxml/entry.wxml"/>
 <template is="entry" class="rich" data="{{...code}}"/>
-=======
-<text>pages/file/file.wxml</text>
->>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
