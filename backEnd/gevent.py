@@ -9,8 +9,8 @@ class GEvent():
             self.etype = str(Dict["eType"])
         if "eTime" in Dict:
             self.etime = float(Dict["eTime"])
-        if "eDetail" in Dict:
-            self.edetail = dict(Dict["eDetail"])
+        if "edetail" in Dict:
+            self.edetail = dict(Dict["edetail"])
 
     def toJson(self) -> dict:
         """ 将获得GEvent类的dict形式"""
@@ -18,6 +18,6 @@ class GEvent():
             "eventID": self.eventid,
             "eType": self.etype,
             "eTime": self.etime,
-            "eDetail": self.edetail
+            "edetail": self.edetail
         }
         return js
