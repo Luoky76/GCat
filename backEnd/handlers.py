@@ -1,7 +1,9 @@
 from gevent import GEvent
 from github import Github
+from datetime import datetime, timedelta
 from reposrcmd import RepositoryRcmd
 import userinfo
+import repoinfo
 import GitHubOperator
 
 
@@ -28,18 +30,32 @@ def EventDistributer(gEvent: GEvent) -> GEvent:
         return FollowHandler(gEvent)
     elif gEvent.etype == "DeclineFollow":
         return DeclineFollowHandler(gEvent)
+    elif gEvent.etype == "GetRepoInfo":
+        return GetRepoInfoHandler(gEvent)
 
 
 def GetInfoEventHandler(gEvent: GEvent) -> GEvent:
     """
         返回对象.eDetail["信息"]=所求信息
     """
+    timefrom = (datetime.now()-timedelta(days=7)).timestamp()
+
     if "newEvents" in gEvent.edetail:
-        gEvent.edetail["newEvents"] = userinfo.getActionList(
-            gEvent.token, gEvent.etime)
+        if gEvent.edetail["newEvents"] != None:
+            if "type" in gEvent.edetail["newEvents"]:
+                typereqest = gEvent.edetail["newEvents"]["type"]
+            if "time" in gEvent.edetail["newEvents"]:
+                timefrom = gEvent.edetail["newEvents"]["time"]
+            gEvent.edetail["newEvents"] = userinfo.getActionList(
+                gEvent.token, timefrom, typereqest)
+        else:
+            gEvent.edetail["newEvents"] = userinfo.getActionList(
+                gEvent.token, timefrom)
+
     if "newRepos" in gEvent.edetail:
         gEvent.edetail["newRepos"] = userinfo.getNewRepository(
-            gEvent.token, gEvent.etime)
+            gEvent.token, timefrom)
+
     return gEvent
 
 
@@ -54,14 +70,14 @@ def RecommendEventHandler(gEvent: GEvent) -> GEvent:
 
 
 def GetFileListHandler(gEvent: GEvent) -> GEvent:
-    res = userinfo.getRepoContent(
+    res = repoinfo.getRepoContent(
         gEvent.edetail["username"], gEvent.edetail["reponame"], gEvent.token)
     gEvent.edetail = res
     return gEvent
 
 
 def GetFileHandler(gEvent: GEvent) -> GEvent:
-    res = userinfo.getRepoContentDetail(
+    res = repoinfo.getRepoContentDetail(
         gEvent.edetail["username"], gEvent.edetail["reponame"], gEvent.edetail["filepath"], gEvent.edetail["type"], gEvent.token)
     gEvent.edetail = res
     return gEvent
@@ -104,4 +120,15 @@ def DeclineFollowHandler(gEvent: GEvent) -> GEvent:
         gEvent.edetail = "success"
     else:
         gEvent.edetail = "failed"
+    return gEvent
+
+
+def GetRepoInfoHandler(gEvent: GEvent):
+    if "pull_request_list" in gEvent.edetail:
+        gEvent.edetail["pull_request_list"] = repoinfo.getPullrequet(
+            gEvent.token, gEvent.edetail["full_name"])
+    if "collaborator_list" in gEvent.edetail:
+        gEvent.edetail["collaborator_list"] = repoinfo.getCollaborator(
+            gEvent.token, gEvent.edetail["full_name"])
+
     return gEvent
