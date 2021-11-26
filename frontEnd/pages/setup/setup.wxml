@@ -4,6 +4,43 @@
 <view>
   <image class="bg" src="/pages/images/bg.jpg"></image>
 </view>
+<<<<<<< HEAD
+<view class="container">
+  <view class="page-body">
+    <form catchsubmit="formSubmit" catchreset="formReset">
+
+      <view class="page-section">
+        <view class="page-section-title">新建仓库名</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd" style="margin: 30rpx 0" >
+              <input class="weui-input" name="repo" placeholder="请输入" />
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="page-section">
+        <view class="page-section-title">初始化导入的文件路径</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd" style="margin: 30rpx 0" >
+              <input class="weui-input" name="input" placeholder="请输入" />
+              <text>请按照格式输入:"仓库的full_name:仓库文件路径,仓库文件路径;仓库的full_name:仓库文件路径,仓库文件路径"</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="btn-area">
+        <button style="margin: 30rpx 0" type="primary" formType="submit">确定</button>
+        <button style="margin: 30rpx 0" formType="reset">重置</button>
+      </view>
+    </form>
+  </view>
+
+</view>
+=======
 <view class="txt1">新建仓库</view>
 
 <view class="txt2">用户名</view>
@@ -55,3 +92,4 @@
 <button class="yes">
 <text>确认</text>
 </button>
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9

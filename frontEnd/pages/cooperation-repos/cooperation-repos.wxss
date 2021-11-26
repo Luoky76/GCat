@@ -1,5 +1,64 @@
+@import '/towxml/style/main.wxss';
+/**如果页面有动态主题切换，则需要将使用到的样式全部引入**/
+/**主题配色（浅色样式）**/
+@import '/towxml/style/theme/light.wxss';
+/**主题配色（深色样式）**/
+@import '/towxml/style/theme/dark.wxss';
 /* pages/cooperation-repos/cooperation-repos.wxss */
-/* 页面背景 */
+
+
+/* 合并请求框 */
+.merge_detail {
+  width: 98%;
+  height: 160rpx;
+  margin-top: 4%;
+  margin-left: 1%;
+  margin-right: 1%;
+  border-radius: 30rpx;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: row;
+  box-shadow: 1rpx 4rpx 12rpx rgba(0, 0, 0, 0.4);
+}
+
+/* 合并图标 */
+.merge_icon {
+  margin-top: 5%;
+  margin-left: 4%;
+  width: 90rpx;
+  height: 90rpx;
+}
+
+/* 合并信息的字体 */
+.merge_font {
+  font-size: 30rpx;
+  color: #CE6C25;
+}
+
+/* 协作者框 */
+.co_detail {
+  width: 98%;
+  height: 150rpx;
+  margin-top: 4%;
+  margin-left: 1%;
+  margin-right: 1%;
+  border-bottom-right-radius: 10%;
+  border-top-left-radius: 10%;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: row;
+  box-shadow: 1rpx 4rpx 12rpx rgba(0, 0, 0, 0.4);
+}
+
+/* 协作者头像 */
+.co_img {
+  height: 120rpx;
+  width: 120rpx;
+  margin-top: 14%;
+  margin-left: 25%;
+  border-radius: 50%;
+  background-color: white;
+}
 .bg {
   position: fixed;
   top: 0;
@@ -81,7 +140,7 @@
   display: flex;
   flex-direction: column;
   margin-left: 6%;
-  margin-top: 5%;
+  margin-top: 0;
 }
 
 /* 用户信息字体 */
@@ -89,6 +148,7 @@
   position: absolute;
   font-size: 30rpx;
   margin-left: 1%;
+  margin-top: 1%;
   color: #CE6C25;
 }
 
@@ -96,10 +156,9 @@
 .comment {
   margin-top: 3%;
   background-color: rgba(247, 180, 184, 0.66);
-  color: rgba(255, 255, 255, 0.85);
+  color: white;
   box-shadow: 1rpx 4rpx 2rpx rgba(234, 210, 122, 0.4);
   font-size: 35rpx;
-  font-weight: bold;
 }
 
 /* readme框 */
@@ -122,12 +181,13 @@
   background-color: rgba(255, 255, 255, 0.81);
   display: flex;
   box-shadow: 1rpx 4rpx 12rpx rgba(0, 0, 0, 0.4);
+  overflow: hidden;
 }
 
 /* 代码文件 */
 .code1 {
   margin-top: 4%;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.9);
   color: #463b34af;
   border-radius: 25rpx;
   box-shadow: 1rpx 4rpx 10rpx rgba(0, 0, 0, 0.4);
@@ -136,62 +196,9 @@
 
 .code2 {
   margin-top: 2%;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.9);
   color: #463b34af;
   border-radius: 25rpx;
   box-shadow: 1rpx 4rpx 10rpx rgba(0, 0, 0, 0.4);
   font-size: 30rpx;
-}
-
-/* 合并请求框 */
-.merge_detail {
-  width: 98%;
-  height: 160rpx;
-  margin-top: 4%;
-  margin-left: 1%;
-  margin-right: 1%;
-  border-radius: 30rpx;
-  background-color: rgba(255, 255, 255, 0.6);
-  display: flex;
-  flex-direction: row;
-  box-shadow: 1rpx 4rpx 12rpx rgba(0, 0, 0, 0.4);
-}
-
-/* 合并图标 */
-.merge_icon {
-  margin-top: 5%;
-  margin-left: 4%;
-  width: 90rpx;
-  height: 90rpx;
-}
-
-/* 合并信息的字体 */
-.merge_font {
-  font-size: 30rpx;
-  color: #CE6C25;
-}
-
-/* 协作者框 */
-.co_detail {
-  width: 98%;
-  height: 150rpx;
-  margin-top: 4%;
-  margin-left: 1%;
-  margin-right: 1%;
-  border-bottom-right-radius: 10%;
-  border-top-left-radius: 10%;
-  background-color: rgba(255, 255, 255, 0.6);
-  display: flex;
-  flex-direction: row;
-  box-shadow: 1rpx 4rpx 12rpx rgba(0, 0, 0, 0.4);
-}
-
-/* 协作者头像 */
-.co_img {
-  height: 120rpx;
-  width: 120rpx;
-  margin-top: 14%;
-  margin-left: 25%;
-  border-radius: 50%;
-  background-color: white;
 }

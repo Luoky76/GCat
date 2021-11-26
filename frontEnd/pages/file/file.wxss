@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 /* pages/file/file.wxss */
+/**基础风格样式**/
+@import '/towxml/style/main.wxss';
+/**如果页面有动态主题切换，则需要将使用到的样式全部引入**/
+/**主题配色（浅色样式）**/
+@import '/towxml/style/theme/light.wxss';
+/**主题配色（深色样式）**/
+@import '/towxml/style/theme/dark.wxss';
 .bg {
     position: fixed;
     top: 0;
@@ -8,3 +16,6 @@
     background-size: cover;
     z-index: -1;
   }
+=======
+/* pages/file/file.wxss */
+>>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
