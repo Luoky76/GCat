@@ -43,8 +43,11 @@ def GetInfoEventHandler(gEvent: GEvent) -> GEvent:
     if "newEvents" in gEvent.edetail:
         if gEvent.edetail["newEvents"] != None:
             if "type" in gEvent.edetail["newEvents"]:
-                gEvent.edetail["newEvents"] = userinfo.getActionList(
-                    gEvent.token, timefrom, gEvent.edetail["newEvents"]["type"])
+                typereqest = gEvent.edetail["newEvents"]["type"]
+            if "time" in gEvent.edetail["newEvents"]:
+                timefrom = gEvent.edetail["newEvents"]["time"]
+            gEvent.edetail["newEvents"] = userinfo.getActionList(
+                gEvent.token, timefrom, typereqest)
         else:
             gEvent.edetail["newEvents"] = userinfo.getActionList(
                 gEvent.token, timefrom)
