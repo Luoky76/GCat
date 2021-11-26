@@ -117,13 +117,14 @@ Page({
       let item = e.currentTarget.dataset.item;
       var that = this;
       wx.navigateTo({
-        url: '../dir/dir?item='+item+'&user='+that.data.user+'&reponame'+that.data.reponame,
+        url: '../dir/dir?item='+item+'&user='+that.data.user+'&reponame='+that.data.reponame,
       })
     },
     tofile:function(e){
       let item = e.currentTarget.dataset.item;
+      var that = this;
       wx.navigateTo({
-        url: '../file/file?item='+item+'&user='+that.data.user+'&reponame'+that.data.reponame,
+        url: '../file/file?item='+item+'&user='+that.data.user+'&reponame='+that.data.reponame,
       })
     }
 })

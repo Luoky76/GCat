@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/login/login",
+    "pages/message/message",
     "pages/personal/personal",
     "pages/file/file",
     "pages/cooperation-repos/cooperation-repos",
@@ -11,7 +12,6 @@
     "pages/comment/comment",
     "pages/starrepos-list/starrepos-list",
     "pages/recommend/recommend", 
-    "pages/message/message",
     "pages/myrepos-list/myrepos-list",
     "pages/cooperationrepos-list/cooperationrepos-list",
     "pages/dir/dir",

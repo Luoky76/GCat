@@ -25,8 +25,8 @@ Page({
             user:v2,
             reponame:v3,
         })
-        // var var_token =  wx.getStorageSync('token');
-        var var_token = "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";
+        var var_token =  wx.getStorageSync('token');
+        // var var_token = "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";
         wx.request({
             url: 'http://127.0.0.1:5000//GcatServer',
             method:'post',

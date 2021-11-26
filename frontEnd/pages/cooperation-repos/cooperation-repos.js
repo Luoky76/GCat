@@ -317,6 +317,7 @@ Page({
   },
   tofile:function(e){
     let item = e.currentTarget.dataset.item;
+    var that = this;
     console.log(item)
     console.log(that.data.user)
     console.log(that.data.reponame)

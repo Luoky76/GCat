@@ -19,85 +19,25 @@
 
 <view class='zhezhao' hidden='{{zhezhao}}'></view>
 
-<view class="user">
+<view class="user" wx:for="{{event_list}}">
     <view>
-      <image class="userinfo-avatar" src="/pages/images/g1.png" mode="scaleToFill"></image>
+      <image class="userinfo-avatar" src="{{item.actor.avatar_url}}" mode="scaleToFill"></image>
     </view>
 
     <view class="setting">
       <image class="icon_size" src="/pages/images/edit.png"></image>
     </view>
-    <text class="font1">第一次提交</text>
+    <text class="font1">{{item["Repo"]["name"]}}</text>
 
     <view class="course" >
       <image class="icon_size" src="/pages/images/个人仓库.png"></image>
     </view>
-    <text class="font2">LYJIA</text>
+    <text class="font2">{{item["actor"]["login"]}}</text>
     <view class="type" ></view>
-    <text class="push" style="color:rgb(247, 149, 92)">push</text>
-    <text class="font3">2021/11/2 14:28:43</text>
-    
-
+    <text class="push" class="font4" style="color:rgb(247, 149, 92)">{{item["Type"]}}</text>
+    <text class="font3">{{item["Time"]}}</text>
+</view>
 </view>
 
-<view class="user2">
-    <!-- 用户头像 -->
-    <view>
-      <image class="userinfo-avatar" src="/pages/images/g2.png" mode="scaleToFill"></image>
-    </view>
 
-    <view class="setting">
-      <image class="icon_size" src="/pages/images/edit.png"></image>
-    </view>
-    <text class="font1">第一次提交</text>
 
-    <view class="course" >
-      <image class="icon_size" src="/pages/images/个人仓库.png"></image>
-    </view>
-    <text class="font2">LYJIA</text>
-    <view class="type" ></view>
-    <text class="push" style="color:rgb(35, 65, 32)">merge</text>
-    <text class="font3">2021/11/2 14:28:43</text>
-</view>
-
-<view class="user3">
-    <!-- 用户头像 -->
-    <view>
-      <image class="userinfo-avatar" src="/pages/images/b.png" mode="scaleToFill"></image>
-    </view>
-
-    <view class="setting">
-      <image class="icon_size" src="/pages/images/edit.png"></image>
-    </view>
-    <text class="font1">第一次提交</text>
-
-    <view class="course" >
-      <image class="icon_size" src="/pages/images/个人仓库.png"></image>
-    </view>
-    <text class="font2">LYJIA</text>
-    <view class="type" ></view>
-    <text class="push" style="color:rgb(247, 149, 92)">push</text>
-    <text class="font3">2021/11/2 14:28:43</text>
-</view>
-
-<view class="user4">
-    <!-- 用户头像 -->
-    <view>
-      <image class="userinfo-avatar" src="/pages/images/b1.png" mode="scaleToFill"></image>
-    </view>
-
-    <view class="setting">
-      <image class="icon_size" src="/pages/images/edit.png"></image>
-    </view>
-    <text class="font1">第一次提交</text>
-
-    <view class="course" >
-      <image class="icon_size" src="/pages/images/个人仓库.png"></image>
-    </view>
-    <text class="font2">LYJIA</text>
-    <view class="type" ></view>
-    <text class="push" style="color:rgb(35, 65, 32)">merge</text>
-    <text class="font3">2021/11/2 14:28:43</text>
-</view>
-
-</view>

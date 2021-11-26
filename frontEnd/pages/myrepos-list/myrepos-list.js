@@ -24,7 +24,7 @@ Page({
       var that = this;
       // var var_token =  wx.getStorageSync('token');
       var var_token = "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";
-       wx.request({
+      wx.request({
           url: 'http://127.0.0.1:5000//GcatServer',
           method:'post',
           dataType:"json",

@@ -95,14 +95,20 @@
 
   .font2{
     margin-top: 6.5%;
-    margin-left: 2%;
+    margin-left: 0%;
+    font-size:30rpx;
+    color:chocolate;
+  }
+  .font4{
+    margin-top: 14%;
+    margin-left: 0%;
     font-size:30rpx;
     color:chocolate;
   }
 
   .font3{
     margin-top: 14%;
-    margin-left: 25%;
+    margin-left: 10%;
     font-size:30rpx;
     color:rgb(102, 102, 102);
   }
