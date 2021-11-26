@@ -8,7 +8,6 @@
     background-size: cover;
     z-index: -1;
   }
-<<<<<<< HEAD
   .detail_icon {
     width: 40rpx;
     height: 40rpx;
@@ -31,6 +30,3 @@
     box-shadow: 1rpx 4rpx 10rpx rgba(0, 0, 0, 0.4);
     font-size: 30rpx;
   }
-=======
->>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
-  

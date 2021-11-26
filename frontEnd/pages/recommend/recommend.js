@@ -18,9 +18,6 @@ Page({
       var var_token =  wx.getStorageSync('token')
       var _this = this;
       wx.request({
-        url: 'url',
-      })
-      wx.request({
           url: 'http://127.0.0.1:5000//GcatServer',
           method:'post',
           dataType:"json",
@@ -33,7 +30,7 @@ Page({
           },
           success: function(res) {
             _this.setData({
-              url_list : res.data.eDetail
+              url_list : res.data.edetail
             });
             console.log(_this.data.url_list);
             var that = _this;

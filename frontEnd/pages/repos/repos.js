@@ -12,8 +12,8 @@ Page({
     winWidth: 0,
     winHeight: 0,
     currentTab: 0,
-    full_name:"sindresorhus/awesome",
-    // full_name:"",
+    // full_name:"sindresorhus/awesome",
+    full_name:"",
     avatar_url:"",
     user:"",
     reponame:"",
@@ -54,17 +54,13 @@ Page({
     //   dir_list:dirlist,
     // })
     var that = this;
-    // var var_token =  wx.getStorageSync('token');
-<<<<<<< HEAD
-    var var_token = "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";
-=======
-    var var_token = "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";
->>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
-    // var value = options.full_name;
-    // console.log(value)
-    // that.setData({
-    //   full_name:value
-    // })
+    var var_token =  wx.getStorageSync('token');
+    // var var_token = "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";
+    var value = options.full_name;
+    console.log(value)
+    that.setData({
+      full_name:value
+    })
     var strs= new Array();
     strs=this.data.full_name.split("/"); 
     that.setData({
@@ -159,11 +155,7 @@ Page({
         eventID: 422743326,
         eType: "GetFileList",
         eTime: 1459994552.51,
-<<<<<<< HEAD
         edetail:{
-=======
-        eDetail:{
->>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
           username:strs[0],
           reponame:strs[1]
         },
@@ -171,16 +163,12 @@ Page({
       success:function(res){
         var dirlist=[]
         var filelist=[]
-        var result = res.data.eDetail
+        var result = res.data.edetail
         for (var key in result)
         {
           if(result[key] === "file")
           {
-<<<<<<< HEAD
             filelist.push(key);
-=======
-            filelist.pus(key);
->>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
           }
           else if(result[key] === "dir")
           {
@@ -267,12 +255,8 @@ Page({
   },
   starred:function(){
     var that = this;
-    // var var_token =  wx.getStorageSync('token');
-<<<<<<< HEAD
-    var var_token = "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";
-=======
-    var var_token = "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";
->>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
+    var var_token =  wx.getStorageSync('token');
+    // var var_token = "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";
     var type;
     if(this.data.hasstar === "yes")
     {
@@ -318,30 +302,21 @@ Page({
   todir:function(e){
     let item = e.currentTarget.dataset.item;
     var that = this;
-<<<<<<< HEAD
     console.log(item)
     console.log(that.data.user)
     console.log(that.data.reponame)
     wx.navigateTo({
       url: '../dir/dir?item='+item+'&user='+that.data.user+'&reponame='+that.data.reponame,
-=======
-    wx.navigateTo({
-      url: '../dir/dir?item='+item+'&user='+that.data.user+'&reponame'+that.data.reponame,
->>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
     })
   },
   tofile:function(e){
     let item = e.currentTarget.dataset.item;
-<<<<<<< HEAD
+    var that = this;
     console.log(item)
     console.log(that.data.user)
     console.log(that.data.reponame)
     wx.navigateTo({
       url: '../file/file?item='+item+'&user='+that.data.user+'&reponame='+that.data.reponame,
-=======
-    wx.navigateTo({
-      url: '../file/file?item='+item+'&user='+that.data.user+'&reponame'+that.data.reponame,
->>>>>>> b8ebabae108a23f3b57e1fc893d447860447c7b9
     })
   }
 })

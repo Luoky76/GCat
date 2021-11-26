@@ -5,8 +5,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-      url_list : ['https://api.github.com/repos/sindresorhus/awesome', 'https://api.github.com/repos/public-apis/public-apis', 'https://api.github.com/repos/github/gitignore', 'https://api.github.com/repos/vinta/awesome-python', 'https://api.github.com/repos/jlevy/the-art-of-command-line'],
-      // url_list:"",
+      // url_list : ['https://api.github.com/repos/sindresorhus/awesome', 'https://api.github.com/repos/public-apis/public-apis', 'https://api.github.com/repos/github/gitignore', 'https://api.github.com/repos/vinta/awesome-python', 'https://api.github.com/repos/jlevy/the-art-of-command-line'],
+      url_list:"",
       repo:[],
     },
     torepo:function(e){
@@ -23,29 +23,50 @@ Page({
     onLoad: function (options) {
       var that = this;
       // var var_token =  wx.getStorageSync('token');
-      var var_token = "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";
-      that.data.url_list.forEach(element => {
-        wx.request({
-          url: element,
-          method:'get',
+      var var_token = "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";
+      wx.request({
+          url: 'http://127.0.0.1:5000//GcatServer',
+          method:'post',
+          dataType:"json",
           data: {
-            token: var_token
+              eventID: 422743326,
+              eType: "GetInfo",
+              eTime: 1459994552.51,
+              edetail:{
+                myrepos:null,
+              },
+              token: var_token
           },
-          success:function(res){
+          success: function(res) {
             console.log(res)
-            that.data.repo.push(
-              {
-                full_name:res.data.full_name,
-                language:res.data.language,
-                star:res.data.stargazers_count,
-                url:res.data.repos_url
-              })
+            var list = res.data.edetail["myrepos"]
             that.setData({
-                repo:that.data.repo
+              url_list:list
             })
+            that.data.url_list.forEach(element => {
+              wx.request({
+                url: element,
+                method:'get',
+                data: {
+                  token: var_token
+                },
+                success:function(res){
+                  console.log(res)
+                  that.data.repo.push(
+                    {
+                      full_name:res.data.full_name,
+                      language:res.data.language,
+                      star:res.data.stargazers_count,
+                      url:res.data.repos_url
+                    })
+                  that.setData({
+                      repo:that.data.repo
+                  })
+                }
+              })
+          })
           }
         })
-    })
     },
 
     /**

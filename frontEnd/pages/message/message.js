@@ -10,6 +10,7 @@ Page({
         sort_hidden: true,
         zhezhao:true,
         dropup_pic_index: true,
+        event_list:[],
         }, 
 
         
@@ -37,7 +38,30 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        var var_token =  wx.getStorageSync('token')
+        // var var_token = "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"
+        var that = this
+        wx.request({
+            url: 'http://127.0.0.1:5000//GcatServer',
+            method:'post',
+            dataType:"json",
+            data: {
+                eventID: 422743326,
+                eType: "GetInfo",
+                eTime: 1459994552.51,
+                edetail:{
+                  newEvents:null,
+                },
+                token: var_token
+            },
+            success: function(res) {
+              console.log(res)
+              var list = res.data.edetail["newEvents"]["eventList"]
+              that.setData({
+                event_list:list
+              })
+            }
+          })
     },
 
     /**

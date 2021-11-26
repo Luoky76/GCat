@@ -16,8 +16,15 @@ class GEvent():
         """ 将获得GEvent类的dict形式"""
         js = {
             "eventID": self.eventid,
+<<<<<<< HEAD
             "eType": self.etype,
             "eTime": self.etime,
             "edetail": self.edetail
+=======
+            "token": self.token,
+            "eType": self.etype,
+            "edetail": self.edetail,
+            "eTime": self.etime
+>>>>>>> main
         }
         return js

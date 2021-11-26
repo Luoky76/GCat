@@ -1,5 +1,4 @@
 // pages/cooperation-repos/cooperation-repos.js
-// pages/repos/repos.js
 var app = getApp()
 Page({
 
@@ -13,8 +12,8 @@ Page({
     winWidth: 0,
     winHeight: 0,
     currentTab: 0,
-    full_name:"sindresorhus/awesome",
-    // full_name:"",
+    // full_name:"sindresorhus/awesome",
+    full_name:"",
     avatar_url:"",
     user:"",
     reponame:"",
@@ -36,34 +35,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var map = {'.editorconfig': 'file', '.gitattributes': 'file', '.github': 'dir', 'awesome.md': 'file', 'code-of-conduct.md': 'file', 'contributing.md': 'file', 'create-list.md': 'file', 'license': 'file', 'media': 'dir', 'pull_request_template.md': 'file', 'readme.md': 'file'};
-    // var dirlist=[]
-    // var filelist=[]
-    // for (var key in map)
-    // {
-    //   if(map[key] === "file")
-    //   {
-    //     filelist.push(key);
-    //   }
-    //   else if(map[key] === "dir")
-    //   {
-    //     dirlist.push(key);
-    //   }
-    // }
-    // console.log(dirlist)
-    // console.log(filelist)
-    // this.setData({
-    //   file_list:filelist,
-    //   dir_list:dirlist,
-    // })
     var that = this;
-    // var var_token =  wx.getStorageSync('token');
-    var var_token = "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";
-    // var value = options.full_name;
-    // console.log(value)
-    // that.setData({
-    //   full_name:value
-    // })
+    var var_token =  wx.getStorageSync('token');
+    // var var_token = "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";
+    var value = options.full_name;
+    console.log(value)
+    that.setData({
+      full_name:value
+    })
     var strs= new Array();
     strs=this.data.full_name.split("/"); 
     that.setData({
@@ -111,9 +90,6 @@ Page({
     wx.request({
       url: 'https://api.github.com/repos/'+that.data.full_name,
       method:'get',
-      // header:{
-      //   "Authorization": "token ghp_16C7e42F292c6912E7710c838347Ae178B4a"
-      // },
       data: {
         token: var_token
       },
@@ -164,9 +140,10 @@ Page({
         },
       },
       success:function(res){
+        console.log(res)
         var dirlist=[]
         var filelist=[]
-        var result = res.data.eDetail
+        var result = res.data.edetail
         for (var key in result)
         {
           if(result[key] === "file")
@@ -284,8 +261,8 @@ Page({
   },
   starred:function(){
     var that = this;
-    // var var_token =  wx.getStorageSync('token');
-    var var_token = "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";
+    var var_token =  wx.getStorageSync('token');
+    // var var_token = "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";
     var type;
     if(this.data.hasstar === "yes")
     {
@@ -340,6 +317,7 @@ Page({
   },
   tofile:function(e){
     let item = e.currentTarget.dataset.item;
+    var that = this;
     console.log(item)
     console.log(that.data.user)
     console.log(that.data.reponame)
