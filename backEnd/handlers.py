@@ -1,3 +1,4 @@
+from userinfo import ACTIONTYPES
 from gevent import GEvent
 from github import Github
 from datetime import datetime, timedelta
@@ -42,12 +43,20 @@ def GetInfoEventHandler(gEvent: GEvent) -> GEvent:
 
     if "newEvents" in gEvent.edetail:
         if gEvent.edetail["newEvents"] != None:
+
             if "type" in gEvent.edetail["newEvents"]:
                 typereqest = gEvent.edetail["newEvents"]["type"]
+            else:
+                typereqest = ACTIONTYPES
+
             if "time" in gEvent.edetail["newEvents"]:
                 timefrom = gEvent.edetail["newEvents"]["time"]
+            else:
+                timefrom = (datetime.now()-timedelta(days=7)).timestamp()
+
             gEvent.edetail["newEvents"] = userinfo.getActionList(
                 gEvent.token, timefrom, typereqest)
+
         else:
             gEvent.edetail["newEvents"] = userinfo.getActionList(
                 gEvent.token, timefrom)
