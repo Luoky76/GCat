@@ -1,28 +1,13 @@
 <!--pages/recommend/recommend.wxml-->
-
 <view class="container" >
 
- <view class="index" >
-  <image class="bg" src="/pages/images/background1.png"></image>
- </view>
+<view class="index" >
+ <image class="bg" src="/pages/images/background2.png"></image>
+</view>
 
- <view class='page_row' bindtap="suo">
-    <view class="search">
-      <view class="df search_arr">
-        <image class="searchcion" src="/pages/images/searchicon.png"></image>
-        <input class="" value="{{searchValue}}"/>
-      </view>
-    </view>
-    <view class='sousuo'>搜索</view>
-  </view>
-
- <view class="BT">
-
-  <button class="recommend1" wx:for="{{repo}}" data-full_name="{{item.full_name}}" bindtap="torepo">   
-   <text style="font-size:12px">{{item.full_name}}\n{{item.language}} {{item.star}}</text>
-   <image class="recommendlogo" src="/pages/images/recommendlogo.png"> </image>
-  </button>
-
- </view>
-
+<view class="BT">
+<button class="recommend1" wx:for="{{repo}}" data-full_name="{{item.full_name}}" bindtap="torepo">   
+ <text style="font-size:12px">{{item.full_name}}\nlanguage{{item.language}} 收藏数{{item.star}}</text>
+</button>
+</view>
 </view>
