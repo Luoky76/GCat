@@ -62,6 +62,9 @@ def GetInfoEventHandler(gEvent: GEvent) -> GEvent:
                 gEvent.token, timefrom)
 
     if "newRepos" in gEvent.edetail:
+        if gEvent.edetail["newRepos"] != None:
+            timefrom = gEvent.edetail["newRepos"]["time"]
+
         gEvent.edetail["newRepos"] = userinfo.getNewRepository(
             gEvent.token, timefrom)
 
