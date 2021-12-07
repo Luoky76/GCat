@@ -1,4 +1,5 @@
 // pages/message/message.js
+const app =getApp();
 Page({
 
     /**
@@ -42,7 +43,7 @@ Page({
         // var var_token = "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"
         var that = this
         wx.request({
-            url: 'http://127.0.0.1:5000//GcatServer',
+            url: app.globalData.server_url,
             method:'post',
             dataType:"json",
             data: {

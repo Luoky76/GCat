@@ -1,4 +1,5 @@
 // pages/weeklog/weeklog.js
+const app =getApp();
 Page({
 
     /**

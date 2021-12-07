@@ -74,6 +74,12 @@ def create_repo(repoID:str ,file_dict:dict, token) -> bool:
             repo.create_file(content.path, "初始化", content.decoded_content)
     return True
 
+def search_repo(token, reponame):
+    g = Github(token)
+    list = []
+    for repo in g.search_repositories(reponame):
+        list.append(repo.full_name)
+    return list
 if __name__ == '__main__':
     # g = Github("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")
     # repo = g.get_repo("sindresorhus/awesome")
@@ -97,4 +103,8 @@ if __name__ == '__main__':
     # for path in file_list:
     #     content = repo.get_contents(path)
     #     repo.create_file(content.path, "初始化", content.decoded_content)
+    g = Github("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")
+    print(g.search_repositories("ShakingSH"))
+    for repo in g.search_repositories("ShakingSH"):
+        print(repo.full_name)
     pass

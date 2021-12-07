@@ -88,5 +88,5 @@ class RepositoryRcmd():
                         break
                     cnt += 1
                     # print(repo.url)
-                    result_list.append(repo.url)
+                    result_list.append(repo.full_name)
         return result_list

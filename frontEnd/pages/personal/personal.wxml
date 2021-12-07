@@ -7,18 +7,13 @@
 <view class="user">
     <!-- 用户头像 -->
     <view>
-      <image class="userinfo-avatar" src="/pages/images/user.png" mode="scaleToFill"></image>
+      <image class="userinfo-avatar" src="{{avatar_url}}" mode="scaleToFill"></image>
     </view>
     <!-- 设置 -->
     <view class="setting">
       <image class="icon_size" src="/pages/images/setting.png"></image>
     </view>
     <text class="font1">设置</text>
-    <!-- 新手教程 -->
-    <view class="course">
-      <image class="icon_size" src="/pages/images/course.png"></image>
-    </view>
-    <text class="font1">新手教程</text>
 </view>
 <view class="function">
     <!-- 历史浏览 -->

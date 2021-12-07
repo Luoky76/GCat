@@ -1,18 +1,38 @@
 // pages/personal/personal.js
+const app =getApp();
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        avatar_url :"",
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        var that = this;
+        var var_token =  wx.getStorageSync('token');
+        wx.request({
+            url: app.globalData.server_url,
+            method:'post',
+            dataType:"json",
+            data: {
+              token: var_token,
+              eventID: 422743326,
+              eType: "GetUserAvatar",
+              eTime: 1459994552.51,
+              edetail:{},
+            },
+            success:function(res){
+              that.setData({
+                avatar_url:res.data.edetail
+              })
+              wx.setStorageSync('avatar_url', that.data.avatar_url)
+            }
+          })
     },
 
     /**

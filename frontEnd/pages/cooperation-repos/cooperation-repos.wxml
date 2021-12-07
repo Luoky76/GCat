@@ -44,10 +44,6 @@
         </view>
       </view>
     </view>
-    <!-- 用户点评按钮 -->
-    <navigator url="../comment/comment">
-      <button class="comment" style="width:97%">用户点评</button>
-    </navigator>
     <!-- README -->
     <button class="readme" style="width:97%">README.md</button>
     <scroll-view class="readme_detail" scroll-y>

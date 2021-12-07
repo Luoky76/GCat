@@ -5,6 +5,7 @@ from reposrcmd import RepositoryRcmd
 import userinfo
 import repoinfo
 import GitHubOperator
+import dbmethod
 
 
 def EventDistributer(gEvent: GEvent) -> GEvent:
@@ -34,7 +35,18 @@ def EventDistributer(gEvent: GEvent) -> GEvent:
         return GetRepoInfoHandler(gEvent)
     elif gEvent.etype == "CreateRepo":
         return Create_repoEventHandler(gEvent)
-
+    elif gEvent.etype == "GetRepoMsg":
+        return GetRepoMsgHandler(gEvent)
+    elif gEvent.etype == "GetRepoReadme":
+        return GetRepoReadmeHandler(gEvent)
+    elif gEvent.etype == "GetUserAvatar":
+        return GetUserAvatarHandler(gEvent)
+    elif gEvent.etype == "SetHistory":
+        return SetHistoryHandler(gEvent)
+    elif gEvent.etype == "GetHistory":
+        return GetHistoryHandler(gEvent)
+    elif gEvent.etype == "SearchRepo":
+        return SearchRepoHandler(gEvent)
 
 
 def GetInfoHandler(gEvent: GEvent) -> GEvent:
@@ -144,3 +156,27 @@ def Create_repoEventHandler(gEvent: GEvent) -> GEvent:
         gEvent.edetail = "success"
     return gEvent
 
+def GetRepoMsgHandler(gEvent: GEvent) -> GEvent:
+    gEvent.edetail["msg"] = repoinfo.getrepodetail(gEvent.token, gEvent.edetail["full_name"])
+    return gEvent
+
+def GetRepoReadmeHandler(gEvent: GEvent) -> GEvent:
+    gEvent.edetail["msg"] = repoinfo.getreporeadme(gEvent.token, gEvent.edetail["full_name"])
+    print(gEvent.edetail["msg"])
+    return gEvent
+
+def GetUserAvatarHandler(gEvent: GEvent) -> GEvent:
+    gEvent.edetail = userinfo.getAvatar(gEvent.token)
+    return gEvent
+
+def SetHistoryHandler(gEvent: GEvent) -> GEvent:
+    gEvent.edetail = dbmethod.inserthistory(gEvent.token,gEvent.edetail["full_name"])
+    return gEvent
+
+def GetHistoryHandler(gEvent: GEvent) -> GEvent:
+    gEvent.edetail = dbmethod.searchhistory(gEvent.token)
+    return gEvent
+
+def SearchRepoHandler(gEvent: GEvent) -> GEvent:
+    gEvent.edetail = GitHubOperator.search_repo(gEvent.token, gEvent.edetail["name"])
+    return gEvent

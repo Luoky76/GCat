@@ -1,4 +1,5 @@
 // pages/dir/dir.js
+const app =getApp();
 Page({
 
     /**
@@ -10,6 +11,7 @@ Page({
         user:"",
         reponame:"",
         filepath:"",
+        before:"",
     },
 
     /**
@@ -20,15 +22,18 @@ Page({
         var v1 = options.item;
         var v2 = options.user;
         var v3 = options.reponame;
+        var v4 = options.before;
         that.setData({
             filepath:v1,
             user:v2,
             reponame:v3,
+            before:v4
         })
+        console.log(that.data.before+that.data.filepath)
         var var_token =  wx.getStorageSync('token');
         // var var_token = "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";
         wx.request({
-            url: 'http://127.0.0.1:5000//GcatServer',
+            url: app.globalData.server_url,
             method:'post',
             dataType:"json",
             data:{
@@ -39,7 +44,7 @@ Page({
               edetail:{
                 username:that.data.user,
                 reponame:that.data.reponame,
-                filepath:that.data.filepath,
+                filepath:that.data.before+that.data.filepath,
                 type:"dir"
               },
             },
@@ -116,15 +121,21 @@ Page({
     todir:function(e){
       let item = e.currentTarget.dataset.item;
       var that = this;
+      console.log(item)
+      console.log(that.data.user)
+      console.log(that.data.reponame)
       wx.navigateTo({
-        url: '../dir/dir?item='+item+'&user='+that.data.user+'&reponame='+that.data.reponame,
+        url: '../dir/dir?item='+item+'&user='+that.data.user+'&reponame='+that.data.reponame+'&before='+that.data.before+that.data.filepath+'/',
       })
     },
-    tofile:function(e){
-      let item = e.currentTarget.dataset.item;
-      var that = this;
-      wx.navigateTo({
-        url: '../file/file?item='+item+'&user='+that.data.user+'&reponame='+that.data.reponame,
-      })
-    }
+  tofile:function(e){
+    let item = e.currentTarget.dataset.item;
+    var that = this;
+    console.log(item)
+    console.log(that.data.user)
+    console.log(that.data.reponame)
+    wx.navigateTo({
+      url: '../file/file?item='+item+'&user='+that.data.user+'&reponame='+that.data.reponame+'&before='+that.data.before+that.data.filepath+'/',
+    })
+  }
 })

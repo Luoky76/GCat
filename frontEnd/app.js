@@ -15,7 +15,9 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    server_url : 'https://www.rat403.cn//GcatServer',
+    // server_url : 'http://127.0.0.1:5000//GcatServer',
   },
   towxml:new Towxml()   
 })

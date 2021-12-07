@@ -1,4 +1,5 @@
 // pages/history-list/history-list.js
+const app =getApp();
 Page({
 
     /**
@@ -10,6 +11,7 @@ Page({
         sort_hidden: true,
         zhezhao:true,
         dropup_pic_index: true,
+        repo:[],
         }, 
 
         
@@ -37,7 +39,58 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        var var_token =  wx.getStorageSync('token')
+        var _this = this;
+        var that = this;    
+        wx.request({
+            url: app.globalData.server_url,
+            method:'post',
+            dataType:"json",
+            data: {
+                eventID: 422743326,
+                eType: "GetHistory",
+                eTime: 1459994552.51,
+                edetail:{},
+                token: var_token
+            },
+            success: function(res) {
+              _this.setData({
+                url_list : res.data.edetail
+              });
+              console.log(_this.data.url_list);
+              var that = _this;
+              _this.data.url_list.forEach(element => {
+                  console.log(element)
+                  console.log(element[0].trim())
+                  wx.request({
+                    url: app.globalData.server_url,
+                    method:'post',
+                    data: {
+                      eventID: 422743326,
+                      eType: "GetRepoMsg",
+                      eTime: 1459994552.51,
+                      edetail:{
+                        full_name:element[0].trim(),
+                        msg:null,
+                      },
+                      token: var_token
+                    },
+                    success:function(res){
+                      //console.log(res)
+                      that.data.repo.push(
+                        {
+                          full_name:res.data.edetail["msg"]["full_name"],
+                          language:res.data.edetail["msg"]["language"],
+                          star:res.data.edetail["msg"]["star"],
+                        })
+                      that.setData({
+                          repo:that.data.repo
+                      })
+                    }
+                  })
+              })
+            }
+          })
     },
 
     /**
@@ -86,6 +139,31 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
-
-    }
+        
+    },
+    torepo:function(e){
+        //console.log(e)
+        var var_token =  wx.getStorageSync('token')
+        var that = this;
+        let full_name = e.currentTarget.dataset.full_name;
+        wx.request({
+          url: app.globalData.server_url,
+          method:'post',
+          data: {
+            eventID: 422743326,
+            eType: "SetHistory",
+            eTime: 1459994552.51,
+            edetail:{
+              full_name:full_name,
+            },
+            token: var_token
+          },
+          success:function(res){
+            console.log(res)
+          }
+        })
+        wx.navigateTo({
+          url: '../repos/repos?full_name='+full_name,
+        })
+      }
 })

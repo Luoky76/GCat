@@ -1,3 +1,4 @@
+const app =getApp();
 Page({
 
   /**
@@ -35,7 +36,7 @@ Page({
     var var_token =  wx.getStorageSync('token');
     // var var_token = "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";
     wx.request({
-      url: 'http://127.0.0.1:5000//GcatServer',
+      url: 'http://www.rat403.cn//GcatServer',
       method:'post',
       dataType:"json",
       data:{

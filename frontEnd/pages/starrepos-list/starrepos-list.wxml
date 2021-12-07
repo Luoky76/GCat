@@ -5,76 +5,9 @@
  <image class="bg" src="/pages/images/background2.png"></image>
 </view>
 
-<view class="user">
-    <text class="type">C++</text>
-    <text class="font1">User2/xxx</text>
-    <view class="like">
-      <image class="icon_size" src="/pages/images/收藏.png"></image>
-    </view>
-    <text class="font3">111</text>
-    <view class="share">
-      <image class="icon_size" src="/pages/images/收藏.png"></image>
-    </view>
-    <text class="font3">111</text>
-    <view class="count">
-      <image class="icon_size" src="/pages/images/协作仓库.png"></image>
-    </view>
-    <text class="font3">10</text>
-    <text class="font4">有新的更新</text>
-</view>
-
-<view class="user1">
-    <text class="type">C++</text>
-    <text class="font1">User3/xxx</text>
-    <view class="like">
-      <image class="icon_size" src="/pages/images/收藏.png"></image>
-    </view>
-    <text class="font3">111</text>
-    <view class="share">
-      <image class="icon_size" src="/pages/images/收藏.png"></image>
-    </view>
-    <text class="font3">111</text>
-    <view class="count">
-      <image class="icon_size" src="/pages/images/协作仓库.png"></image>
-    </view>
-    <text class="font3">10</text>
-    <text class="font2">最近一次更新：1周前</text>
-</view>
-
-<view class="user1">
-    <text class="type">C++</text>
-    <text class="font1">User4/xxx</text>
-    <view class="like">
-      <image class="icon_size" src="/pages/images/收藏.png"></image>
-    </view>
-    <text class="font3">111</text>
-    <view class="share">
-      <image class="icon_size" src="/pages/images/收藏.png"></image>
-    </view>
-    <text class="font3">111</text>
-    <view class="count">
-      <image class="icon_size" src="/pages/images/协作仓库.png"></image>
-    </view>
-    <text class="font3">10</text>
-    <text class="font2">最近一次更新：1周前</text>
-</view>
-
-<view class="user1">
-    <text class="type">C++</text>
-    <text class="font1">User5/xxx</text>
-    <view class="like">
-      <image class="icon_size" src="/pages/images/收藏.png"></image>
-    </view>
-    <text class="font3">111</text>
-    <view class="share">
-      <image class="icon_size" src="/pages/images/收藏.png"></image>
-    </view>
-    <text class="font3">111</text>
-    <view class="count">
-      <image class="icon_size" src="/pages/images/协作仓库.png"></image>
-    </view>
-    <text class="font3">10</text>
-    <text class="font2">最近一次更新：1周前</text>
+<view class="BT">
+<button class="recommend1" wx:for="{{repo}}" data-full_name="{{item.full_name}}" bindtap="torepo">   
+ <text style="font-size:12px">{{item.full_name}}\nlanguage{{item.language}} 收藏数{{item.star}}</text>
+</button>
 </view>
 </view>
-

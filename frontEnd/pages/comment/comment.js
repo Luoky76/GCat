@@ -1,4 +1,5 @@
 // pages/comment/comment.js
+const app =getApp();
 Page({
 
   /**

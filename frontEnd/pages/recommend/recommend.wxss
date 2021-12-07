@@ -49,8 +49,8 @@
 }
 
 .recommendlogo{
-    margin-left: 290rpx;
-    margin-right: -60rpx;
+    position: relative;
+    margin-right: 10%rpx;
     width: 60rpx;
     height: 60rpx;
 }

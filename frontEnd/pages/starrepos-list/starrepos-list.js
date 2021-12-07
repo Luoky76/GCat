@@ -1,4 +1,5 @@
 // pages/starrepos-list/starrepos-list.js
+const app =getApp();
 Page({
 
     /**
@@ -25,7 +26,7 @@ Page({
       var var_token =  wx.getStorageSync('token');
     //   var var_token = "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";
        wx.request({
-          url: 'http://127.0.0.1:5000//GcatServer',
+          url: app.globalData.server_url,
           method:'post',
           dataType:"json",
           data: {
@@ -45,19 +46,25 @@ Page({
             })
             that.data.url_list.forEach(element => {
               wx.request({
-                url: element,
-                method:'get',
+                url: app.globalData.server_url,
+                method:'post',
                 data: {
+                  eventID: 422743326,
+                  eType: "GetRepoMsg",
+                  eTime: 1459994552.51,
+                  edetail:{
+                    full_name:element,
+                    msg:null,
+                  },
                   token: var_token
                 },
                 success:function(res){
-                  console.log(res)
+                  //console.log(res)
                   that.data.repo.push(
                     {
-                      full_name:res.data.full_name,
-                      language:res.data.language,
-                      star:res.data.stargazers_count,
-                      url:res.data.repos_url
+                      full_name:res.data.edetail["msg"]["full_name"],
+                      language:res.data.edetail["msg"]["language"],
+                      star:res.data.edetail["msg"]["star"],
                     })
                   that.setData({
                       repo:that.data.repo

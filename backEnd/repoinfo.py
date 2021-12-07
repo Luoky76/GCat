@@ -2,6 +2,8 @@ from typing import Union
 import methods
 from github import Github
 from datetime import datetime
+import base64
+import codecs
 
 
 def getRepoContent(username: str, reponame: str,
@@ -36,7 +38,7 @@ def getRepoContentDetail(username: str, reponame: str,
     content = repo.get_contents(filepath)
     file_dict = {}
     if type == "file":
-        return content.decoded_content
+        return content.content
     elif type == "dir":
         for in_content in content:
             file_dict[in_content.name] = in_content.type
@@ -61,3 +63,22 @@ def getCollaborator(usrtoken: str, reponame: str):
     for co in repo.get_collaborators():
         msg.append({"name": co.login, "avatar": co.avatar_url})
     return msg
+
+
+def getrepodetail(usrtoken: str, reponame: str):
+    repo = Github(usrtoken).get_repo(reponame)
+    msg = {"full_name": reponame, "language": repo.language, "star": repo.stargazers_count,
+           "avatar_url": repo.owner.avatar_url, "create_time": repo.created_at,
+           "subscribers_count": repo.subscribers_count, "default_branch": repo.default_branch}
+    return msg
+
+
+def getreporeadme(usrtoken: str, reponame: str):
+    repo = Github(usrtoken).get_repo(reponame)
+    return repo.get_readme().content
+
+
+if __name__ == '__main__':
+    # print(getRepoContentDetail("Luoky76", "GCat", "backEnd/data", "dir", "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"))
+    print(Github("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").get_user().id)
+    pass

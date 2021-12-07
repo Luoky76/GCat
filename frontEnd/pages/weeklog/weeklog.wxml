@@ -7,44 +7,24 @@
 <view class="report">
  <!-- 用户头像 -->
   <view>
-  <image class="userinfo-avatar" src="/pages/images/男生-黄.png" mode="scaleToFill"></image>
+  <image class="userinfo-avatar" src="{{avatar_url}}" mode="aspectFit"></image>
   </view>
  <!-- 艺术字-Good -->
-  <view>
-  <image class="ysz1" src="/pages/images/Good.png"></image>
-  </view>
- <!-- 艺术字-Done -->
-  <view>
-   <image class="ysz2" src="/pages/images/Done.png"></image>
-  </view>
+
 
   <view>
  <!-- 完成commit -->
   <view class="show1">
-   <image class="detail_icon" src="/pages/images/上传.png"></image>
-   <text class="font1">本周完成了__次commit</text>
+   <text class="font1">本周完成了{{count1}}次push</text>
   </view>
  <!-- 完成项目 -->
   <view class="show2">
-   <text class="font1">本周完成了__个项目</text>
-   <image class="detail_icon" src="/pages/images/待收货.png"></image>
+   <text class="font1">本周完成了{{count2}}次merge</text>
   </view>
  <!-- 新建仓库 -->
   <view class="show3">
-   <image class="detail_icon" src="/pages/images/纸箱.png"></image>
-   <text class="font1">本周新建了__个仓库</text>
+   <text class="font1">本周新建了{{count3}}个仓库</text>
   </view>
- <!-- 协作项目 -->
-  <view class="show4">
-   <text class="font1">本周参与协作了__个项目</text>
-   <image class="detail_icon" src="/pages/images/拼团.png"></image>
-  </view>
- <!-- 浏览界面 -->
-  <view class="show5">
-   <image class="detail_icon" src="/pages/images/检查.png"></image>
-   <text class="font1">本周浏览了__个界面</text>
-  </view>
- 
   <button class="share" flex-direction="column">分享</button>
 </view>
 </view>

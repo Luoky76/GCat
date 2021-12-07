@@ -62,7 +62,8 @@ def getMyRepos(token)->list:
     user = Github(token).get_user()
     repos = []
     for repo in user.get_repos(type = "owner"):
-        repos.append(repo.url)
+        print(repo)
+        repos.append(repo.full_name)
     return repos
 
 def getCollRepos(token)->list:
@@ -74,7 +75,7 @@ def getCollRepos(token)->list:
     user = Github(token).get_user()
     repos = []
     for repo in user.get_repos(type = "collaborator"):
-        repos.append(repo.url)
+        repos.append(repo.full_name)
     return repos
 
 def getStarRepos(token)->list:
@@ -85,9 +86,13 @@ def getStarRepos(token)->list:
     """
     user = Github(token).get_user()
     repos = []
-    for repo in user.get_repos(type = "collaborator"):
-        repos.append(repo.url)
+    for repo in user.get_starred():
+        repos.append(repo.full_name)
     return repos
+
+def getAvatar(token)->str:
+    user = Github(token).get_user()
+    return user.avatar_url
 
 if __name__ == '__main__':
     # g = Github("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")
