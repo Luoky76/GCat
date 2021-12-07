@@ -36,7 +36,7 @@ Page({
     var var_token =  wx.getStorageSync('token');
     // var var_token = "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";
     wx.request({
-      url: 'http://www.rat403.cn//GcatServer',
+      url: app.globalData.server_url,
       method:'post',
       dataType:"json",
       data:{
